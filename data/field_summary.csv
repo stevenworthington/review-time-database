@@ -1,75 +1,83 @@
 field,n_journals_total,n_journals_with_data,coverage_pct,field_median_review_days,field_p25_review_days,field_p75_review_days,field_mean_review_days,slowest_journal,fastest_journal
 Accounting,6,6,100.0,621.0,348.625,649.25,534.6666666666666,Contemporary Accounting Research,Financial Analysts Journal
 Business & Management,3,3,100.0,509.0,494.0,563.25,535.1666666666666,Strategic Management Journal,Journal of the Academy of Marketing Science
+Mathematics,2,2,100.0,487.25,456.375,518.125,487.25,Publications Mathematiques de l'Institut des Hautes Etudes Scientifiques,Inventiones Mathematicae
 Finance,3,3,100.0,463.0,348.5,519.5,424.3333333333333,Financial Innovation,Financial Review
 Communication & Media,3,3,100.0,396.0,349.0,396.0,364.6666666666667,Annals of the International Communication Association,Political Communication
-Library & Information Science,1,1,100.0,371.0,371.0,371.0,371.0,Health Information and Libraries Journal,Health Information and Libraries Journal
+Political Science,2,2,100.0,394.5,365.25,423.75,394.5,Political Behavior,American Journal of Political Science
+Library & Information Science,4,4,100.0,368.75,324.75,393.375,349.375,Journal of Classification,Journal of Decision Systems
+Law,3,3,100.0,292.5,252.25,298.25,269.5,Regulation and Governance,Journal of Quantitative Criminology
+Marketing,3,3,100.0,292.0,231.5,378.0,309.0,Journal of Brand Management,Journal of Travel and Tourism Marketing
+Linguistics,5,5,100.0,281.5,259.0,415.0,327.6,Linguistics and Philosophy,Neurobiology of Language
 Artificial Intelligence,3,3,100.0,278.0,247.0,293.0,267.3333333333333,International Journal of Computer Vision,Science Robotics
 Chemical Engineering,4,4,100.0,276.5,186.5,369.75,279.75,Nature Biomedical Engineering,Angewandte Chemie - International Edition
+Philosophy,8,8,100.0,272.5,183.875,310.625,259.75,Australasian Journal of Philosophy,Journal of Political Philosophy
+Information Systems,7,7,100.0,269.0,119.0,351.5,266.85714285714283,European Journal of Information Systems,Neuroinformatics
+Sociology & Social Sciences,8,8,100.0,264.75,220.75,312.125,275.625,Journal of Population Economics,Accident Analysis and Prevention
 Chemistry,3,3,100.0,251.0,159.0,261.0,196.33333333333334,Nature Materials,Aggregate
 Development Studies,8,8,100.0,241.75,178.5,283.875,229.6875,New Political Economy,Sustainable Development
-Operations Research & Decision Science,2,2,100.0,230.0,193.5,266.5,230.0,The Lancet Digital Health,Ecological Indicators
+Statistics,3,3,100.0,237.5,183.25,343.25,271.8333333333333,Journal of the American Statistical Association,Wiley Interdisciplinary Reviews: Computational Statistics
+Psychology,4,4,100.0,231.75,179.125,324.625,272.0,Personnel Psychology,Psychotherapy and Psychosomatics
+Operations Research & Decision Science,6,6,100.0,230.0,136.75,366.75,282.8333333333333,International Journal of Management Reviews,Structural Equation Modeling
 Geography & Urban Studies,4,4,100.0,227.5,212.25,247.0,231.75,Journal of Sustainable Tourism,Democratization
+Physics,7,7,100.0,218.5,155.5,258.0,203.85714285714286,Nature Physics,eLight
 Arts & Humanities,5,5,100.0,212.5,152.0,258.0,201.1,Journal of Business Ethics,Postdigital Science and Education
-Molecular & Cell Biology,13,13,100.0,210.0,171.0,260.0,219.03846153846155,Nature Metabolism,Trends in Cell Biology
-Law,1,1,100.0,207.0,207.0,207.0,207.0,Criminology,Criminology
-Linguistics,1,1,100.0,206.5,206.5,206.5,206.5,Neurobiology of Language,Neurobiology of Language
+Molecular & Cell Biology,13,13,100.0,208.0,179.0,260.0,220.65384615384616,Nature Metabolism,Trends in Cell Biology
 Biochemistry,11,11,100.0,200.0,134.5,260.5,205.45454545454547,Nature Methods,Protein and Cell
 Education,5,5,100.0,194.0,87.0,197.0,157.4,Studies in Science Education,The Lancet Child and Adolescent Health
 Astronomy & Astrophysics,4,4,100.0,191.75,166.0,213.875,188.125,Living Reviews in Solar Physics,Astronomy and Astrophysics Review
 Earth Science,7,7,100.0,186.5,143.75,219.0,199.57142857142858,Nature Geoscience,Remote Sensing of Environment
+Mechanical & Aerospace Engineering,2,2,100.0,182.5,172.75,192.25,182.5,npj Urban Sustainability,Satellite Navigation
 Industrial Engineering,4,4,100.0,177.75,124.125,264.125,210.5,Operations Management Research,Advanced Materials Technologies
 Atmospheric & Ocean Science,6,6,100.0,173.25,135.125,246.625,195.58333333333334,Wiley Interdisciplinary Reviews: Climate Change,npj Climate and Atmospheric Science
-Sociology & Social Sciences,1,1,100.0,173.0,173.0,173.0,173.0,Accident Analysis and Prevention,Accident Analysis and Prevention
+Multidisciplinary,6,6,100.0,172.75,83.0,235.875,169.0,Nature,Transactions of Tianjin University
+Marine & Aquatic Science,14,14,100.0,171.5,115.875,195.5,169.42857142857142,Progress in Oceanography,Aquatic Toxicology
 Ecology & Evolution,9,9,100.0,170.0,125.0,215.0,178.77777777777777,Nature Sustainability,ISME Journal
 Computer Science (General),5,5,100.0,169.5,169.0,417.5,284.6,Journal of Operations Management,npj Digital Medicine
+Plant & Agricultural Science,13,13,100.0,167.0,119.0,233.0,195.07692307692307,Nature Food,Physics of Life Reviews
 Genetics & Genomics,13,13,100.0,167.0,141.0,198.0,173.80769230769232,Nature Genetics,Trends in Genetics
-Plant & Agricultural Science,13,13,100.0,167.0,119.0,186.5,173.03846153846155,Nature Food,Physics of Life Reviews
-Psychology,2,2,100.0,164.25,149.375,179.125,164.25,Clinical Psychology Review,Psychotherapy and Psychosomatics
 Environmental Science,7,7,100.0,164.0,159.0,244.5,197.64285714285714,Environmental Politics,Microplastics and Nanoplastics
 Biomedical Engineering,9,9,100.0,163.0,109.5,190.0,169.0,ACM Transactions on Computing for Healthcare,Biosensors and Bioelectronics
 History,7,7,100.0,156.0,77.75,193.75,141.42857142857142,Philosophy and Phenomenological Research,Philosophy and Technology
-Neuroscience,12,12,100.0,154.0,111.0,242.25,188.95833333333334,Nature Neuroscience,The Lancet Psychiatry
-Information Systems,5,5,100.0,148.5,128.0,269.0,240.7,European Journal of Information Systems,Neuroinformatics
-Rehabilitation,10,10,100.0,147.75,109.0,152.75,130.75,Journal of Geriatric Physical Therapy,Journal of Neurorestoratology
-Public Health & Epidemiology,7,7,100.0,144.5,117.75,156.0,136.85714285714286,International Journal of Epidemiology,The Lancet Public Health
-Electrical & Electronic Engineering,3,3,100.0,135.0,100.5,249.5,188.33333333333334,Nature Electronics,Nano-Micro Letters
+Neuroscience,12,12,100.0,154.0,108.625,241.25,184.54166666666666,Nature Neuroscience,The Lancet Psychiatry
+Rehabilitation,14,14,100.0,148.0,109.0,161.75,141.67857142857142,Disability and Rehabilitation,Journal of Neurorestoratology
+Public Health & Epidemiology,7,7,100.0,144.5,115.0,176.0,141.78571428571428,International Journal of Epidemiology,The Lancet Public Health
+Nursing,14,14,100.0,141.5,113.0,159.0,146.17857142857142,Journal of Nursing Management,Intensive and Critical Care Nursing
 Health Policy & Services,13,13,100.0,135.0,121.5,175.5,155.76923076923077,BMJ Global Health,The Lancet Regional Health - Europe
+Electrical & Electronic Engineering,3,3,100.0,135.0,100.5,249.5,188.33333333333334,Nature Electronics,Nano-Micro Letters
 Dentistry,14,14,100.0,134.5,112.875,158.75,133.64285714285714,Clinical Oral Implants Research,Journal of Dentistry
-Marine & Aquatic Science,12,12,100.0,134.5,116.875,200.625,164.33333333333334,Progress in Oceanography,Aquatic Toxicology
 Health Professions,13,13,100.0,131.5,117.5,147.0,137.8846153846154,Communications Medicine,Journal of Physiotherapy
 Biotechnology,9,9,100.0,130.0,66.0,184.5,122.83333333333333,Phenomics,iMeta
-Microbiology,11,11,100.0,129.5,110.75,165.5,143.95454545454547,Nature Microbiology,Current Opinion in Virology
-Nursing,13,13,100.0,128.0,109.0,161.0,144.96153846153845,Journal of Nursing Management,Intensive and Critical Care Nursing
-Orthopedics & Sports Medicine,11,11,100.0,122.5,118.5,162.5,137.0,Sports Medicine - Open,Current Reviews in Musculoskeletal Medicine
-Ophthalmology,12,12,100.0,122.5,73.0,136.375,107.45833333333333,Therapeutic Advances in Ophthalmology,Ophthalmology
-Pediatrics,12,12,100.0,120.0,98.0,141.75,105.20833333333333,Journal of Adolescent Health,Paediatric Respiratory Reviews
-Oncology,11,11,100.0,119.0,104.5,153.0,142.04545454545453,Nature Cancer,The Lancet Oncology
+Orthopedics & Sports Medicine,12,12,100.0,128.0,119.5,173.875,139.91666666666666,Sports Medicine - Open,Current Reviews in Musculoskeletal Medicine
+Otolaryngology,11,11,100.0,126.5,101.5,151.25,124.68181818181819,Dysphagia,Head and Neck Pathology
+Microbiology,13,13,100.0,122.0,105.0,157.5,130.30769230769232,Nature Microbiology,mBio
+Ophthalmology,12,12,100.0,121.0,73.0,135.625,107.125,Therapeutic Advances in Ophthalmology,Ophthalmology
+Pediatrics,12,12,100.0,120.0,98.625,141.75,105.70833333333333,Journal of Adolescent Health,Paediatric Respiratory Reviews
+Respiratory Medicine,14,14,100.0,117.75,58.25,158.75,113.35714285714286,Pulmonology,The Lancet Respiratory Medicine
 Anatomy & Physiology,14,14,100.0,117.5,93.25,154.0,124.82142857142857,Journal of General Physiology,Physiology
 Animal Science & Veterinary,10,10,100.0,117.0,93.875,162.5,124.95,ILAR Journal,EXCLI Journal
+Oncology,12,12,100.0,116.0,104.75,152.5,139.5,Nature Cancer,The Lancet Oncology
+Psychiatry,10,10,100.0,115.5,98.5,129.75,112.2,Schizophrenia Bulletin,Current Psychiatry Reports
+Pharmacology & Toxicology,14,14,100.0,115.0,98.5,133.25,117.53571428571429,Medicinal Research Reviews,Pharmacological Research
 Immunology,12,12,100.0,114.5,72.75,204.25,142.5,Nature Immunology,Immunological Reviews
 Endocrinology & Metabolism,13,13,100.0,113.0,73.0,146.0,127.03846153846153,Obesity Reviews,The Lancet Diabetes and Endocrinology
-Pharmacology & Toxicology,13,13,100.0,112.0,100.0,137.0,117.0,Medicinal Research Reviews,Pharmacological Research
 General & Internal Medicine,7,7,100.0,111.0,92.25,182.5,152.07142857142858,Science Translational Medicine,The Lancet
-Respiratory Medicine,13,13,100.0,110.5,52.5,140.0,104.15384615384616,Thorax,The Lancet Respiratory Medicine
-Obstetrics & Gynecology,15,15,100.0,110.0,62.75,151.5,132.26666666666668,Perspectives on Sexual and Reproductive Health,Fertility and Sterility
+Neurology,14,14,100.0,110.5,95.0,124.75,104.75,Sleep Medicine Reviews,The Lancet Neurology
+Obstetrics & Gynecology,15,15,100.0,110.0,62.75,149.75,132.03333333333333,Perspectives on Sexual and Reproductive Health,Fertility and Sterility
 Geriatrics,14,14,100.0,109.0,79.625,162.0,126.82142857142857,Nature Aging,Oxidative Medicine and Cellular Longevity
-Psychiatry,8,8,100.0,108.25,95.375,115.5,105.8125,Schizophrenia Bulletin,Current Psychiatry Reports
-Rheumatology,10,10,100.0,107.5,67.625,124.875,107.5,Advances in Rheumatology,Joint Bone Spine
-Neurology,12,12,100.0,107.0,88.125,124.0,102.29166666666667,Annals of Neurology,The Lancet Neurology
+Rheumatology,10,10,100.0,107.0,67.25,124.875,107.3,Advances in Rheumatology,Joint Bone Spine
 Dermatology,12,12,100.0,106.0,77.25,128.25,102.66666666666667,Dermatology,Journal of Dermatological Treatment
-Nutrition & Food Science,11,11,100.0,105.0,75.5,113.75,93.86363636363636,Current Nutrition Reports,Food Frontiers
-Otolaryngology,11,11,100.0,105.0,99.25,153.0,121.72727272727273,Dysphagia,Head and Neck Pathology
+Nutrition & Food Science,12,12,100.0,105.75,102.875,124.125,103.29166666666667,Journal of the International Society of Sports Nutrition,Food Frontiers
 Anesthesiology,12,12,100.0,101.75,78.125,125.375,102.70833333333333,Pain Reports,British Journal of Anaesthesia
 General Engineering,5,5,100.0,96.0,83.5,153.0,216.9,Journal of Product Innovation Management,Nano Convergence
-Pathology,14,14,100.0,96.0,92.625,123.25,105.42857142857143,Neuropathology and Applied Neurobiology,Pathologica
+Pathology,15,15,100.0,95.5,92.75,122.5,105.4,Neuropathology and Applied Neurobiology,Pathologica
 Infectious Disease,14,14,100.0,94.25,81.0,127.25,103.5,Journal of the International AIDS Society,Clinical Infectious Diseases
-Nephrology & Urology,10,10,100.0,90.25,69.25,102.375,86.8,American Journal of Kidney Diseases,European Urology
 Hematology,13,13,100.0,90.0,64.5,115.5,87.3076923076923,Bone Marrow Transplantation,Seminars in Hematology
+Nephrology & Urology,11,11,100.0,88.5,57.25,100.25,79.04545454545455,American Journal of Kidney Diseases,Journal of Urology
+Materials Science,8,8,100.0,86.0,79.875,95.125,104.0,Nature Energy,InfoMat
 Gastroenterology & Hepatology,13,13,100.0,84.0,23.0,113.5,74.61538461538461,JHEP Reports,Alimentary Pharmacology and Therapeutics
-Materials Science,1,1,100.0,83.0,83.0,83.0,83.0,Bioactive Materials,Bioactive Materials
 Energy,4,4,100.0,82.5,72.5,90.125,80.125,Carbon Energy,Energy and Environmental Materials
+Surgery,8,8,100.0,80.75,67.25,87.75,79.25,Surgery for Obesity and Related Diseases,Annals of Surgical Oncology
 Critical Care & Emergency Medicine,13,13,100.0,80.0,69.0,126.5,92.42307692307692,Clinical Journal of the American Society of Nephrology,American Journal of Respiratory and Critical Care Medicine
-Surgery,8,8,100.0,80.0,64.25,91.5,74.0625,Surgery for Obesity and Related Diseases,Annals of Surgical Oncology
-Radiology & Imaging,13,13,100.0,73.5,46.0,158.0,92.26923076923077,Cancer Medicine,Seminars in Nuclear Medicine
+Radiology & Imaging,13,13,100.0,73.5,46.0,158.0,92.96153846153847,Cancer Medicine,Seminars in Nuclear Medicine
 Cardiovascular Medicine,13,13,100.0,68.5,55.0,157.0,94.92307692307692,Circulation Research,Journal of the American College of Cardiology

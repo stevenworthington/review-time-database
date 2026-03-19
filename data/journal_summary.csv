@@ -350,50 +350,85 @@ Trends in Microbiology,1878-4380,Infectious Disease,50,50,64.0,26.25,103.0,79.68
 The Lancet Infectious Diseases,1474-4457,Infectious Disease,38,38,63.0,6.75,89.25,55.26315789473684,,,pubmed,Elsevier Ltd,256,5.446
 Clinical Infectious Diseases,1537-6591,Infectious Disease,29,29,59.0,10.0,99.0,63.13793103448276,,,pubmed,Oxford University Press,719,2.992
 European Journal of Information Systems,0960-085X,Information Systems,46,45,581.0,422.0,722.0,586.0222222222222,18.5,605.0,crossref_assertion,Taylor and Francis Ltd.,551,3.459
+ACM Transactions on Database Systems,1557-4644,Information Systems,49,47,376.0,304.0,515.0,423.29787234042556,77.0,487.0,crossref_assertion,Association for Computing Machinery (ACM),5574,0.913
+Journal of Innovation and Entrepreneurship,2192-5372,Information Systems,49,48,327.0,201.75,639.75,414.6458333333333,49.0,388.0,crossref_assertion,SpringerOpen,5796,0.889
 Business and Information Systems Engineering,1867-0202,Information Systems,37,37,269.0,245.0,344.0,335.4594594594595,56.0,333.0,crossref_assertion,Springer Gabler,1198,2.201
-Journal of Medical Systems,0148-5598,Information Systems,50,50,148.5,96.25,210.5,180.66,,,pubmed,Springer New York,5157,0.962
 Briefings in Bioinformatics,1477-4054,Information Systems,48,45,128.0,94.0,174.0,139.0888888888889,,,pubmed,Oxford University Press,1035,2.39
-Neuroinformatics,1539-2791,Information Systems,25,25,77.0,49.0,101.0,93.88,,,pubmed,Humana Press,5467,0.927
-Criminology,1745-9125,Law,2,2,207.0,177.0,237.0,207.0,,,pubmed,Wiley-Blackwell,1122,2.287
-Health Information and Libraries Journal,1471-1842,Library & Information Science,49,47,371.0,61.0,542.5,373.2340425531915,,,pubmed,Wiley-Blackwell Publishing Ltd,6891,0.79
+Journal of Medical Systems,0148-5598,Information Systems,99,99,110.0,65.0,179.5,148.94949494949495,12.0,101.0,"crossref_assertion, pubmed",Springer New York,5157,0.962
+Neuroinformatics,1539-2791,Information Systems,26,26,77.0,52.0,100.0,93.23076923076923,19.0,96.0,"crossref_assertion, pubmed",Humana Press,5467,0.927
+Regulation and Governance,1748-5983,Law,49,49,304.0,258.0,428.0,349.51020408163265,17.0,330.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,2688,1.403
+Criminology,1745-9125,Law,46,46,292.5,202.75,385.5,322.54347826086956,132.5,424.5,"crossref_assertion, pubmed",Wiley-Blackwell,1122,2.287
+Journal of Quantitative Criminology,0748-4518,Law,23,23,212.0,168.5,258.0,204.91304347826087,37.0,248.0,crossref_assertion,Springer New York,2892,1.349
+Journal of Classification,0176-4268,Library & Information Science,27,27,411.0,349.0,489.5,418.74074074074076,19.0,440.0,crossref_assertion,Springer New York,7950,0.71
+Knowledge Management Research and Practice,1477-8238,Library & Information Science,49,48,387.5,299.0,524.75,414.1666666666667,9.0,398.0,crossref_assertion,Taylor and Francis Ltd.,6526,0.822
+Health Information and Libraries Journal,1471-1842,Library & Information Science,52,50,350.0,36.25,533.75,358.48,49.0,82.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,6891,0.79
+Journal of Decision Systems,2116-7052,Library & Information Science,50,50,249.0,155.25,369.25,286.38,23.0,285.5,crossref_assertion,Taylor and Francis Ltd.,7242,0.761
+Linguistics and Philosophy,0165-0157,Linguistics,11,11,476.0,371.5,740.0,565.7272727272727,75.0,566.0,crossref_assertion,Springer Netherlands,3359,1.242
+Syntax,1368-0005,Linguistics,40,40,415.0,332.25,612.25,463.275,226.5,826.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,2676,1.407
+Mind and Language,1468-0017,Linguistics,46,46,281.5,138.0,466.25,314.4782608695652,97.5,410.5,crossref_assertion,Wiley-Blackwell Publishing Ltd,1994,1.668
+Modern Language Journal,1540-4781,Linguistics,14,14,259.0,0.75,379.5,237.78571428571428,55.0,317.5,crossref_assertion,Wiley-Blackwell,1033,2.394
 Neurobiology of Language,2641-4368,Linguistics,50,50,206.5,181.0,274.0,257.38,88.0,157.5,pubmed,,3663,1.179
 Progress in Oceanography,0079-6611,Marine & Aquatic Science,1,1,345.0,345.0,345.0,345.0,,,pubmed,Elsevier Ltd,2856,1.357
-Reviews in Fish Biology and Fisheries,0960-3166,Marine & Aquatic Science,36,36,248.0,181.0,323.75,262.30555555555554,159.0,355.0,pubmed,Springer Science and Business Media Deutschland GmbH,1813,1.753
-Limnology and Oceanography,0024-3590,Marine & Aquatic Science,33,33,237.0,176.0,297.0,245.03030303030303,,,pubmed,Wiley-Blackwell,2214,1.566
-NPJ Ocean Sustainability,2731-426X,Marine & Aquatic Science,14,14,188.5,159.0,245.75,195.21428571428572,,136.0,pubmed,Springer Nature,2353,1.513
-Wiley Interdisciplinary Reviews: Water,2049-1948,Marine & Aquatic Science,11,11,150.0,89.5,185.0,152.36363636363637,50.0,171.0,pubmed,John Wiley &amp; Sons Inc.,938,2.524
-Fish and Fisheries,1467-2960,Marine & Aquatic Science,10,10,136.5,54.5,164.75,133.4,,,pubmed,Wiley-Blackwell Publishing Ltd,1252,2.153
-Journal of Geophysical Research: Biogeosciences,2169-8953,Marine & Aquatic Science,32,32,132.5,102.25,194.25,160.5,,,pubmed,John Wiley and Sons Inc,2591,1.432
+Limnology and Oceanography,0024-3590,Marine & Aquatic Science,80,80,236.5,175.5,317.5,247.175,21.0,265.0,"crossref_assertion, pubmed",Wiley-Blackwell,2214,1.566
+NPJ Ocean Sustainability,2731-426X,Marine & Aquatic Science,63,63,206.0,157.0,292.0,233.6031746031746,38.0,245.5,"crossref_assertion, pubmed",Springer Nature,2353,1.513
+Reviews in Fish Biology and Fisheries,0960-3166,Marine & Aquatic Science,85,85,196.0,154.0,262.0,219.1764705882353,29.5,264.5,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,1813,1.753
+Wiley Interdisciplinary Reviews: Water,2049-1948,Marine & Aquatic Science,54,54,194.0,150.0,287.5,219.7962962962963,19.5,245.5,"crossref_assertion, pubmed",John Wiley &amp; Sons Inc.,938,2.524
+Fish and Fisheries,1467-2960,Marine & Aquatic Science,57,57,177.0,139.0,223.0,179.8421052631579,23.0,215.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,1252,2.153
+Journal of Geophysical Research: Biogeosciences,2169-8953,Marine & Aquatic Science,81,81,174.0,125.0,220.0,190.03703703703704,17.0,207.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,2591,1.432
+Limnology and Oceanography Letters,2378-2242,Marine & Aquatic Science,47,47,169.0,128.0,255.0,196.0,17.0,202.0,crossref_assertion,John Wiley and Sons Inc,1201,2.199
+Reviews in Aquaculture,1753-5131,Marine & Aquatic Science,50,50,157.0,109.25,208.5,161.18,17.0,178.0,"crossref_assertion, pubmed",Blackwell Publishing Asia,842,2.729
 Harmful Algae,1878-1470,Marine & Aquatic Science,49,49,123.0,94.0,163.0,131.46938775510205,,,pubmed,Elsevier B.V.,2095,1.618
-Reviews in Aquaculture,1753-5131,Marine & Aquatic Science,7,7,118.0,113.0,138.0,121.42857142857143,,,pubmed,Blackwell Publishing Asia,842,2.729
 Ocean and Coastal Management,0964-5691,Marine & Aquatic Science,46,46,113.5,85.25,182.75,139.8913043478261,,,pubmed,Elsevier B.V.,3339,1.245
+Droplet,2769-2159,Marine & Aquatic Science,33,33,101.0,57.0,125.0,103.78787878787878,67.0,180.0,crossref_assertion,John Wiley and Sons Inc,1478,1.969
 Marine Pollution Bulletin,0025-326X,Marine & Aquatic Science,50,50,101.0,65.75,138.5,108.06,,,pubmed,Elsevier Ltd,2691,1.402
 Aquatic Toxicology,0166-445X,Marine & Aquatic Science,49,49,79.0,60.0,112.0,91.91836734693878,,,pubmed,Elsevier B.V.,3265,1.256
+Journal of Brand Management,1479-1803,Marketing,3,3,464.0,406.5,468.5,428.6666666666667,32.0,490.0,crossref_assertion,Palgrave Macmillan Ltd.,2350,1.514
+Public Administration Review,0033-3352,Marketing,39,39,292.0,219.5,440.0,323.3076923076923,13.0,334.0,crossref_assertion,Wiley-Blackwell,730,2.964
+Journal of Travel and Tourism Marketing,1054-8408,Marketing,47,47,171.0,120.5,230.5,183.48936170212767,86.0,314.0,crossref_assertion,Routledge,1109,2.299
+Nature Energy,2058-7546,Materials Science,27,27,238.0,179.0,296.5,250.5185185185185,34.0,285.0,crossref_assertion,Springer Nature,25,17.599
+Advanced Materials,0935-9648,Materials Science,50,50,112.0,84.5,140.0,116.08,10.5,120.5,crossref_assertion,Wiley-Blackwell,104,8.851
+Advanced Functional Materials,1616-301X,Materials Science,50,50,89.5,77.25,111.0,100.8,9.5,102.0,crossref_assertion,Wiley-VCH Verlag,257,5.439
+Advanced Fiber Materials,2524-7921,Materials Science,47,47,89.0,78.0,115.5,97.36170212765957,43.0,136.0,crossref_assertion,Springer Nature,440,3.919
+Advanced Energy Materials,1614-6832,Materials Science,50,50,83.0,66.0,97.0,87.68,10.0,95.0,crossref_assertion,John Wiley and Sons Inc,116,8.378
 Bioactive Materials,2452-199X,Materials Science,49,49,83.0,70.0,112.0,99.34693877551021,,,pubmed,KeAi Communications Co.,405,4.075
-Nature Microbiology,2058-5276,Microbiology,37,37,272.0,186.0,430.0,340.02702702702703,,,pubmed,Nature Research,167,6.893
-Nature Biotechnology,1546-1696,Microbiology,19,19,214.0,164.0,262.0,223.78947368421052,,,pubmed,Nature Research,18,19.006
-Microbiome,2049-2618,Microbiology,50,50,174.0,136.25,227.0,194.0,,,pubmed,BioMed Central Ltd,397,4.117
-npj Biofilms and Microbiomes,2055-5008,Microbiology,49,49,157.0,132.0,220.0,191.0408163265306,,,pubmed,Nature Publishing Group,1049,2.37
+Interdisciplinary Materials,2767-441X,Materials Science,36,36,70.5,58.75,112.0,92.80555555555556,38.5,121.0,crossref_assertion,John Wiley and Sons Inc,148,7.351
+InfoMat,2567-3165,Materials Science,35,35,67.0,54.5,83.5,72.37142857142857,47.0,120.0,crossref_assertion,John Wiley and Sons Ltd,237,5.683
+Publications Mathematiques de l'Institut des Hautes Etudes Scientifiques,1618-1913,Mathematics,45,38,549.0,342.75,682.25,524.421052631579,131.0,702.0,crossref_assertion,Springer Verlag,176,6.783
+Inventiones Mathematicae,0020-9910,Mathematics,48,44,425.5,316.5,754.5,525.9090909090909,13.0,443.5,crossref_assertion,Springer New York,202,6.183
+npj Urban Sustainability,2661-8001,Mechanical & Aerospace Engineering,50,50,202.0,152.25,260.25,218.82,18.5,236.0,crossref_assertion,Springer Nature,642,3.185
+Satellite Navigation,2662-9291,Mechanical & Aerospace Engineering,50,50,163.0,110.5,202.75,166.92,42.0,219.5,crossref_assertion,Springer International Publishing,881,2.658
+Nature Microbiology,2058-5276,Microbiology,38,38,272.0,183.75,428.5,335.8421052631579,35.0,216.0,"crossref_assertion, pubmed",Nature Research,167,6.893
+Nature Biotechnology,1546-1696,Microbiology,27,27,214.0,161.0,300.5,241.22222222222223,36.0,289.0,"crossref_assertion, pubmed",Nature Research,18,19.006
+Microbiome,2049-2618,Microbiology,51,51,173.0,138.5,226.0,193.45098039215685,37.0,203.0,"crossref_assertion, pubmed",BioMed Central Ltd,397,4.117
+npj Biofilms and Microbiomes,2055-5008,Microbiology,50,50,157.5,132.75,232.75,193.82,36.0,366.0,"crossref_assertion, pubmed",Nature Publishing Group,1049,2.37
 Virus Evolution,2057-1577,Microbiology,47,46,137.5,108.75,216.0,157.5,25.5,133.0,pubmed,Oxford University Press,1583,1.9
 Soil Biology and Biochemistry,0038-0717,Microbiology,22,22,129.5,99.75,168.25,141.9090909090909,,,pubmed,Elsevier Ltd,426,3.982
 Biotechnology Advances,1873-1899,Microbiology,50,50,122.0,88.5,158.5,132.16,0.0,105.0,pubmed,Elsevier Inc.,877,2.662
+EcoSal Plus,2324-6200,Microbiology,46,46,117.5,62.25,175.0,124.65217391304348,239.0,371.5,crossref_assertion,American Society for Microbiology,1077,2.331
 International Journal of Biological Sciences,1449-2288,Microbiology,50,50,114.5,75.25,157.75,119.1,8.5,107.0,pubmed,Ivyspring International Publisher,848,2.715
-Journal of Nanobiotechnology,1477-3155,Microbiology,50,50,107.0,78.5,132.75,111.1,,,pubmed,BioMed Central Ltd,1125,2.282
-Reviews in Environmental Science and Biotechnology,1569-1705,Microbiology,8,8,82.0,75.5,99.25,91.75,14.5,52.5,pubmed,Springer Science and Business Media B.V.,1071,2.338
+Journal of Nanobiotechnology,1477-3155,Microbiology,56,56,105.0,77.75,134.75,111.07142857142857,15.5,123.0,"crossref_assertion, pubmed",BioMed Central Ltd,1125,2.282
 Current Opinion in Virology,1879-6265,Microbiology,48,48,74.0,43.0,155.0,117.29166666666667,,148.0,pubmed,Elsevier B.V.,1391,2.034
-Nature Metabolism,2522-5812,Molecular & Cell Biology,28,27,358.0,267.5,437.0,362.962962962963,,,pubmed,Springer Berlin,142,7.529
-Nature Cell Biology,1476-4679,Molecular & Cell Biology,28,28,325.0,273.0,410.25,355.85714285714283,,,pubmed,Nature Research,140,7.711
-Nature Chemical Biology,1552-4469,Molecular & Cell Biology,32,31,318.0,227.0,395.0,325.1290322580645,,,pubmed,Nature Research,248,5.521
-Genome Biology,1474-760X,Molecular & Cell Biology,50,49,260.0,188.0,360.0,296.57142857142856,,,pubmed,BioMed Central Ltd,233,5.71
+Reviews in Environmental Science and Biotechnology,1569-1705,Microbiology,54,54,65.5,50.75,88.5,77.03703703703704,22.0,86.5,"crossref_assertion, pubmed",Springer Science and Business Media B.V.,1071,2.338
+mBio,2161-2129,Microbiology,47,47,12.0,5.5,43.0,26.0,74.0,97.0,crossref_assertion,American Society for Microbiology,1605,1.885
+Nature Metabolism,2522-5812,Molecular & Cell Biology,30,29,358.0,265.0,436.0,357.58620689655174,28.0,313.0,"crossref_assertion, pubmed",Springer Berlin,142,7.529
+Nature Cell Biology,1476-4679,Molecular & Cell Biology,29,29,329.0,275.0,404.0,354.9310344827586,51.0,380.0,"crossref_assertion, pubmed",Nature Research,140,7.711
+Nature Chemical Biology,1552-4469,Molecular & Cell Biology,46,45,318.0,267.0,374.0,330.22222222222223,50.5,371.0,"crossref_assertion, pubmed",Nature Research,248,5.521
+Genome Biology,1474-760X,Molecular & Cell Biology,52,51,260.0,187.5,363.0,296.7647058823529,14.0,315.5,"crossref_assertion, pubmed",BioMed Central Ltd,233,5.71
 Cell Systems,2405-4720,Molecular & Cell Biology,49,49,245.0,181.0,368.0,262.6326530612245,,,pubmed,Cell Press,297,4.943
 Cell Metabolism,1550-4131,Molecular & Cell Biology,47,47,211.0,42.5,273.5,204.5744680851064,,,pubmed,Cell Press,60,11.989
-Nature Structural and Molecular Biology,1545-9993,Molecular & Cell Biology,30,30,210.0,163.25,302.25,237.06666666666666,,,pubmed,Nature Research,201,6.187
+Nature Structural and Molecular Biology,1545-9993,Molecular & Cell Biology,33,33,208.0,167.0,300.0,234.54545454545453,44.0,242.0,"crossref_assertion, pubmed",Nature Research,201,6.187
 Molecular Cell,1097-4164,Molecular & Cell Biology,50,50,202.0,107.75,307.75,226.88,,,pubmed,Cell Press,101,9.051
+Cell Research,1748-7838,Molecular & Cell Biology,33,33,189.0,148.0,205.0,183.63636363636363,38.0,234.0,"crossref_assertion, pubmed",Springer Nature,105,8.74
 Cell Stem Cell,1934-5909,Molecular & Cell Biology,48,48,179.0,27.25,297.25,176.97916666666666,,,pubmed,Cell Press,96,9.313
 Pharmacological Reviews,1521-0081,Molecular & Cell Biology,46,46,171.0,130.75,252.25,186.54347826086956,,,pubmed,Elsevier Inc.,182,6.603
-Cell Research,1748-7838,Molecular & Cell Biology,27,27,170.0,139.0,211.0,180.5185185185185,,,pubmed,Springer Nature,105,8.74
 Molecular Plant,1674-2052,Molecular & Cell Biology,50,50,101.5,29.0,161.25,108.0,,,pubmed,Cell Press,249,5.519
 Trends in Cell Biology,0962-8924,Molecular & Cell Biology,49,49,97.0,74.0,115.0,98.81632653061224,,,pubmed,Elsevier Ltd,255,5.455
+Nature,1476-4687,Multidisciplinary,24,24,309.5,245.0,405.0,336.1666666666667,40.5,346.5,crossref_assertion,Nature Research,21,18.288
+Exploration,2766-2098,Multidisciplinary,41,41,246.0,180.0,290.0,243.0487804878049,125.5,407.0,crossref_assertion,John Wiley and Sons Inc,376,4.231
+Science Advances,2375-2548,Multidisciplinary,50,50,205.5,159.5,254.25,212.34,32.0,241.5,crossref_assertion,American Association for the Advancement of Science,367,4.324
+Proceedings of the National Academy of Sciences of the United States of America,1091-6490,Multidisciplinary,46,46,140.0,113.25,199.75,154.65217391304347,34.0,175.0,crossref_assertion,National Academy of Sciences,567,3.414
+Electron,2751-2614,Multidisciplinary,31,31,64.0,49.5,98.0,77.70967741935483,33.0,108.0,crossref_assertion,John Wiley and Sons Inc,1155,2.251
+Transactions of Tianjin University,1006-4982,Multidisciplinary,50,50,49.0,34.0,90.0,65.7,57.0,122.5,crossref_assertion,Tianjin Daxue/Tianjin University,1808,1.756
 American Journal of Kidney Diseases,1523-6838,Nephrology & Urology,50,50,148.5,40.5,211.0,131.66,,,pubmed,W.B. Saunders,705,3.024
 "Brain, Behavior, and Immunity - Health",2666-3546,Nephrology & Urology,48,48,120.0,73.0,181.25,129.4375,,,pubmed,Elsevier Inc.,3307,1.249
 American Journal of Nephrology,1421-9670,Nephrology & Urology,50,50,104.5,66.0,145.5,108.74,247.5,406.0,pubmed,S. Karger AG,2697,1.4
@@ -404,126 +439,138 @@ Clinical Kidney Journal,2048-8505,Nephrology & Urology,49,49,88.0,52.0,131.0,104
 European Urology Focus,2405-4569,Nephrology & Urology,49,49,63.0,16.0,112.0,75.59183673469387,,,pubmed,Elsevier B.V.,1648,1.86
 Kidney International,0085-2538,Nephrology & Urology,50,50,51.5,14.0,109.25,83.0,,,pubmed,Elsevier B.V.,392,4.13
 European Urology,1873-7560,Nephrology & Urology,49,49,16.0,8.0,94.0,51.55102040816327,,,pubmed,Elsevier B.V.,113,8.529
-Annals of Neurology,1531-8249,Neurology,50,50,127.5,76.75,199.75,138.44,,,pubmed,John Wiley &amp; Sons Inc.,487,3.736
+Journal of Urology,0022-5347,Nephrology & Urology,42,42,1.5,0.0,71.75,49.095238095238095,116.0,125.0,crossref_assertion,Wolters Kluwer Health,1187,2.213
 Sleep Medicine Reviews,1532-2955,Neurology,47,47,127.0,58.0,176.0,130.4255319148936,,,pubmed,W.B. Saunders Ltd,379,4.209
+Brain Pathology,1015-6305,Neurology,57,57,126.0,75.0,171.0,132.28070175438597,22.5,191.0,"crossref_assertion, pubmed",Wiley-Blackwell,1498,1.958
+Neurology,0028-3878,Neurology,49,49,126.0,90.0,169.0,126.9795918367347,102.0,231.0,crossref_assertion,Lippincott Williams and Wilkins,1025,2.401
+Annals of Neurology,1531-8249,Neurology,65,65,125.0,76.0,175.0,128.93846153846152,22.0,140.0,"crossref_assertion, pubmed",John Wiley &amp; Sons Inc.,487,3.736
 "Journal of Neurology, Neurosurgery and Psychiatry",1468-330X,Neurology,50,49,124.0,92.0,149.0,129.12244897959184,,,pubmed,BMJ Publishing Group,576,3.379
 Spine Journal,1529-9430,Neurology,47,47,124.0,93.0,155.0,130.51063829787233,,,pubmed,Elsevier Inc.,1508,1.954
-Brain Pathology,1015-6305,Neurology,49,49,121.0,74.0,153.0,122.9795918367347,,,pubmed,Wiley-Blackwell,1498,1.958
 Movement Disorders,0885-3185,Neurology,41,41,111.0,77.0,146.0,117.73170731707317,,,pubmed,John Wiley &amp; Sons Inc.,723,2.988
+Neurology: Neuroimmunology and NeuroInflammation,2332-7812,Neurology,44,44,110.0,91.0,140.75,118.13636363636364,107.0,220.5,crossref_assertion,Lippincott Williams and Wilkins Ltd.,711,3.008
 Neurotherapeutics,1933-7213,Neurology,49,49,103.0,79.0,135.0,110.75510204081633,,,pubmed,Elsevier B.V.,1355,2.063
-Epilepsia,1528-1167,Neurology,49,49,98.0,45.0,114.0,97.34693877551021,,,pubmed,Wiley-Blackwell Publishing Ltd,1046,2.371
-Alzheimer's and Dementia: Translational Research and Clinical Interventions,2352-8737,Neurology,48,48,91.5,76.75,121.25,97.14583333333333,27.0,91.5,pubmed,John Wiley and Sons Inc,1261,2.146
+Alzheimer's and Dementia: Translational Research and Clinical Interventions,2352-8737,Neurology,59,59,95.0,76.5,129.0,101.15254237288136,36.0,118.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,1261,2.146
+Epilepsia,1528-1167,Neurology,50,50,95.0,45.0,113.75,95.72,12.0,28.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,1046,2.371
 Neurobiology of Disease,1095-953X,Neurology,43,43,78.0,49.0,140.0,93.93023255813954,,,pubmed,Academic Press Inc.,1417,2.009
 Journal of Prevention of Alzheimer's Disease,2274-5807,Neurology,49,49,69.0,42.0,97.0,74.40816326530613,,,pubmed,Elsevier Masson s.r.l.,691,3.04
 The Lancet Neurology,1474-4465,Neurology,32,32,53.5,6.0,189.75,106.625,,,pubmed,Elsevier Ltd,62,11.729
-Nature Neuroscience,1097-6256,Neuroscience,34,34,408.5,285.25,499.5,434.2352941176471,,,pubmed,Nature Research,70,11.197
-Nature Human Behaviour,2397-3374,Neuroscience,24,24,369.0,289.75,544.5,435.7916666666667,,,pubmed,Nature Publishing Group,246,5.537
-Molecular Psychiatry,1476-5578,Neuroscience,50,49,315.0,239.0,415.0,336.81632653061223,,,pubmed,Springer Nature,416,4.022
+Nature Neuroscience,1097-6256,Neuroscience,39,39,393.0,278.5,477.0,407.7435897435897,31.0,234.0,"crossref_assertion, pubmed",Nature Research,70,11.197
+Nature Human Behaviour,2397-3374,Neuroscience,32,31,350.0,256.5,504.5,403.8709677419355,56.5,360.0,"crossref_assertion, pubmed",Nature Publishing Group,246,5.537
+Molecular Psychiatry,1476-5578,Neuroscience,84,83,311.0,228.0,425.0,326.2168674698795,12.0,312.5,"crossref_assertion, pubmed",Springer Nature,416,4.022
 Neuron,1097-4199,Neuroscience,49,49,218.0,123.0,298.0,226.30612244897958,,,pubmed,Cell Press,177,6.755
 Biological Psychiatry,0006-3223,Neuroscience,50,50,176.5,117.0,241.0,169.7,,,pubmed,Elsevier Inc.,322,4.684
-Molecular Neurodegeneration,1750-1326,Neuroscience,49,49,160.0,121.0,203.0,166.9795918367347,,,pubmed,BioMed Central Ltd,253,5.488
+Molecular Neurodegeneration,1750-1326,Neuroscience,51,51,160.0,124.0,202.0,166.8235294117647,44.5,207.5,"crossref_assertion, pubmed",BioMed Central Ltd,253,5.488
 Translational Neurodegeneration,2047-9158,Neuroscience,49,49,148.0,115.0,211.0,165.42857142857142,,,pubmed,BioMed Central Ltd,462,3.85
 Alzheimer's and Dementia,1552-5279,Neuroscience,50,50,112.5,89.25,144.75,117.62,,,pubmed,John Wiley and Sons Inc,515,3.6
 Trends in Cognitive Sciences,1879-307X,Neuroscience,50,50,111.5,53.25,169.25,116.16,,,pubmed,Elsevier Ltd,340,4.506
-Acta Neuropathologica,0001-6322,Neuroscience,48,48,109.5,84.25,129.75,111.14583333333333,,,pubmed,Springer Science and Business Media Deutschland GmbH,348,4.483
 Trends in Neurosciences,0166-2236,Neuroscience,50,50,100.0,65.75,138.75,99.32,,,pubmed,Elsevier Ltd,316,4.726
+Acta Neuropathologica,0001-6322,Neuroscience,95,95,95.0,64.0,129.0,100.81052631578947,21.0,101.0,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,348,4.483
 The Lancet Psychiatry,2215-0374,Neuroscience,41,41,39.0,12.0,70.0,49.31707317073171,,,pubmed,Elsevier Ltd,145,7.458
-Journal of Nursing Management,0966-0429,Nursing,50,50,258.5,160.5,382.5,273.34,22.0,260.0,pubmed,John Wiley and Sons Ltd,1901,1.706
+Journal of Nursing Management,0966-0429,Nursing,64,64,255.0,160.0,371.5,270.046875,24.0,256.0,"crossref_assertion, pubmed",John Wiley and Sons Ltd,1901,1.706
 Public Health Reviews,2107-6952,Nursing,50,50,230.5,143.5,364.75,260.34,,189.0,pubmed,Frontiers Media SA,2414,1.491
 Journal of Nursing Regulation,2155-8264,Nursing,1,1,191.0,191.0,191.0,191.0,,,pubmed,Elsevier Inc.,1828,1.743
 International Journal of Nursing Studies,1873-491X,Nursing,47,47,161.0,122.5,205.5,176.5744680851064,,,pubmed,Elsevier Ltd,805,2.819
 International Nursing Review,1466-7657,Nursing,50,50,153.0,106.0,204.75,167.92,,,pubmed,Wiley-Blackwell Publishing Ltd,2830,1.364
-BMC Nursing,1472-6955,Nursing,50,50,138.0,95.0,191.0,185.64,,,pubmed,BioMed Central Ltd,3201,1.272
-Journal of Advanced Nursing,0309-2402,Nursing,50,50,128.0,97.75,166.25,140.3,,,pubmed,Wiley-Blackwell Publishing Ltd,2705,1.398
+Stroke,1524-4628,Nursing,37,37,146.0,106.0,174.0,149.1891891891892,61.0,201.0,crossref_assertion,Wolters Kluwer Health,880,2.659
+Journal of Advanced Nursing,0309-2402,Nursing,94,94,145.0,103.25,194.75,152.64893617021278,15.5,185.5,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,2705,1.398
+BMC Nursing,1472-6955,Nursing,51,51,138.0,88.0,190.0,183.58823529411765,6.0,87.0,"crossref_assertion, pubmed",BioMed Central Ltd,3201,1.272
 Nursing Outlook,1528-3968,Nursing,48,48,119.0,87.0,173.25,127.85416666666667,,,pubmed,Elsevier Inc.,3576,1.195
 Journal of Healthcare Leadership,1179-3201,Nursing,50,50,117.5,94.25,138.25,119.58,8.0,112.0,pubmed,Dove Medical Press Limited,3238,1.264
-Patient,1178-1653,Nursing,39,39,109.0,78.5,158.5,128.82051282051282,,,pubmed,Springer Science + Business Media,2946,1.336
+Patient,1178-1653,Nursing,40,40,111.5,79.25,163.5,130.125,30.0,211.0,"crossref_assertion, pubmed",Springer Science + Business Media,2946,1.336
 Women and Birth,1871-5192,Nursing,50,50,107.0,74.75,144.25,124.96,,,pubmed,Elsevier B.V.,3018,1.318
 Diabetes Care,1935-5548,Nursing,36,36,89.0,59.75,131.0,97.69444444444444,,,pubmed,American Diabetes Association Inc.,185,6.566
 Intensive and Critical Care Nursing,0964-3397,Nursing,47,47,83.0,17.5,119.0,80.02127659574468,,,pubmed,Churchill Livingstone,3466,1.218
+Journal of the International Society of Sports Nutrition,1550-2783,Nutrition & Food Science,40,40,155.5,88.0,223.25,159.7,14.0,169.5,crossref_assertion,Taylor and Francis Ltd.,3023,1.316
 Current Nutrition Reports,2161-3311,Nutrition & Food Science,48,48,142.0,112.75,200.0,174.0,,,pubmed,Springer,2658,1.41
-Comprehensive Reviews in Food Science and Food Safety,1541-4337,Nutrition & Food Science,49,49,136.0,96.0,187.0,142.81632653061226,,,pubmed,John Wiley and Sons Inc,745,2.935
+Comprehensive Reviews in Food Science and Food Safety,1541-4337,Nutrition & Food Science,55,55,132.0,96.5,190.0,141.16363636363636,28.0,177.5,"crossref_assertion, pubmed",John Wiley and Sons Inc,745,2.935
 Meat Science,0309-1740,Nutrition & Food Science,50,50,121.5,84.5,162.0,128.52,,,pubmed,Elsevier Ltd,2176,1.584
+International Journal of Food Contamination,2196-2804,Nutrition & Food Science,36,36,108.5,80.0,136.75,137.86111111111111,21.0,132.5,"crossref_assertion, pubmed",BioMed Central Ltd,2780,1.377
 Advances in Nutrition,2156-5376,Nutrition & Food Science,47,47,106.0,63.0,163.0,120.08510638297872,,,pubmed,Elsevier B.V.,905,2.591
 Food Science and Human Wellness,2213-4530,Nutrition & Food Science,2,2,105.5,54.25,156.75,105.5,,,pubmed,Tsinghua University Press,2715,1.396
 LWT,1096-1127,Nutrition & Food Science,17,17,105.0,80.0,186.0,141.8235294117647,,,pubmed,Academic Press,2448,1.48
-npj Science of Food,2396-8370,Nutrition & Food Science,48,48,104.5,66.0,210.0,133.52083333333334,,,pubmed,Nature Publishing Group,3220,1.268
+npj Science of Food,2396-8370,Nutrition & Food Science,50,50,104.5,66.0,207.75,131.58,18.0,103.0,"crossref_assertion, pubmed",Nature Publishing Group,3220,1.268
 Food Research International,0963-9969,Nutrition & Food Science,50,50,98.0,81.75,135.25,112.44,,,pubmed,Elsevier Ltd,1914,1.698
-International Journal of Food Contamination,2196-2804,Nutrition & Food Science,3,3,53.0,51.0,97.5,81.33333333333333,,44.0,pubmed,BioMed Central Ltd,2780,1.377
 Nutrients,2072-6643,Nutrition & Food Science,50,50,34.0,28.25,41.75,37.82,,,pubmed,Multidisciplinary Digital Publishing Institute (MDPI),2468,1.473
 Food Frontiers,2643-8429,Nutrition & Food Science,3,3,27.0,13.5,109.5,73.0,,,pubmed,John Wiley and Sons Inc,3348,1.243
 Perspectives on Sexual and Reproductive Health,1538-6341,Obstetrics & Gynecology,48,46,484.5,340.0,654.25,517.2608695652174,,,pubmed,Wiley-Blackwell,1905,1.704
 Human Reproduction Update,1460-2369,Obstetrics & Gynecology,14,14,208.0,142.0,342.5,250.78571428571428,,,pubmed,Oxford University Press,266,5.357
 Reproductive Health,1742-4755,Obstetrics & Gynecology,48,48,208.0,158.0,347.5,279.375,,,pubmed,BioMed Central Ltd,3194,1.275
 Archives of Women's Mental Health,1434-1816,Obstetrics & Gynecology,49,49,155.0,110.0,210.0,167.12244897959184,,,pubmed,Springer-Verlag Wien,3404,1.232
-BJOG: An International Journal of Obstetrics and Gynaecology,1470-0328,Obstetrics & Gynecology,49,49,148.0,65.0,240.0,159.3265306122449,,,pubmed,John Wiley and Sons Inc,1756,1.786
+BJOG: An International Journal of Obstetrics and Gynaecology,1470-0328,Obstetrics & Gynecology,82,82,144.5,99.25,213.5,160.9390243902439,15.0,150.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,1756,1.786
 Human Reproduction,1460-2350,Obstetrics & Gynecology,47,47,142.0,82.0,191.5,157.14893617021278,,,pubmed,Oxford University Press,1260,2.147
 Contraception,0010-7824,Obstetrics & Gynecology,49,49,114.0,92.0,159.0,136.9795918367347,,,pubmed,Elsevier Inc.,2952,1.334
 Reproductive BioMedicine Online,1472-6483,Obstetrics & Gynecology,49,49,110.0,86.0,147.0,119.48979591836735,,,pubmed,Elsevier Ltd,3428,1.226
 American Journal of Obstetrics and Gynecology,0002-9378,Obstetrics & Gynecology,49,49,80.0,59.0,125.0,116.77551020408163,,,pubmed,Elsevier Inc.,822,2.772
-Obstetrics and Gynecology,0029-7844,Obstetrics & Gynecology,41,41,69.0,62.0,78.0,70.8780487804878,,,pubmed,Lippincott Williams and Wilkins,1487,1.967
+Obstetrics and Gynecology,0029-7844,Obstetrics & Gynecology,53,53,69.0,62.0,79.0,69.18867924528301,63.0,135.0,"crossref_assertion, pubmed",Lippincott Williams and Wilkins,1487,1.967
 Gynecologic Oncology,0090-8258,Obstetrics & Gynecology,46,46,65.0,51.0,92.25,70.91304347826087,,,pubmed,Academic Press Inc.,1614,1.881
 Menopause,1072-3714,Obstetrics & Gynecology,50,48,60.5,32.0,83.0,66.125,,,pubmed,Wolters Kluwer Health,3900,1.139
 International Journal of Gynecological Cancer,1525-1438,Obstetrics & Gynecology,48,48,55.0,5.75,73.0,46.875,,,pubmed,Elsevier Inc.,2432,1.485
 Seminars in Perinatology,1558-075X,Obstetrics & Gynecology,39,39,46.0,29.5,85.0,63.35897435897436,,,pubmed,W.B. Saunders,3864,1.144
 Fertility and Sterility,1556-5653,Obstetrics & Gynecology,48,48,39.0,1.0,135.75,87.08333333333333,,,pubmed,Elsevier Inc.,1399,2.028
-Nature Cancer,2662-1347,Oncology,31,31,322.0,265.5,397.0,351.19354838709677,,,pubmed,Nature Research,61,11.941
-Signal Transduction and Targeted Therapy,2059-3635,Oncology,50,50,215.5,153.25,270.5,215.9,,,pubmed,Springer Nature,58,12.135
+Nature Cancer,2662-1347,Oncology,32,32,329.0,267.25,402.75,353.25,65.0,482.0,"crossref_assertion, pubmed",Nature Research,61,11.941
+Signal Transduction and Targeted Therapy,2059-3635,Oncology,52,52,215.5,153.75,267.5,214.96153846153845,34.0,225.5,"crossref_assertion, pubmed",Springer Nature,58,12.135
 Cancer Cell,1535-6108,Oncology,47,47,154.0,22.5,236.0,150.6595744680851,,,pubmed,Cell Press,17,19.027
 Cell Host and Microbe,1934-6069,Oncology,50,50,152.0,4.25,227.25,139.6,,,pubmed,Cell Press,157,7.067
 Cancer Discovery,2159-8274,Oncology,20,20,140.0,6.25,214.0,141.65,,,pubmed,American Association for Cancer Research Inc.,152,7.283
 Cancer Communications,2523-3548,Oncology,47,47,119.0,64.0,198.5,137.59574468085106,10.0,53.0,pubmed,John Wiley &amp; Sons Inc.,190,6.403
 Journal of the National Cancer Institute,1460-2105,Oncology,49,49,113.0,10.0,171.0,107.24489795918367,,,pubmed,Oxford University Press,234,5.703
+Journal of Clinical Oncology,1527-7755,Oncology,47,46,106.5,36.25,153.75,103.3913043478261,63.0,185.0,crossref_assertion,Lippincott Williams and Wilkins,69,11.205
 Neuro-Oncology,1522-8517,Oncology,48,48,106.0,10.75,169.75,110.6875,,,pubmed,Oxford University Press,162,6.974
-Molecular Cancer,1476-4598,Oncology,43,43,103.0,78.0,154.5,123.86046511627907,,,pubmed,BioMed Central Ltd,97,9.263
+Molecular Cancer,1476-4598,Oncology,44,44,101.0,77.25,153.25,122.4090909090909,20.0,80.0,"crossref_assertion, pubmed",BioMed Central Ltd,97,9.263
 Journal of Hematology and Oncology,1756-8722,Oncology,49,49,81.0,62.0,113.0,89.12244897959184,,,pubmed,BioMed Central Ltd,83,10.192
 The Lancet Oncology,1470-2045,Oncology,33,33,57.0,8.0,91.0,59.484848484848484,,,pubmed,Elsevier Ltd,68,11.319
+International Journal of Management Reviews,1460-8545,Operations Research & Decision Science,42,41,627.0,498.0,735.0,591.0243902439024,19.5,664.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,408,4.054
+Journal of Responsible Innovation,2329-9460,Operations Research & Decision Science,43,43,388.0,304.5,592.0,444.4651162790698,29.0,472.0,crossref_assertion,Taylor and Francis Ltd.,3811,1.153
 The Lancet Digital Health,2589-7500,Operations Research & Decision Science,43,43,303.0,146.0,380.5,288.48837209302326,,,pubmed,Elsevier Ltd,170,6.838
 Ecological Indicators,1470-160X,Operations Research & Decision Science,14,14,157.0,114.25,255.0,181.07142857142858,,,pubmed,Elsevier B.V.,1496,1.959
+Frontiers of Engineering Management,2095-7513,Operations Research & Decision Science,47,47,130.0,95.0,186.5,154.70212765957447,67.0,215.0,crossref_assertion,Higher Education Press Limited Company,3081,1.301
+Structural Equation Modeling,1532-8007,Operations Research & Decision Science,50,50,92.0,61.5,138.75,122.3,36.5,128.5,crossref_assertion,Psychology Press Ltd,603,3.321
 Therapeutic Advances in Ophthalmology,2515-8414,Ophthalmology,50,50,179.0,132.0,226.75,181.3,41.0,114.0,pubmed,SAGE Publications Ltd,4757,1.009
 Ophthalmology Science,2666-9145,Ophthalmology,45,45,145.0,106.0,173.0,143.73333333333332,,,pubmed,Elsevier Inc.,1571,1.91
 Survey of Ophthalmology,0039-6257,Ophthalmology,50,50,140.5,88.25,187.5,142.28,66.0,215.0,pubmed,Elsevier Inc.,1360,2.059
-Graefe's Archive for Clinical and Experimental Ophthalmology,0721-832X,Ophthalmology,48,48,135.0,103.0,202.75,149.5,,,pubmed,Springer Science and Business Media Deutschland GmbH,4889,0.992
+Journal of Cataract and Refractive Surgery,1873-4502,Ophthalmology,47,47,134.0,74.5,212.5,152.87234042553192,11.0,169.0,"crossref_assertion, pubmed",Wolters Kluwer Health,2611,1.425
 Progress in Retinal and Eye Research,1350-9462,Ophthalmology,49,49,130.0,90.0,163.0,137.69387755102042,,,pubmed,Elsevier Ltd,219,5.838
-Journal of Cataract and Refractive Surgery,1873-4502,Ophthalmology,46,46,129.0,71.75,213.25,152.7608695652174,,,pubmed,Wolters Kluwer Health,2611,1.425
+Graefe's Archive for Clinical and Experimental Ophthalmology,0721-832X,Ophthalmology,73,73,126.0,103.0,186.0,141.64383561643837,29.0,136.0,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,4889,0.992
 Ocular Surface,1937-5913,Ophthalmology,48,48,116.0,59.0,169.25,121.27083333333333,,,pubmed,Elsevier Inc.,1715,1.82
 Ophthalmology Glaucoma,2589-4196,Ophthalmology,50,49,105.0,65.0,148.0,110.10204081632654,128.5,229.5,pubmed,American Academy of Ophthalmology,2802,1.372
 American Journal of Ophthalmology,0002-9394,Ophthalmology,50,50,79.0,41.25,126.75,91.2,,,pubmed,Elsevier Inc.,1309,2.103
-Ophthalmology and Therapy,2193-6528,Ophthalmology,49,49,55.0,41.0,72.0,60.57142857142857,,,pubmed,Springer London,3623,1.187
+Ophthalmology and Therapy,2193-6528,Ophthalmology,50,50,55.0,41.0,72.0,60.3,14.0,61.0,"crossref_assertion, pubmed",Springer London,3623,1.187
 Ophthalmology,1549-4713,Ophthalmology,49,49,38.0,11.0,109.0,65.3265306122449,,,pubmed,Elsevier Inc.,332,4.552
 Ophthalmology Retina,2468-6530,Ophthalmology,50,50,38.0,8.0,92.25,62.62,,,pubmed,Elsevier Inc.,1460,1.982
-Sports Medicine - Open,2198-9761,Orthopedics & Sports Medicine,48,48,269.5,182.25,346.5,286.625,,,pubmed,SpringerOpen,1956,1.683
-"Journal of Cachexia, Sarcopenia and Muscle",2190-5991,Orthopedics & Sports Medicine,49,49,204.0,131.0,294.0,216.44897959183675,,,pubmed,Wiley-Blackwell,565,3.416
-Arthroscopy - Journal of Arthroscopic and Related Surgery,0749-8063,Orthopedics & Sports Medicine,34,34,177.5,147.75,213.75,182.64705882352942,,,pubmed,W.B. Saunders,1181,2.219
+Sports Medicine - Open,2198-9761,Orthopedics & Sports Medicine,49,49,272.0,185.0,346.0,287.0612244897959,7.0,315.0,"crossref_assertion, pubmed",SpringerOpen,1956,1.683
+"Journal of Cachexia, Sarcopenia and Muscle",2190-5991,Orthopedics & Sports Medicine,53,53,197.0,127.0,291.0,208.9433962264151,23.0,124.0,"crossref_assertion, pubmed",Wiley-Blackwell,565,3.416
+Science and Medicine in Football,2473-3938,Orthopedics & Sports Medicine,4,4,179.5,162.75,204.75,188.0,24.5,209.0,crossref_assertion,Taylor and Francis Ltd.,1931,1.691
+Arthroscopy - Journal of Arthroscopic and Related Surgery,0749-8063,Orthopedics & Sports Medicine,41,41,172.0,136.0,213.0,177.34146341463415,194.0,340.0,"crossref_assertion, pubmed",W.B. Saunders,1181,2.219
 International Journal of Sports Physiology and Performance,1555-0265,Orthopedics & Sports Medicine,50,50,147.5,100.25,192.75,160.72,,,pubmed,Human Kinetics Publishers Inc.,2113,1.61
 Journal of Orthopaedic Translation,2214-031X,Orthopedics & Sports Medicine,48,48,133.5,112.5,158.5,135.64583333333334,,,pubmed,Elsevier (Singapore) Pte Ltd,2057,1.641
 Biology of Sport,0860-021X,Orthopedics & Sports Medicine,50,50,122.5,88.0,178.5,136.48,,,pubmed,Institute of Sport,2047,1.645
 Journal of Arthroplasty,0883-5403,Orthopedics & Sports Medicine,48,48,122.0,91.25,149.75,119.77083333333333,,,pubmed,Elsevier B.V.,1513,1.951
-Knee Surgery and Related Research,2234-0726,Orthopedics & Sports Medicine,49,49,119.0,96.0,135.0,125.71428571428571,,,pubmed,BioMed Central Ltd,1592,1.891
+Knee Surgery and Related Research,2234-0726,Orthopedics & Sports Medicine,97,97,120.0,93.0,146.0,128.24742268041237,130.0,278.5,"crossref_assertion, pubmed",BioMed Central Ltd,1592,1.891
 Journal of Sport and Health Science,2213-2961,Orthopedics & Sports Medicine,44,44,118.0,21.0,168.25,110.93181818181819,,,pubmed,Elsevier B.V.,638,3.197
-"Knee Surgery, Sports Traumatology, Arthroscopy",0942-2056,Orthopedics & Sports Medicine,50,50,79.5,53.0,103.5,85.66,,,pubmed,John Wiley and Sons Inc,1514,1.95
+"Knee Surgery, Sports Traumatology, Arthroscopy",0942-2056,Orthopedics & Sports Medicine,85,85,81.0,59.0,122.0,88.85882352941177,23.0,108.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,1514,1.95
 Current Reviews in Musculoskeletal Medicine,1935-9748,Orthopedics & Sports Medicine,29,29,14.0,10.0,29.0,32.827586206896555,,,pubmed,Springer,1961,1.68
-Dysphagia,0179-051X,Otolaryngology,45,45,197.0,108.0,257.0,186.64444444444445,,,pubmed,Springer New York,5187,0.958
+Dysphagia,0179-051X,Otolaryngology,68,68,188.0,103.5,256.25,185.16176470588235,31.0,205.0,"crossref_assertion, pubmed",Springer New York,5187,0.958
 JARO - Journal of the Association for Research in Otolaryngology,1438-7573,Otolaryngology,50,50,171.5,124.75,221.75,191.36,,,pubmed,Springer New York,5962,0.873
-Otolaryngology - Head and Neck Surgery,1097-6817,Otolaryngology,50,50,160.0,124.75,179.25,167.44,,,pubmed,John Wiley and Sons Inc,4932,0.987
-Sleep and Breathing,1522-1709,Otolaryngology,50,50,146.0,90.5,207.5,154.0,,,pubmed,Springer Verlag,7669,0.731
-Otology and Neurotology,1537-4505,Otolaryngology,47,47,134.0,88.0,199.5,162.0212765957447,,,pubmed,Lippincott Williams and Wilkins,6046,0.866
-Head and Neck,1097-0347,Otolaryngology,49,49,105.0,88.0,132.0,114.79591836734694,,,pubmed,John Wiley &amp; Sons Inc.,6407,0.832
-Clinical and Experimental Otorhinolaryngology,1976-8710,Otolaryngology,50,50,101.0,74.0,130.75,107.66,,,pubmed,Korean Society of Otolaryngology,5600,0.91
+Otolaryngology - Head and Neck Surgery,1097-6817,Otolaryngology,77,77,155.0,118.0,180.0,164.9090909090909,23.0,173.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,4932,0.987
+Sleep and Breathing,1522-1709,Otolaryngology,52,52,147.5,91.5,198.5,154.09615384615384,24.0,180.5,"crossref_assertion, pubmed",Springer Verlag,7669,0.731
+World Journal of Otorhinolaryngology - Head and Neck Surgery,2589-1081,Otolaryngology,88,88,137.0,61.0,201.25,141.25,80.0,242.5,"crossref_assertion, pubmed",John Wiley and Sons Inc,7417,0.749
+Otology and Neurotology,1537-4505,Otolaryngology,66,66,126.5,83.25,193.0,154.87878787878788,34.0,175.0,"crossref_assertion, pubmed",Lippincott Williams and Wilkins,6046,0.866
+Head and Neck,1097-0347,Otolaryngology,73,73,108.0,88.0,142.0,123.0,16.0,139.0,"crossref_assertion, pubmed",John Wiley &amp; Sons Inc.,6407,0.832
+Clinical and Experimental Otorhinolaryngology,1976-8710,Otolaryngology,51,51,102.0,75.0,133.0,108.3921568627451,166.0,311.0,"crossref_assertion, pubmed",Korean Society of Otolaryngology,5600,0.91
 European Archives of Oto-Rhino-Laryngology,0937-4477,Otolaryngology,49,49,101.0,60.0,126.0,92.6734693877551,,,pubmed,Springer Science and Business Media Deutschland GmbH,6929,0.787
-Laryngoscope,1531-4995,Otolaryngology,50,50,97.5,32.5,137.25,98.58,,,pubmed,Wiley-Blackwell,4601,1.029
-World Journal of Otorhinolaryngology - Head and Neck Surgery,2589-1081,Otolaryngology,46,46,90.0,37.25,162.25,112.82608695652173,,,pubmed,John Wiley and Sons Inc,7417,0.749
-Head and Neck Pathology,1936-055X,Otolaryngology,50,50,36.0,24.25,47.5,38.98,,,pubmed,Humana Press,4928,0.987
-Neuropathology and Applied Neurobiology,0305-1846,Pathology,48,48,159.5,116.0,217.75,175.0625,,105.0,pubmed,Wiley-Blackwell Publishing Ltd,2151,1.593
-Laboratory Investigation,1530-0307,Pathology,47,47,156.0,117.0,225.0,169.63829787234042,,,pubmed,Elsevier B.V.,3285,1.254
+Laryngoscope,1531-4995,Otolaryngology,99,99,94.0,43.5,134.5,100.42424242424242,17.0,113.0,"crossref_assertion, pubmed",Wiley-Blackwell,4601,1.029
+Head and Neck Pathology,1936-055X,Otolaryngology,96,96,41.0,26.0,66.75,47.4375,13.5,85.5,"crossref_assertion, pubmed",Humana Press,4928,0.987
+Neuropathology and Applied Neurobiology,0305-1846,Pathology,49,49,158.0,116.0,213.0,172.91836734693877,8.0,91.5,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,2151,1.593
+Laboratory Investigation,1530-0307,Pathology,48,48,154.0,116.75,221.5,167.54166666666666,24.0,93.0,"crossref_assertion, pubmed",Elsevier B.V.,3285,1.254
 Journal of Pathology,1096-9896,Pathology,49,49,152.0,114.0,204.0,165.30612244897958,,,pubmed,John Wiley and Sons Ltd,1246,2.16
 European Journal of Cell Biology,1618-1298,Pathology,47,47,124.0,91.0,166.5,131.85106382978722,,,pubmed,Elsevier GmbH,2412,1.491
 Modern Pathology,1530-0285,Pathology,48,48,121.0,89.0,168.0,128.6875,,,pubmed,Elsevier B.V.,1026,2.4
 American Journal of Pathology,0002-9440,Pathology,50,50,120.0,85.0,164.0,128.06,,,pubmed,Elsevier Inc.,3032,1.313
-Cell and Tissue Research,1432-0878,Pathology,48,48,96.5,72.5,131.0,108.3125,,,pubmed,Springer Science and Business Media Deutschland GmbH,3658,1.179
+Adipocyte,2162-3945,Pathology,49,49,110.0,70.0,168.0,120.20408163265306,15.0,122.0,crossref_assertion,Taylor and Francis Ltd.,4222,1.084
 Journal of Pathology: Clinical Research,2056-4538,Pathology,50,50,95.5,58.5,129.0,94.24,,,pubmed,Wiley-Blackwell Publishing Ltd,2330,1.521
+Cell and Tissue Research,1432-0878,Pathology,50,50,95.0,71.5,130.75,106.3,31.5,89.5,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,3658,1.179
 Pathology,1465-3931,Pathology,50,50,94.0,60.25,142.0,99.14,,,pubmed,Elsevier B.V.,4779,1.007
-Histopathology,1365-2559,Pathology,41,41,93.0,66.0,125.0,107.5609756097561,,,pubmed,Wiley-Blackwell Publishing Ltd,2443,1.481
+Histopathology,1365-2559,Pathology,62,62,93.0,66.5,134.0,106.30645161290323,16.0,115.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,2443,1.481
 World Journal of Stem Cells,1948-0210,Pathology,50,50,92.5,73.0,116.5,97.32,,,pubmed,Baishideng Publishing Group,4858,0.996
 Seminars in Diagnostic Pathology,1930-1111,Pathology,50,50,82.5,22.0,156.25,98.08,,,pubmed,W.B. Saunders,5215,0.956
 Human Pathology,1532-8392,Pathology,50,50,52.5,24.5,81.0,59.54,,,pubmed,W.B. Saunders,4571,1.033
@@ -532,109 +579,146 @@ Journal of Adolescent Health,1054-139X,Pediatrics,50,50,164.5,74.0,195.75,140.62
 Pediatrics,0031-4005,Pediatrics,41,41,148.0,111.0,235.0,154.58536585365854,,,pubmed,American Academy of Pediatrics,1022,2.406
 Journal of Pediatric Psychology,0146-8693,Pediatrics,49,49,144.0,106.0,203.0,149.79591836734693,,,pubmed,Oxford University Press,4443,1.052
 Academic Pediatrics,1876-2859,Pediatrics,50,50,141.0,90.0,201.0,152.98,,,pubmed,Elsevier Inc.,3021,1.316
-Child and Adolescent Psychiatry and Mental Health,1753-2000,Pediatrics,49,49,124.0,103.0,156.0,135.53061224489795,,,pubmed,BioMed Central Ltd,2409,1.492
+Child and Adolescent Psychiatry and Mental Health,1753-2000,Pediatrics,50,50,126.5,103.25,163.5,136.98,88.0,296.0,"crossref_assertion, pubmed",BioMed Central Ltd,2409,1.492
 Pediatric Allergy and Immunology,1399-3038,Pediatrics,49,49,123.0,87.0,176.0,129.89795918367346,,,pubmed,Blackwell Munksgaard,3216,1.269
 Journal of Cystic Fibrosis,1569-1993,Pediatrics,48,48,117.0,62.5,158.25,123.75,,,pubmed,Elsevier B.V.,1778,1.772
-World Journal of Pediatrics,1708-8569,Pediatrics,44,44,112.0,66.75,146.0,112.52272727272727,,,pubmed,Zhejiang University School of Medicine Children's Hospital,4462,1.05
+World Journal of Pediatrics,1708-8569,Pediatrics,49,49,113.0,71.0,147.0,115.46938775510205,33.0,190.0,"crossref_assertion, pubmed",Zhejiang University School of Medicine Children's Hospital,4462,1.05
 World Journal of Clinical Pediatrics,2219-2808,Pediatrics,50,50,102.5,82.0,113.75,97.72,,,pubmed,Baishideng Publishing Group,4699,1.017
-Pediatric Research,0031-3998,Pediatrics,50,50,84.5,26.25,157.75,98.72,,,pubmed,Springer Nature,3708,1.171
+Pediatric Research,0031-3998,Pediatrics,53,53,87.0,30.0,167.0,108.67924528301887,52.0,309.0,"crossref_assertion, pubmed",Springer Nature,3708,1.171
 Seminars in Fetal and Neonatal Medicine,1878-0946,Pediatrics,14,14,2.0,1.0,4.75,3.642857142857143,,,pubmed,W.B. Saunders Ltd,3777,1.16
 Paediatric Respiratory Reviews,1526-0550,Pediatrics,50,50,0.0,0.0,22.75,23.14,,,pubmed,W.B. Saunders Ltd,4478,1.047
-Medicinal Research Reviews,0198-6325,Pharmacology & Toxicology,50,48,192.0,67.5,274.75,217.14583333333334,,,pubmed,John Wiley &amp; Sons Inc.,647,3.169
+Medicinal Research Reviews,0198-6325,Pharmacology & Toxicology,51,49,189.0,66.0,271.0,213.12244897959184,6.0,26.0,"crossref_assertion, pubmed",John Wiley &amp; Sons Inc.,647,3.169
 Asian Journal of Pharmaceutical Sciences,1818-0876,Pharmacology & Toxicology,50,50,156.0,108.0,196.75,162.36,,,pubmed,Shenyang Pharmaceutical University,1152,2.251
-British Journal of Pharmacology,1476-5381,Pharmacology & Toxicology,49,49,137.0,91.0,188.0,145.12244897959184,,,pubmed,John Wiley and Sons Inc,1069,2.344
+British Journal of Pharmacology,1476-5381,Pharmacology & Toxicology,76,76,150.5,90.75,197.25,153.32894736842104,40.0,196.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,1069,2.344
 Pharmacology and Therapeutics,1879-016X,Pharmacology & Toxicology,48,48,137.0,105.5,181.25,148.1875,,,pubmed,Elsevier Inc.,474,3.8
 Acta Pharmaceutica Sinica B,2211-3843,Pharmacology & Toxicology,46,46,122.0,80.25,155.75,139.95652173913044,,,pubmed,Chinese Academy of Medical Sciences,543,3.489
+Emerging Microbes and Infections,2222-1751,Pharmacology & Toxicology,43,43,121.0,87.0,147.0,122.48837209302326,18.0,150.0,crossref_assertion,Taylor and Francis Ltd.,1140,2.264
 Molecular Therapy,1525-0024,Pharmacology & Toxicology,49,49,118.0,8.0,194.0,116.38775510204081,,,pubmed,Cell Press,419,4.008
-Neuropsychopharmacology,0893-133X,Pharmacology & Toxicology,49,49,112.0,86.0,142.0,116.38775510204081,,,pubmed,Springer Nature,744,2.944
+Neuropsychopharmacology,0893-133X,Pharmacology & Toxicology,61,61,112.0,78.0,141.0,112.81967213114754,106.0,205.5,"crossref_assertion, pubmed",Springer Nature,744,2.944
 Advanced Drug Delivery Reviews,0169-409X,Pharmacology & Toxicology,48,48,110.0,77.0,143.75,120.5,,,pubmed,Elsevier B.V.,489,3.721
-Clinical Pharmacology and Therapeutics,1532-6535,Pharmacology & Toxicology,49,49,105.0,86.0,149.0,113.18367346938776,,,pubmed,Wiley-Blackwell,1283,2.127
 Journal of Controlled Release,1873-4995,Pharmacology & Toxicology,49,49,100.0,69.0,133.0,107.65306122448979,,,pubmed,Elsevier B.V.,976,2.47
+Clinical Pharmacology and Therapeutics,1532-6535,Pharmacology & Toxicology,76,76,98.0,69.75,146.75,106.03947368421052,18.0,107.0,"crossref_assertion, pubmed",Wiley-Blackwell,1283,2.127
 Trends in Pharmacological Sciences,1873-3735,Pharmacology & Toxicology,47,47,79.0,54.0,101.5,78.48936170212765,,,pubmed,Elsevier Ltd,481,3.771
-Drugs,0012-6667,Pharmacology & Toxicology,48,48,78.0,30.5,121.75,77.35416666666667,,,pubmed,,588,3.362
+Drugs,0012-6667,Pharmacology & Toxicology,49,49,78.0,31.0,124.0,79.06122448979592,36.0,197.0,"crossref_assertion, pubmed",,588,3.362
 Pharmacological Research,1043-6618,Pharmacology & Toxicology,49,49,75.0,55.0,89.0,75.14285714285714,,,pubmed,Academic Press,875,2.664
+Australasian Journal of Philosophy,1471-6828,Philosophy,43,43,403.0,305.0,496.0,405.72093023255815,328.0,782.0,crossref_assertion,Taylor and Francis Ltd.,2793,1.374
+Nous,1468-0068,Philosophy,18,18,332.0,292.75,354.75,340.6111111111111,42.5,379.5,crossref_assertion,Wiley-Blackwell,813,2.795
+Philosophical Studies,0031-8116,Philosophy,48,48,303.5,192.5,537.5,355.9583333333333,32.0,343.0,crossref_assertion,Springer Netherlands,2919,1.343
+Journal of Philosophical Logic,0022-3611,Philosophy,50,48,289.0,234.5,385.0,337.75,32.0,350.0,crossref_assertion,Springer Netherlands,2395,1.497
+Journal of Critical Realism,1476-7430,Philosophy,38,38,256.0,114.25,350.25,244.60526315789474,27.0,292.0,crossref_assertion,Maney Publishing,3862,1.144
+Nous-Supplement: Philosophical Perspectives,1758-2245,Philosophy,5,5,191.0,169.0,196.0,189.4,11.0,200.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,2318,1.525
+Philosophy Compass,1747-9991,Philosophy,40,40,162.5,85.5,248.25,198.075,17.0,186.5,crossref_assertion,John Wiley and Sons Inc,2293,1.533
+Journal of Political Philosophy,1467-9760,Philosophy,1,1,141.0,141.0,141.0,141.0,,128.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,2380,1.501
+Nature Physics,1745-2473,Physics,30,30,270.5,235.5,410.25,317.8333333333333,42.5,311.5,crossref_assertion,Nature Publishing Group,154,7.125
+Nature Nanotechnology,1748-3387,Physics,33,33,270.0,178.0,371.0,289.27272727272725,55.0,326.0,crossref_assertion,Nature Publishing Group,37,14.612
+Nature Photonics,1749-4885,Physics,36,36,246.0,157.5,332.0,255.83333333333334,42.0,287.5,crossref_assertion,Nature Publishing Group,64,11.546
+Living Reviews in Relativity,1433-8351,Physics,48,48,218.5,136.75,260.75,210.3125,58.5,270.5,crossref_assertion,Springer International Publishing AG,38,14.562
+Light: Science and Applications,2047-7538,Physics,46,46,174.0,129.25,234.5,181.2391304347826,46.0,232.5,crossref_assertion,Nature Publishing Group,293,5.018
+Advances in Optics and Photonics,1943-8206,Physics,49,49,137.0,101.0,179.0,148.0204081632653,81.0,213.0,crossref_assertion,Optica Publishing Group (formerly OSA),132,7.982
+eLight,2662-8643,Physics,39,39,111.0,74.0,128.0,108.38461538461539,45.0,158.0,crossref_assertion,Springer,67,11.392
 Nature Food,2662-1355,Plant & Agricultural Science,24,24,455.0,384.0,587.5,467.2083333333333,,,pubmed,Springer Nature,205,6.088
-Biological Reviews,1469-185X,Plant & Agricultural Science,48,48,274.5,231.75,398.25,312.75,,,pubmed,Wiley-Blackwell,362,4.383
+American Journal of Agricultural Economics,1467-8276,Plant & Agricultural Science,39,39,443.0,324.0,515.5,445.61538461538464,26.0,473.0,"crossref_assertion, pubmed",John Wiley &amp; Sons Inc.,1005,2.426
+Biological Reviews,1469-185X,Plant & Agricultural Science,69,69,275.0,231.0,388.0,307.82608695652175,11.0,292.0,"crossref_assertion, pubmed",Wiley-Blackwell,362,4.383
 Nature Plants,2055-026X,Plant & Agricultural Science,31,31,233.0,196.0,272.0,245.70967741935485,,,pubmed,Nature Research,307,4.815
 BioScience,1525-3244,Plant & Agricultural Science,48,48,186.5,123.0,225.0,184.20833333333334,,,pubmed,Oxford University Press,1053,2.365
-American Journal of Agricultural Economics,1467-8276,Plant & Agricultural Science,2,2,182.0,167.5,196.5,182.0,,,pubmed,John Wiley &amp; Sons Inc.,1005,2.426
 Molecular Systems Biology,1744-4292,Plant & Agricultural Science,49,49,174.0,111.0,241.0,179.71428571428572,,,pubmed,Springer Science and Business Media Deutschland GmbH,310,4.783
 PLoS Biology,1544-9173,Plant & Agricultural Science,41,41,167.0,104.0,235.0,194.17073170731706,,,pubmed,Public Library of Science,862,2.691
 Current Biology,1879-0445,Plant & Agricultural Science,36,36,164.5,112.75,242.0,184.5,,,pubmed,Cell Press,851,2.707
-Plant Biotechnology Journal,1467-7644,Plant & Agricultural Science,50,50,119.0,96.5,167.75,141.02,,,pubmed,Wiley-Blackwell Publishing Ltd,761,2.907
+Plant Biotechnology Journal,1467-7644,Plant & Agricultural Science,71,71,144.0,103.0,193.5,153.3661971830986,15.0,198.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,761,2.907
 Studies in Mycology,0166-0616,Plant & Agricultural Science,49,49,119.0,88.0,164.0,134.91836734693877,,,pubmed,Westerdijk Fungal Biodiversity Institute,455,3.867
 Current Opinion in Plant Biology,1879-0356,Plant & Agricultural Science,49,49,107.0,77.0,155.0,122.63265306122449,,,pubmed,Elsevier Ltd,639,3.193
 Trends in Plant Science,1360-1385,Plant & Agricultural Science,50,50,66.0,38.25,118.25,87.54,,,pubmed,Elsevier Ltd,610,3.297
 Physics of Life Reviews,1873-1457,Plant & Agricultural Science,50,50,2.0,1.0,8.0,17.26,,,pubmed,Elsevier B.V.,1038,2.384
+Political Behavior,0190-9320,Political Science,9,9,453.0,386.0,628.0,511.6666666666667,49.0,530.0,crossref_assertion,Springer New York,706,3.021
+American Journal of Political Science,0092-5853,Political Science,47,47,336.0,285.5,468.5,407.9148936170213,130.0,497.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,193,6.28
 Schizophrenia Bulletin,0586-7614,Psychiatry,14,13,143.0,94.0,211.0,156.3846153846154,,,pubmed,Oxford University Press,1270,2.138
-International Journal of Mental Health Nursing,1445-8330,Psychiatry,49,49,120.0,81.0,227.0,153.57142857142858,,,pubmed,Wiley-Blackwell Publishing Ltd,2169,1.586
+International Journal of Mental Health and Addiction,1557-1882,Psychiatry,50,50,132.5,92.0,185.5,134.16,29.0,169.0,crossref_assertion,Springer New York,2460,1.477
+International Journal of Mental Health Nursing,1445-8330,Psychiatry,51,51,130.0,83.0,210.5,153.23529411764707,14.0,159.0,"crossref_assertion, pubmed",Wiley-Blackwell Publishing Ltd,2169,1.586
+European Journal of Psychotraumatology,2000-8066,Psychiatry,49,49,129.0,95.0,190.0,155.83673469387756,27.0,155.0,crossref_assertion,Taylor and Francis Ltd.,1869,1.718
+International Journal of Eating Disorders,1098-108X,Psychiatry,67,67,117.0,91.0,152.5,118.59701492537313,16.0,141.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,1907,1.703
 JMIR Mental Health,2368-7959,Psychiatry,48,48,114.0,88.5,158.0,130.8125,,,pubmed,JMIR Publications Inc.,1610,1.882
-International Journal of Eating Disorders,1098-108X,Psychiatry,50,50,113.5,90.5,144.75,116.96,,,pubmed,John Wiley and Sons Inc,1907,1.703
 BMJ Mental Health,2755-9734,Psychiatry,50,50,103.0,86.25,146.0,115.96,,,pubmed,BMJ Publishing Group,713,3.005
-Acta Psychiatrica Scandinavica,1600-0447,Psychiatry,44,44,96.5,54.5,156.5,104.8409090909091,,,pubmed,John Wiley and Sons Inc,953,2.506
+Acta Psychiatrica Scandinavica,1600-0447,Psychiatry,45,45,97.0,56.0,154.0,105.6,29.0,168.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,953,2.506
 Biological Psychiatry Global Open Science,2667-1743,Psychiatry,49,49,92.0,21.0,151.0,91.61224489795919,,,pubmed,Elsevier Inc.,2361,1.508
 Current Psychiatry Reports,1535-1645,Psychiatry,34,34,64.5,31.0,149.5,99.70588235294117,,,pubmed,"Current Science, Inc.",1048,2.37
+Personnel Psychology,0031-5826,Psychology,35,35,490.0,58.5,676.0,418.45714285714286,22.0,529.0,crossref_assertion,Wiley-Blackwell,260,5.414
+Health Psychology Review,1743-7202,Psychology,50,50,269.5,209.0,346.25,289.06,17.5,286.5,crossref_assertion,Routledge,305,4.838
 Clinical Psychology Review,1873-7811,Psychology,49,49,194.0,154.0,260.0,211.6122448979592,,,pubmed,Elsevier Inc.,180,6.617
 Psychotherapy and Psychosomatics,0033-3190,Psychology,50,50,134.5,86.5,182.75,135.82,168.0,301.5,pubmed,S. Karger AG,300,4.904
 International Journal of Epidemiology,1464-3685,Public Health & Epidemiology,48,48,204.5,162.75,306.5,223.27083333333334,,,pubmed,Oxford University Press,859,2.695
-"Qualitative Research in Sport, Exercise and Health",2159-6778,Public Health & Epidemiology,1,1,160.0,160.0,160.0,160.0,99.0,259.0,pubmed,Taylor and Francis Ltd.,640,3.193
+"Qualitative Research in Sport, Exercise and Health",2159-6778,Public Health & Epidemiology,51,51,200.0,164.5,273.0,215.07843137254903,9.0,217.0,"crossref_assertion, pubmed",Taylor and Francis Ltd.,640,3.193
 Journal of Clinical Epidemiology,0895-4356,Public Health & Epidemiology,48,48,152.0,93.75,236.5,163.08333333333334,,,pubmed,Elsevier Inc.,655,3.149
-European Journal of Epidemiology,0393-2990,Public Health & Epidemiology,50,50,144.5,67.75,206.25,148.52,,,pubmed,Springer Netherlands,624,3.241
 Tobacco Control,0964-4563,Public Health & Epidemiology,46,46,144.5,108.5,196.5,160.93478260869566,,,pubmed,BMJ Publishing Group,1104,2.305
+European Journal of Epidemiology,0393-2990,Public Health & Epidemiology,51,51,139.0,66.0,205.5,146.05882352941177,74.0,97.0,"crossref_assertion, pubmed",Springer Netherlands,624,3.241
 The Lancet HIV,2352-3018,Public Health & Epidemiology,37,37,91.0,9.0,132.0,77.37837837837837,,,pubmed,Elsevier Ltd,339,4.506
 The Lancet Public Health,2468-2667,Public Health & Epidemiology,40,40,61.5,8.75,135.25,81.8,,,pubmed,Elsevier Ltd,114,8.408
-Cancer Medicine,2045-7634,Radiology & Imaging,49,49,207.0,164.0,295.0,232.3673469387755,,,pubmed,John Wiley and Sons Inc,3542,1.201
-Insights into Imaging,1869-4101,Radiology & Imaging,49,49,164.0,118.0,205.0,165.16326530612244,,,pubmed,Springer Science and Business Media Deutschland GmbH,3271,1.256
-NMR in Biomedicine,1099-1492,Radiology & Imaging,50,50,162.5,119.25,200.75,162.56,,,pubmed,John Wiley and Sons Ltd,5266,0.95
+Cancer Medicine,2045-7634,Radiology & Imaging,52,52,213.0,163.75,295.25,232.26923076923077,15.0,253.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,3542,1.201
+Insights into Imaging,1869-4101,Radiology & Imaging,50,50,164.0,119.0,208.0,166.68,184.0,425.0,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,3271,1.256
+NMR in Biomedicine,1099-1492,Radiology & Imaging,52,52,159.5,109.25,200.25,157.0,6.5,24.5,"crossref_assertion, pubmed",John Wiley and Sons Ltd,5266,0.95
 Radiation Oncology,1748-717X,Radiology & Imaging,48,48,158.0,104.75,224.75,178.375,,,pubmed,BioMed Central Ltd,4054,1.112
-Magnetic Resonance in Medicine,0740-3194,Radiology & Imaging,50,50,125.0,104.25,151.75,134.68,,,pubmed,John Wiley and Sons Inc,3767,1.161
+Magnetic Resonance in Medicine,0740-3194,Radiology & Imaging,98,98,130.0,100.75,159.25,138.14285714285714,15.0,149.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,3767,1.161
 Practical Radiation Oncology,1879-8500,Radiology & Imaging,50,50,80.0,33.0,129.75,89.92,93.0,144.0,pubmed,Elsevier Inc.,4736,1.011
 Academic Radiology,1076-6332,Radiology & Imaging,50,50,73.5,48.0,99.25,76.3,,,pubmed,Elsevier Inc.,4885,0.992
+Journal of Magnetic Resonance Imaging,1522-2586,Radiology & Imaging,78,78,64.5,3.0,95.75,65.93589743589743,13.5,96.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,3319,1.248
 Clinical Oncology,1433-2981,Radiology & Imaging,49,49,64.0,10.0,173.0,107.10204081632654,,,pubmed,Elsevier Ltd,5129,0.965
-Journal of Magnetic Resonance Imaging,1522-2586,Radiology & Imaging,50,50,61.0,3.0,91.25,64.6,,,pubmed,John Wiley and Sons Inc,3319,1.248
 Seminars in Radiation Oncology,1053-4296,Radiology & Imaging,49,49,46.0,9.0,61.0,42.12244897959184,,,pubmed,W.B. Saunders,4781,1.007
 Journal of the American College of Radiology,1558-349X,Radiology & Imaging,50,50,31.0,7.0,80.5,49.04,,,pubmed,Elsevier B.V.,4309,1.071
-Korean Journal of Radiology,1229-6929,Radiology & Imaging,50,50,22.5,3.25,88.75,67.56,,,pubmed,Korean Radiological Society,3325,1.247
+Korean Journal of Radiology,1229-6929,Radiology & Imaging,51,51,20.0,3.5,87.5,66.33333333333333,62.0,67.0,"crossref_assertion, pubmed",Korean Radiological Society,3325,1.247
 Seminars in Nuclear Medicine,1558-4623,Radiology & Imaging,44,44,5.0,4.0,6.0,6.295454545454546,,,pubmed,W.B. Saunders,2996,1.324
+Disability and Rehabilitation,0963-8288,Rehabilitation,50,50,224.0,175.0,289.25,242.34,12.0,234.0,crossref_assertion,Informa Healthcare,5055,0.972
 Journal of Geriatric Physical Therapy,1539-8412,Rehabilitation,5,5,210.0,194.0,213.0,172.8,,,pubmed,Lippincott Williams and Wilkins Ltd.,8686,0.66
+AAC: Augmentative and Alternative Communication,1477-3848,Rehabilitation,49,49,203.0,166.0,278.0,219.30612244897958,38.0,260.0,crossref_assertion,Taylor and Francis Ltd.,7498,0.742
+Disability and Rehabilitation: Assistive Technology,1748-3115,Rehabilitation,49,49,164.0,120.0,252.0,207.6326530612245,14.0,191.0,crossref_assertion,Taylor and Francis Ltd.,7463,0.745
 Wearable Technologies,2631-7176,Rehabilitation,49,49,155.0,124.0,229.0,181.14285714285714,19.0,86.5,pubmed,Cambridge University Press,6543,0.821
 Archives of Physiotherapy,2057-0082,Rehabilitation,50,48,153.0,104.75,211.75,160.22916666666666,12.0,97.0,pubmed,AboutScience Srl,7173,0.766
-Annals of Rehabilitation Medicine,2234-0653,Rehabilitation,48,48,152.0,95.75,209.25,165.0625,,,pubmed,Korean Academy of Rehabilitation Medicine,7758,0.724
+Annals of Rehabilitation Medicine,2234-0653,Rehabilitation,49,49,148.0,97.0,208.0,163.73469387755102,73.0,173.0,"crossref_assertion, pubmed",Korean Academy of Rehabilitation Medicine,7758,0.724
 Gait and Posture,1879-2219,Rehabilitation,47,47,148.0,113.0,226.0,189.31914893617022,,,pubmed,Elsevier B.V.,7037,0.778
 Journal of Biomechanics,1873-2380,Rehabilitation,48,48,147.5,119.75,185.5,155.8125,,,pubmed,Elsevier Ltd,6773,0.8
 Osteoarthritis and Cartilage Open,2665-9131,Rehabilitation,49,49,139.0,63.0,186.0,129.55102040816325,,,pubmed,Elsevier Ltd,6920,0.788
 Journal of Stroke and Cerebrovascular Diseases,1052-3057,Rehabilitation,49,49,99.0,61.0,140.0,123.3265306122449,,,pubmed,W.B. Saunders,8266,0.688
-American Journal of Physical Medicine and Rehabilitation,1537-7385,Rehabilitation,50,50,83.0,23.5,130.5,90.92,,,pubmed,Lippincott Williams and Wilkins Ltd.,8290,0.686
+American Journal of Physical Medicine and Rehabilitation,1537-7385,Rehabilitation,75,75,88.0,31.0,140.5,95.32,15.0,120.0,"crossref_assertion, pubmed",Lippincott Williams and Wilkins Ltd.,8290,0.686
+Current Trauma Reports,2198-6096,Rehabilitation,5,5,84.0,49.0,293.0,186.8,27.0,127.0,crossref_assertion,Springer International Publishing AG,11581,0.5
 Journal of Neurorestoratology,2324-2426,Rehabilitation,1,1,21.0,21.0,21.0,21.0,,,pubmed,Elsevier Ltd,7581,0.737
+Pulmonology,2531-0429,Respiratory Medicine,29,29,220.0,151.0,289.0,239.89655172413794,22.0,249.0,crossref_assertion,Taylor and Francis Ltd.,2585,1.434
 Thorax,1468-3296,Respiratory Medicine,31,31,186.0,126.5,263.5,196.38709677419354,,,pubmed,BMJ Publishing Group,996,2.448
 BMJ Open Respiratory Research,2052-4439,Respiratory Medicine,50,50,170.5,118.25,249.5,211.08,,,pubmed,BMJ Publishing Group,4092,1.106
 World Allergy Organization Journal,1939-4551,Respiratory Medicine,47,47,165.0,104.0,195.5,166.85106382978722,,,pubmed,Elsevier Inc.,3200,1.273
 Respiratory Medicine,0954-6111,Respiratory Medicine,50,50,140.0,90.0,230.75,170.1,,,pubmed,W.B. Saunders Ltd,4380,1.063
-Respiratory Research,1465-993X,Respiratory Medicine,48,48,126.0,82.25,181.75,135.02083333333334,,,pubmed,BioMed Central Ltd,2239,1.555
+Respiratory Research,1465-993X,Respiratory Medicine,52,52,126.5,82.25,181.75,134.76923076923077,22.0,184.5,"crossref_assertion, pubmed",BioMed Central Ltd,2239,1.555
 European Respiratory Review,1600-0617,Respiratory Medicine,49,49,125.0,102.0,180.0,144.91836734693877,,,pubmed,European Respiratory Society,714,3.005
 Annals of the American Thoracic Society,2325-6621,Respiratory Medicine,50,50,110.5,23.5,160.0,100.34,,,pubmed,American Thoracic Society,2026,1.652
 Journal of Asthma and Allergy,1178-6965,Respiratory Medicine,50,50,108.5,86.0,133.75,113.16,24.0,65.0,pubmed,Dove Medical Press Ltd,4374,1.063
 ERJ Open Research,2312-0541,Respiratory Medicine,49,49,80.0,40.0,112.0,76.38775510204081,,,pubmed,European Respiratory Society,2816,1.367
-Lung,1432-1750,Respiratory Medicine,48,48,52.5,38.25,76.25,59.166666666666664,,,pubmed,Springer,4778,1.007
+Lung,1432-1750,Respiratory Medicine,49,49,51.0,36.0,76.0,58.61224489795919,18.0,50.0,"crossref_assertion, pubmed",Springer,4778,1.007
 "Annals of Allergy, Asthma and Immunology",1534-4436,Respiratory Medicine,49,49,46.0,3.0,76.0,57.87755102040816,,,pubmed,"American College of Allergy, Asthma and Immunology",4230,1.082
-Respirology,1440-1843,Respiratory Medicine,50,50,29.5,6.0,155.75,84.44,,,pubmed,John Wiley and Sons Inc,2204,1.57
+Respirology,1440-1843,Respiratory Medicine,62,62,43.5,6.0,154.0,84.11290322580645,21.0,119.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,2204,1.57
 The Lancet Respiratory Medicine,2213-2619,Respiratory Medicine,40,40,14.5,6.0,96.75,53.45,,,pubmed,Elsevier Ltd,175,6.788
 Advances in Rheumatology,2523-3106,Rheumatology,50,50,188.5,141.5,272.25,215.66,,,pubmed,BioMed Central Ltd,8946,0.645
-Arthritis Care and Research,2151-464X,Rheumatology,49,49,164.0,80.0,226.0,159.91836734693877,,,pubmed,John Wiley and Sons Inc,2450,1.479
+Arthritis Care and Research,2151-464X,Rheumatology,70,70,164.5,110.0,217.75,160.4142857142857,101.0,256.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,2450,1.479
 Rheumatology Advances in Practice,2514-1775,Rheumatology,39,39,125.0,100.0,183.0,152.2051282051282,44.0,139.5,pubmed,Oxford University Press,7904,0.715
 International Journal of Rheumatic Diseases,1756-1841,Rheumatology,48,48,124.5,85.0,207.75,159.29166666666666,,,pubmed,John Wiley and Sons Inc,9975,0.582
-BMC Rheumatology,2520-1026,Rheumatology,49,49,119.0,76.0,226.0,164.30612244897958,,,pubmed,BioMed Central Ltd,6727,0.805
+BMC Rheumatology,2520-1026,Rheumatology,51,51,118.0,70.5,217.5,160.33333333333334,16.0,79.0,"crossref_assertion, pubmed",BioMed Central Ltd,6727,0.805
 Open Access Rheumatology: Research and Reviews,1179-156X,Rheumatology,50,50,96.0,73.75,112.75,94.78,35.0,60.5,pubmed,Dove Medical Press Ltd,8943,0.645
-ACR Open Rheumatology,2578-5745,Rheumatology,50,50,81.5,33.5,121.75,92.86,,,pubmed,John Wiley and Sons Inc,4161,1.096
-Journal of Rheumatic Diseases,2093-940X,Rheumatology,45,45,63.0,37.0,88.0,70.37777777777778,,,pubmed,Korean College of Rheumatology,6469,0.827
+ACR Open Rheumatology,2578-5745,Rheumatology,54,54,80.0,28.5,120.0,88.24074074074075,107.5,114.0,"crossref_assertion, pubmed",John Wiley and Sons Inc,4161,1.096
+Journal of Rheumatic Diseases,2093-940X,Rheumatology,81,81,63.0,37.0,96.0,70.54320987654322,21.0,85.5,"crossref_assertion, pubmed",Korean College of Rheumatology,6469,0.827
 Current Rheumatology Reports,1534-6307,Rheumatology,12,12,60.5,39.0,71.0,61.0,,,pubmed,Springer,1725,1.809
 Joint Bone Spine,1778-7254,Rheumatology,49,49,53.0,43.0,89.0,65.06122448979592,,,pubmed,Elsevier Masson s.r.l.,5614,0.909
+Journal of Population Economics,1432-1475,Sociology & Social Sciences,50,50,444.0,365.75,596.75,487.26,19.0,464.5,crossref_assertion,Springer New York,1732,1.805
+"New Technology, Work and Employment",0268-1072,Sociology & Social Sciences,46,45,320.0,14.0,421.0,275.68888888888887,9.5,327.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,812,2.795
+"Gender, Work and Organization",1468-0432,Sociology & Social Sciences,49,48,309.5,223.0,522.25,364.8125,16.0,327.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,929,2.539
+International Journal of Social Research Methodology: Theory and Practice,1464-5300,Sociology & Social Sciences,49,49,275.0,180.0,336.0,281.9795918367347,15.0,294.0,crossref_assertion,Taylor and Francis Ltd.,1723,1.81
+Journal of Peasant Studies,0306-6150,Sociology & Social Sciences,40,40,254.5,91.25,398.5,263.2,53.0,329.5,crossref_assertion,Routledge,1156,2.248
+Comparative Migration Studies,2214-594X,Sociology & Social Sciences,48,48,227.0,156.75,385.0,274.0208333333333,21.0,261.0,crossref_assertion,SpringerOpen,1926,1.693
+Journal of Social Issues,0022-4537,Sociology & Social Sciences,45,45,202.0,25.0,244.0,162.6,23.0,221.0,crossref_assertion,Wiley-Blackwell Publishing Ltd,1824,1.746
 Accident Analysis and Prevention,1879-2057,Sociology & Social Sciences,50,50,173.0,147.25,207.25,181.06,,,pubmed,Elsevier Ltd,1419,2.007
+Journal of the American Statistical Association,0162-1459,Statistics,49,48,449.0,269.5,594.25,456.6458333333333,51.0,528.5,crossref_assertion,Taylor and Francis Ltd.,399,4.103
+International Statistical Review,0306-7734,Statistics,40,40,237.5,185.25,297.75,261.475,31.5,271.0,crossref_assertion,John Wiley &amp; Sons Inc.,5498,0.922
+Wiley Interdisciplinary Reviews: Computational Statistics,1939-5108,Statistics,42,42,129.0,90.75,177.75,147.16666666666666,20.0,147.5,crossref_assertion,John Wiley &amp; Sons Inc.,2533,1.452
 Surgery for Obesity and Related Diseases,1550-7289,Surgery,50,50,119.0,48.0,199.5,136.12,,,pubmed,Elsevier Inc.,3229,1.266
 Surgery (United States),1532-7361,Surgery,49,49,93.0,61.0,131.0,103.83673469387755,,,pubmed,Elsevier Inc.,4167,1.095
-Annals of Surgery,1528-1140,Surgery,28,28,91.0,23.75,119.25,82.14285714285714,,,pubmed,Wolters Kluwer Health,903,2.593
+Annals of Surgery,1528-1140,Surgery,67,67,86.0,54.0,124.5,91.80597014925372,12.0,103.0,"crossref_assertion, pubmed",Wolters Kluwer Health,903,2.593
 British Journal of Surgery,0007-1323,Surgery,32,32,82.5,47.5,124.25,87.25,,,pubmed,Oxford University Press,1934,1.69
-Surgical Endoscopy,1432-2218,Surgery,50,50,77.5,61.0,102.75,91.16,,,pubmed,Springer,4645,1.023
-Hernia : the journal of hernias and abdominal wall surgery,1265-4906,Surgery,48,48,68.0,56.75,82.0,73.625,,,pubmed,Springer Paris,4123,1.102
+Surgical Endoscopy,1432-2218,Surgery,60,60,79.0,61.75,106.25,94.96666666666667,15.5,105.5,"crossref_assertion, pubmed",Springer,4645,1.023
+Hernia : the journal of hernias and abdominal wall surgery,1265-4906,Surgery,92,92,72.0,55.75,96.0,74.0,25.0,103.0,"crossref_assertion, pubmed",Springer Paris,4123,1.102
 Transplantation Reviews,1557-9816,Surgery,49,49,53.0,31.0,71.0,55.83673469387755,,,pubmed,Elsevier Inc.,3813,1.153
-Annals of Surgical Oncology,1068-9265,Surgery,24,24,8.5,2.75,58.75,40.958333333333336,,,pubmed,Springer Science and Business Media Deutschland GmbH,3816,1.152
+Annals of Surgical Oncology,1068-9265,Surgery,60,60,49.5,4.75,111.0,66.95,23.5,103.5,"crossref_assertion, pubmed",Springer Science and Business Media Deutschland GmbH,3816,1.152

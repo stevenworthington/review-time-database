@@ -1,85 +1,85 @@
 field,total_journals,journals_with_data,journals_missing,coverage_pct
-Mechanical & Aerospace Engineering,15,0,15,0.0
 Civil Engineering,15,0,15,0.0
-Statistics,15,0,15,0.0
-Mathematics,15,0,15,0.0
-Philosophy,15,0,15,0.0
-Physics,15,0,15,0.0
-Multidisciplinary,15,0,15,0.0
-Political Science,15,0,15,0.0
-Marketing,15,0,15,0.0
 Economics,15,0,15,0.0
-Law,15,1,14,6.7
-Materials Science,15,1,14,6.7
-Library & Information Science,15,1,14,6.7
-Sociology & Social Sciences,15,1,14,6.7
-Linguistics,15,1,14,6.7
-Psychology,15,2,13,13.3
-Operations Research & Decision Science,15,2,13,13.3
+Mechanical & Aerospace Engineering,15,2,13,13.3
+Mathematics,15,2,13,13.3
+Political Science,15,2,13,13.3
+Marketing,15,3,12,20.0
 Electrical & Electronic Engineering,15,3,12,20.0
-Finance,15,3,12,20.0
+Statistics,15,3,12,20.0
 Communication & Media,15,3,12,20.0
 Chemistry,15,3,12,20.0
 Business & Management,15,3,12,20.0
+Finance,15,3,12,20.0
+Law,15,3,12,20.0
 Artificial Intelligence,15,3,12,20.0
 Chemical Engineering,15,4,11,26.7
-Geography & Urban Studies,15,4,11,26.7
 Astronomy & Astrophysics,15,4,11,26.7
 Energy,15,4,11,26.7
+Psychology,15,4,11,26.7
+Geography & Urban Studies,15,4,11,26.7
 Industrial Engineering,15,4,11,26.7
-Information Systems,15,5,10,33.3
-Education,15,5,10,33.3
+Library & Information Science,15,4,11,26.7
+General Engineering,15,5,10,33.3
 Arts & Humanities,15,5,10,33.3
 Computer Science (General),15,5,10,33.3
-General Engineering,15,5,10,33.3
+Linguistics,15,5,10,33.3
+Education,15,5,10,33.3
 Accounting,15,6,9,40.0
+Multidisciplinary,15,6,9,40.0
+Operations Research & Decision Science,15,6,9,40.0
 Atmospheric & Ocean Science,15,6,9,40.0
 Environmental Science,15,7,8,46.7
-Earth Science,15,7,8,46.7
-Public Health & Epidemiology,15,7,8,46.7
 General & Internal Medicine,15,7,8,46.7
+Physics,15,7,8,46.7
+Public Health & Epidemiology,15,7,8,46.7
+Information Systems,15,7,8,46.7
+Earth Science,15,7,8,46.7
 History,15,7,8,46.7
-Psychiatry,15,8,7,53.3
+Materials Science,15,8,7,53.3
+Philosophy,15,8,7,53.3
+Sociology & Social Sciences,15,8,7,53.3
 Surgery,15,8,7,53.3
 Development Studies,15,8,7,53.3
 Ecology & Evolution,15,9,6,60.0
 Biomedical Engineering,15,9,6,60.0
 Biotechnology,15,9,6,60.0
 Rheumatology,15,10,5,66.7
-Rehabilitation,15,10,5,66.7
-Nephrology & Urology,15,10,5,66.7
 Animal Science & Veterinary,15,10,5,66.7
-Orthopedics & Sports Medicine,15,11,4,73.3
-Otolaryngology,15,11,4,73.3
-Microbiology,15,11,4,73.3
-Oncology,15,11,4,73.3
+Psychiatry,15,10,5,66.7
 Biochemistry,15,11,4,73.3
-Nutrition & Food Science,15,11,4,73.3
+Nephrology & Urology,15,11,4,73.3
+Otolaryngology,15,11,4,73.3
+Nutrition & Food Science,15,12,3,80.0
 Ophthalmology,15,12,3,80.0
-Anesthesiology,15,12,3,80.0
+Oncology,15,12,3,80.0
 Pediatrics,15,12,3,80.0
-Immunology,15,12,3,80.0
+Anesthesiology,15,12,3,80.0
+Orthopedics & Sports Medicine,15,12,3,80.0
 Neuroscience,15,12,3,80.0
-Neurology,15,12,3,80.0
-Marine & Aquatic Science,15,12,3,80.0
+Immunology,15,12,3,80.0
 Dermatology,15,12,3,80.0
-Respiratory Medicine,15,13,2,86.7
+Endocrinology & Metabolism,15,13,2,86.7
 Health Policy & Services,15,13,2,86.7
 Radiology & Imaging,15,13,2,86.7
 Genetics & Genomics,15,13,2,86.7
 Gastroenterology & Hepatology,15,13,2,86.7
 Plant & Agricultural Science,15,13,2,86.7
-Nursing,15,13,2,86.7
-Endocrinology & Metabolism,15,13,2,86.7
-Pharmacology & Toxicology,15,13,2,86.7
-Molecular & Cell Biology,15,13,2,86.7
-Critical Care & Emergency Medicine,15,13,2,86.7
-Hematology,15,13,2,86.7
-Cardiovascular Medicine,15,13,2,86.7
 Health Professions,15,13,2,86.7
-Pathology,15,14,1,93.3
-Dentistry,15,14,1,93.3
+Microbiology,15,13,2,86.7
+Critical Care & Emergency Medicine,15,13,2,86.7
+Molecular & Cell Biology,15,13,2,86.7
+Cardiovascular Medicine,15,13,2,86.7
+Hematology,15,13,2,86.7
 Geriatrics,15,14,1,93.3
-Infectious Disease,15,14,1,93.3
 Anatomy & Physiology,15,14,1,93.3
+Respiratory Medicine,15,14,1,93.3
+Rehabilitation,15,14,1,93.3
+Nursing,15,14,1,93.3
+Dentistry,15,14,1,93.3
+Neurology,15,14,1,93.3
+Marine & Aquatic Science,15,14,1,93.3
+Pharmacology & Toxicology,15,14,1,93.3
+Infectious Disease,15,14,1,93.3
 Obstetrics & Gynecology,15,15,0,100.0
+Pathology,15,15,0,100.0
