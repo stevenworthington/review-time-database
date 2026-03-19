@@ -121,11 +121,12 @@ def build_field_bars(field_summary):
 
     # Same color scale as the ridge plot: teal (fast) → red (slow)
     bar_colorscale = [
-        [0.0, "rgb(40, 120, 140)"],
-        [0.25, "rgb(80, 170, 120)"],
-        [0.5, "rgb(230, 160, 50)"],
-        [0.75, "rgb(220, 100, 50)"],
-        [1.0, "rgb(180, 40, 40)"],
+        [0.0, "rgb(50, 140, 140)"],
+        [0.15, "rgb(70, 160, 110)"],
+        [0.35, "rgb(180, 180, 60)"],
+        [0.55, "rgb(230, 150, 50)"],
+        [0.75, "rgb(210, 90, 50)"],
+        [1.0, "rgb(170, 40, 45)"],
     ]
 
     fig.add_trace(
@@ -457,11 +458,12 @@ def build_ridge_plot(articles, field_summary):
     # Custom scale avoids the washed-out yellows and jarring blues of Turbo
     from plotly.colors import sample_colorscale
     custom_scale = [
-        [0.0, "rgb(40, 120, 140)"],    # teal (fastest, bottom)
-        [0.25, "rgb(80, 170, 120)"],   # sage green
-        [0.5, "rgb(230, 160, 50)"],    # amber
-        [0.75, "rgb(220, 100, 50)"],   # burnt orange
-        [1.0, "rgb(180, 40, 40)"],     # deep red (slowest, top)
+        [0.0, "rgb(50, 140, 140)"],    # teal (fastest, bottom)
+        [0.15, "rgb(70, 160, 110)"],   # green-teal
+        [0.35, "rgb(180, 180, 60)"],   # olive-gold
+        [0.55, "rgb(230, 150, 50)"],   # amber
+        [0.75, "rgb(210, 90, 50)"],    # burnt orange
+        [1.0, "rgb(170, 40, 45)"],     # deep red (slowest, top)
     ]
     hue_values = np.linspace(0, 1, n_fields)
     ridge_colors_rgb = sample_colorscale(custom_scale, hue_values)
