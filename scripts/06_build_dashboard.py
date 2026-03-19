@@ -426,8 +426,13 @@ def build_ridge_plot(articles, field_summary):
     if not good_fields:
         return go.Figure().add_annotation(text="Not enough data for ridge plot")
 
+    # Compute medians from article-level data (not field_summary, which may miss some fields)
+    medians = {}
+    for field in good_fields:
+        field_days = valid[valid["field"] == field]["days_submission_to_acceptance"]
+        medians[field] = field_days.median()
+
     # Sort fields by median review time (slowest at top like the bar chart)
-    medians = field_summary.set_index("field")["field_median_review_days"].to_dict()
     good_fields = sorted(good_fields, key=lambda f: medians.get(f, 0) or 0)
 
     # KDE evaluation grid
@@ -439,12 +444,18 @@ def build_ridge_plot(articles, field_summary):
     spacing = 0.45
     peak_scale = 1.3  # peaks extend well above the spacing
 
-    # Distinct, saturated color palette that stays visible with transparency
-    # Use a qualitative-ish palette derived from a colorscale with good contrast
+    # Color palette: red (slowest) → orange → gold → teal (fastest)
+    # Custom scale avoids the washed-out yellows and jarring blues of Turbo
     from plotly.colors import sample_colorscale
-    # Use a perceptually uniform diverging scale for variety
-    hue_values = np.linspace(0.05, 0.95, n_fields)
-    ridge_colors_rgb = sample_colorscale("Turbo", hue_values)
+    custom_scale = [
+        [0.0, "rgb(180, 40, 40)"],    # deep red (fastest, bottom)
+        [0.25, "rgb(220, 100, 50)"],   # burnt orange
+        [0.5, "rgb(230, 160, 50)"],    # amber
+        [0.75, "rgb(80, 170, 120)"],   # sage green
+        [1.0, "rgb(40, 120, 140)"],    # teal (slowest, top)
+    ]
+    hue_values = np.linspace(0, 1, n_fields)
+    ridge_colors_rgb = sample_colorscale(custom_scale, hue_values)
 
     fig = go.Figure()
 
