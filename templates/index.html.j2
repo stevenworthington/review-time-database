@@ -18,7 +18,7 @@
         header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #fff;
-            padding: 3rem 1.5rem;
+            padding: 2.5rem 1.5rem 1.5rem;
             text-align: center;
         }
 
@@ -46,32 +46,100 @@
             margin: 0 0.75rem;
         }
 
-        .container {
+        .key-findings {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 1.5rem auto 0;
             padding: 0 1.5rem;
         }
 
-        .chart-section {
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .finding-card {
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            margin: 2rem auto;
-            max-width: 1200px;
-            padding: 2rem;
+            padding: 1.25rem;
+            border-left: 4px solid #e94560;
         }
 
-        .chart-section h2 {
-            font-size: 1.4rem;
+        .finding-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .finding-card .label {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-top: 0.2rem;
+        }
+
+        /* Tabs */
+        .tabs-wrapper {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.25rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #718096;
+            cursor: pointer;
+            transition: color 0.15s, border-color 0.15s;
+            font-family: inherit;
+        }
+
+        .tab-btn:hover {
+            color: #2d3748;
+        }
+
+        .tab-btn.active {
+            color: #1a1a2e;
+            border-bottom-color: #e94560;
+            font-weight: 600;
+        }
+
+        .tab-panel {
+            display: none;
+            background: #fff;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-panel h2 {
+            font-size: 1.3rem;
             font-weight: 600;
             color: #1a1a2e;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
-        .chart-section .description {
+        .tab-panel .description {
             color: #718096;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .chart-container {
@@ -79,42 +147,9 @@
             min-height: 400px;
         }
 
-        .key-findings {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .findings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.25rem;
-            margin-top: 1rem;
-        }
-
-        .finding-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            border-left: 4px solid #e94560;
-        }
-
-        .finding-card .number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1a1a2e;
-        }
-
-        .finding-card .label {
-            font-size: 0.9rem;
-            color: #718096;
-            margin-top: 0.25rem;
-        }
-
         footer {
             text-align: center;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.5rem;
             color: #a0aec0;
             font-size: 0.85rem;
         }
@@ -129,9 +164,10 @@
         }
 
         @media (max-width: 768px) {
-            header { padding: 2rem 1rem; }
+            header { padding: 2rem 1rem 1rem; }
             header h1 { font-size: 1.6rem; }
-            .chart-section { padding: 1.25rem; margin: 1rem; }
+            .tab-btn { padding: 0.6rem 0.75rem; font-size: 0.8rem; }
+            .tab-panel { padding: 1rem; }
         }
     </style>
 </head>
@@ -151,49 +187,71 @@
         <div class="findings-grid">
             <div class="finding-card">
                 <div class="number">{{ slowest_field_days | int }} days</div>
-                <div class="label">Slowest field ({{ slowest_field_name }})</div>
+                <div class="label">Median review time in {{ slowest_field_name }} (slowest field)</div>
             </div>
             <div class="finding-card">
                 <div class="number">{{ fastest_field_days | int }} days</div>
-                <div class="label">Fastest field ({{ fastest_field_name }})</div>
+                <div class="label">Median review time in {{ fastest_field_name }} (fastest field)</div>
             </div>
             <div class="finding-card">
                 <div class="number">{{ overall_median | int }} days</div>
-                <div class="label">Overall median review time</div>
+                <div class="label">Median review time across all fields</div>
             </div>
             <div class="finding-card">
-                <div class="number">{{ coverage_pct }}%</div>
-                <div class="label">Journal coverage ({{ n_journals_with_data }}/{{ n_journals | int }})</div>
+                <div class="number">{{ n_journals_with_data }}</div>
+                <div class="label">Journals with review time data</div>
             </div>
         </div>
     </div>
 
-    <section class="chart-section container">
+    <div class="tabs-wrapper">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('bars')">By Field</button>
+            <button class="tab-btn" onclick="switchTab('scatter')">vs. Prestige</button>
+            <button class="tab-btn" onclick="switchTab('ridge')">Distributions</button>
+            <button class="tab-btn" onclick="switchTab('histogram')">Per-Field Detail</button>
+        </div>
+    </div>
+
+    <div id="tab-bars" class="tab-panel active" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
         <h2>Median Review Time by Field</h2>
-        <p class="description">Days from submission to acceptance, aggregated across top journals per field. Click a bar for details.</p>
+        <p class="description">Each bar shows the median of per-journal median review times within that field. Based on journal-level summaries from {{ n_journals_with_data }} journals with date data.</p>
         <div class="chart-container">{{ chart_field_bars }}</div>
-    </section>
+    </div>
 
-    <section class="chart-section container">
+    <div id="tab-scatter" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
         <h2>Review Time vs. Journal Prestige</h2>
-        <p class="description">How does review speed relate to journal ranking? Use the dropdown to filter by field.</p>
+        <p class="description">Each point is one journal. X-axis shows SJR ranking (lower = more prestigious). Y-axis is the journal's median submission-to-acceptance time. Use the dropdown to filter by field.</p>
         <div class="chart-container">{{ chart_scatter }}</div>
-    </section>
+    </div>
 
-    <section class="chart-section container">
+    <div id="tab-ridge" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
         <h2>Distribution Comparison Across Fields</h2>
-        <p class="description">Overlapping density plots showing the full spread of review times per field. Dotted lines mark the median. Hover for details.</p>
+        <p class="description">Kernel density estimates of individual article review times, computed from {{ n_articles | int }} articles. Each ridge shows the full spread of review durations for one field. Dotted lines mark the median. Fields sorted by median review time.</p>
         <div class="chart-container">{{ chart_ridge }}</div>
-    </section>
+    </div>
 
-    <section class="chart-section container">
+    <div id="tab-histogram" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
         <h2>Review Time Distributions</h2>
-        <p class="description">Select a field to see the detailed histogram of review times.</p>
+        <p class="description">Histogram of individual article review times for a single field. Select a field from the dropdown. Dashed line marks the median.</p>
         <div class="chart-container">{{ chart_histograms }}</div>
-    </section>
+    </div>
 
     <footer>
         <p>Built {{ build_date }} | Data: Crossref assertions &amp; PubMed | <a href="https://github.com/rapidPeer">rapidPeer project</a></p>
     </footer>
+
+    <script>
+        function switchTab(name) {
+            // Hide all panels, deactivate all buttons
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Show selected panel, activate button
+            document.getElementById('tab-' + name).classList.add('active');
+            event.target.classList.add('active');
+            // Trigger Plotly resize so charts fill their container
+            window.dispatchEvent(new Event('resize'));
+        }
+    </script>
 </body>
 </html>

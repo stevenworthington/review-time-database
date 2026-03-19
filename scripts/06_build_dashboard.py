@@ -119,6 +119,15 @@ def build_field_bars(field_summary):
 
     fig = go.Figure()
 
+    # Same color scale as the ridge plot: teal (fast) → red (slow)
+    bar_colorscale = [
+        [0.0, "rgb(40, 120, 140)"],
+        [0.25, "rgb(80, 170, 120)"],
+        [0.5, "rgb(230, 160, 50)"],
+        [0.75, "rgb(220, 100, 50)"],
+        [1.0, "rgb(180, 40, 40)"],
+    ]
+
     fig.add_trace(
         go.Bar(
             y=df["field"],
@@ -126,7 +135,7 @@ def build_field_bars(field_summary):
             orientation="h",
             marker=dict(
                 color=df["field_median_review_days"],
-                colorscale="YlOrRd",
+                colorscale=bar_colorscale,
                 line=dict(width=0),
             ),
             text=df["field_median_review_days"].round(0).astype(int).astype(str) + "d",
@@ -570,6 +579,11 @@ def render_site(field_bars, scatter, histograms, ridge, field_summary, journal_s
     fastest = fs.iloc[-1] if not fs.empty else None
     all_medians = fs["field_median_review_days"]
 
+    # Total tracked journals (from the master journal list, not just those with data)
+    journal_list_path = DATA_DIR / "journal_list.csv"
+    n_tracked = len(pd.read_csv(journal_list_path)) if journal_list_path.exists() else len(journal_summary)
+    n_jwd = len(journal_summary[journal_summary["n_with_review_time"] > 0])
+
     html = template.render(
         chart_field_bars=field_bars.to_html(
             full_html=False, include_plotlyjs=False, config=PLOTLY_CONFIG
@@ -586,20 +600,14 @@ def render_site(field_bars, scatter, histograms, ridge, field_summary, journal_s
         n_articles=len(articles),
         n_journals=len(journal_summary),
         n_fields=len(field_summary),
-        n_journals_with_data=len(
-            journal_summary[journal_summary["n_with_review_time"] > 0]
-        ),
+        n_journals_with_data=n_jwd,
+        n_journals_tracked=n_tracked,
         slowest_field_name=slowest["field"] if slowest is not None else "N/A",
         slowest_field_days=slowest["field_median_review_days"] if slowest is not None else 0,
         fastest_field_name=fastest["field"] if fastest is not None else "N/A",
         fastest_field_days=fastest["field_median_review_days"] if fastest is not None else 0,
         overall_median=all_medians.median() if not all_medians.empty else 0,
-        coverage_pct=round(
-            len(journal_summary[journal_summary["n_with_review_time"] > 0])
-            / len(journal_summary)
-            * 100,
-            1,
-        ),
+        coverage_pct=round(n_jwd / n_tracked * 100, 1),
         build_date=date.today().isoformat(),
     )
 
