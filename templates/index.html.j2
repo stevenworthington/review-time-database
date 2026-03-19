@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Review Times — rapidPeer</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: #2d3748;
+            background: #f7fafc;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        header .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+
+        header .stats {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        header .stats span {
+            display: inline-block;
+            margin: 0 0.75rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .chart-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+
+        .chart-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 0.4rem;
+        }
+
+        .chart-section .description {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-container {
+            width: 100%;
+            min-height: 400px;
+        }
+
+        .key-findings {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .finding-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+        }
+
+        .finding-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .finding-card .label {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            color: #a0aec0;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #718096;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 2rem 1rem; }
+            header h1 { font-size: 1.6rem; }
+            .chart-section { padding: 1.25rem; margin: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Peer Review Timeline Database</h1>
+        <p class="subtitle">How long does peer review take across academic fields?</p>
+        <div class="stats">
+            <span>{{ n_articles | int }} articles</span>
+            <span>{{ n_journals | int }} journals</span>
+            <span>{{ n_fields | int }} fields</span>
+            <span>Sources: Crossref &amp; PubMed</span>
+        </div>
+    </header>
+
+    <div class="key-findings">
+        <div class="findings-grid">
+            <div class="finding-card">
+                <div class="number">{{ slowest_field_days | int }} days</div>
+                <div class="label">Slowest field ({{ slowest_field_name }})</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">{{ fastest_field_days | int }} days</div>
+                <div class="label">Fastest field ({{ fastest_field_name }})</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">{{ overall_median | int }} days</div>
+                <div class="label">Overall median review time</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">{{ coverage_pct }}%</div>
+                <div class="label">Journal coverage ({{ n_journals_with_data }}/{{ n_journals | int }})</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="chart-section container">
+        <h2>Median Review Time by Field</h2>
+        <p class="description">Days from submission to acceptance, aggregated across top journals per field. Click a bar for details.</p>
+        <div class="chart-container">{{ chart_field_bars }}</div>
+    </section>
+
+    <section class="chart-section container">
+        <h2>Review Time vs. Journal Prestige</h2>
+        <p class="description">How does review speed relate to journal ranking? Use the dropdown to filter by field.</p>
+        <div class="chart-container">{{ chart_scatter }}</div>
+    </section>
+
+    <section class="chart-section container">
+        <h2>Distribution Comparison Across Fields</h2>
+        <p class="description">Overlapping density plots showing the full spread of review times per field. Dotted lines mark the median. Hover for details.</p>
+        <div class="chart-container">{{ chart_ridge }}</div>
+    </section>
+
+    <section class="chart-section container">
+        <h2>Review Time Distributions</h2>
+        <p class="description">Select a field to see the detailed histogram of review times.</p>
+        <div class="chart-container">{{ chart_histograms }}</div>
+    </section>
+
+    <footer>
+        <p>Built {{ build_date }} | Data: Crossref assertions &amp; PubMed | <a href="https://github.com/rapidPeer">rapidPeer project</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Data checkpoints (large, regenerable)
+data/crossref_checkpoint.json
+data/pubmed_checkpoint.json
+
+# Raw SJR download (10MB, can be re-downloaded)
+data/scimagojr_2024.csv
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Claude
+.claude/
