@@ -119,15 +119,17 @@ def build_field_bars(field_summary):
 
     fig = go.Figure()
 
-    # Same color scale as the ridge plot: teal (fast) → red (slow)
-    bar_colorscale = [
-        [0.0, "rgb(50, 140, 140)"],
-        [0.15, "rgb(70, 160, 110)"],
-        [0.35, "rgb(180, 180, 60)"],
-        [0.55, "rgb(230, 150, 50)"],
-        [0.75, "rgb(210, 90, 50)"],
-        [1.0, "rgb(170, 40, 45)"],
+    # Assign per-bar colors by position (evenly spaced), matching ridge plot scale
+    from plotly.colors import sample_colorscale
+    bar_scale = [
+        [0.0, "rgb(40, 120, 140)"],
+        [0.25, "rgb(80, 170, 120)"],
+        [0.5, "rgb(230, 160, 50)"],
+        [0.75, "rgb(220, 100, 50)"],
+        [1.0, "rgb(180, 40, 40)"],
     ]
+    n_bars = len(df)
+    bar_colors = sample_colorscale(bar_scale, np.linspace(0, 1, n_bars))
 
     fig.add_trace(
         go.Bar(
@@ -135,8 +137,7 @@ def build_field_bars(field_summary):
             x=df["field_median_review_days"],
             orientation="h",
             marker=dict(
-                color=df["field_median_review_days"],
-                colorscale=bar_colorscale,
+                color=bar_colors,
                 line=dict(width=0),
             ),
             text=df["field_median_review_days"].round(0).astype(int).astype(str) + "d",
@@ -165,7 +166,7 @@ def build_field_bars(field_summary):
     # Sort toggle buttons
     fig.update_layout(
         **LAYOUT_DEFAULTS,
-        height=max(500, len(df) * 28),
+        height=max(400, len(df) * 19),
         xaxis_title="Median days (submission → acceptance)",
         xaxis=dict(gridcolor=COLORS["grid"]),
         yaxis=dict(automargin=True),
@@ -455,15 +456,13 @@ def build_ridge_plot(articles, field_summary):
     peak_scale = 1.3  # peaks extend well above the spacing
 
     # Color palette: red (slowest) → orange → gold → teal (fastest)
-    # Custom scale avoids the washed-out yellows and jarring blues of Turbo
     from plotly.colors import sample_colorscale
     custom_scale = [
-        [0.0, "rgb(50, 140, 140)"],    # teal (fastest, bottom)
-        [0.15, "rgb(70, 160, 110)"],   # green-teal
-        [0.35, "rgb(180, 180, 60)"],   # olive-gold
-        [0.55, "rgb(230, 150, 50)"],   # amber
-        [0.75, "rgb(210, 90, 50)"],    # burnt orange
-        [1.0, "rgb(170, 40, 45)"],     # deep red (slowest, top)
+        [0.0, "rgb(40, 120, 140)"],    # teal (fastest, bottom)
+        [0.25, "rgb(80, 170, 120)"],   # sage green
+        [0.5, "rgb(230, 160, 50)"],    # amber
+        [0.75, "rgb(220, 100, 50)"],   # burnt orange
+        [1.0, "rgb(180, 40, 40)"],     # deep red (slowest, top)
     ]
     hue_values = np.linspace(0, 1, n_fields)
     ridge_colors_rgb = sample_colorscale(custom_scale, hue_values)
