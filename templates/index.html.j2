@@ -207,6 +207,7 @@
     <div class="tabs-wrapper">
         <div class="tab-buttons">
             <button class="tab-btn active" onclick="switchTab('bars')">By Field</button>
+            <button class="tab-btn" onclick="switchTab('boxplot')">Journal Spread</button>
             <button class="tab-btn" onclick="switchTab('ridge')">Distributions</button>
             <button class="tab-btn" onclick="switchTab('scatter')">vs. Prestige</button>
             <button class="tab-btn" onclick="switchTab('histogram')">Per-Field Detail</button>
@@ -217,6 +218,12 @@
         <h2>Median Review Time by Field</h2>
         <p class="description">Each bar shows the median of per-journal median review times within that field. Based on journal-level summaries from {{ n_journals_with_data }} journals with date data.</p>
         <div class="chart-container">{{ chart_field_bars }}</div>
+    </div>
+
+    <div id="tab-boxplot" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Journal-Level Spread by Field</h2>
+        <p class="description">Each box shows the distribution of per-journal median review times within a field. The box spans the interquartile range (25th–75th percentile), the line marks the median, and whiskers extend to 1.5× IQR. Individual dots are outlier journals. Fields sorted by overall median.</p>
+        <div class="chart-container">{{ chart_field_boxplot }}</div>
     </div>
 
     <div id="tab-scatter" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">

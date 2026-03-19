@@ -205,7 +205,83 @@ def build_field_bars(field_summary):
 
 
 # ---------------------------------------------------------------------------
-# Chart 2: Scatter — review time vs journal ranking
+# Chart 2: Box plot — distribution of journal medians by field
+# ---------------------------------------------------------------------------
+def build_field_boxplot(journal_summary, field_summary):
+    """Box plot showing distribution of per-journal median review times within each field."""
+    # Get journals with review data
+    js = journal_summary[journal_summary["n_with_review_time"] > 0].copy()
+    js = js.dropna(subset=["median_days_submission_to_acceptance", "field"])
+
+    # Sort fields by overall field median (same order as bar chart)
+    fs = field_summary.dropna(subset=["field_median_review_days"]).copy()
+    fs = fs.sort_values("field_median_review_days", ascending=True)
+    field_order = fs["field"].tolist()
+
+    # Only include fields that appear in journal data
+    field_order = [f for f in field_order if f in js["field"].values]
+    n_fields = len(field_order)
+
+    # Same color scale as bar chart, sampled by position
+    from plotly.colors import sample_colorscale
+    bar_scale = [
+        [0.0, "rgb(40, 120, 140)"],
+        [0.25, "rgb(80, 170, 120)"],
+        [0.5, "rgb(230, 160, 50)"],
+        [0.75, "rgb(220, 100, 50)"],
+        [1.0, "rgb(180, 40, 40)"],
+    ]
+    box_colors = sample_colorscale(bar_scale, np.linspace(0, 1, n_fields))
+
+    fig = go.Figure()
+
+    for i, field in enumerate(field_order):
+        field_data = js[js["field"] == field]["median_days_submission_to_acceptance"]
+        color_str = box_colors[i]
+        rgb_vals = color_str.replace("rgb(", "").replace(")", "").split(",")
+        r, g, b = [v.strip() for v in rgb_vals]
+        fill_color = f"rgba({r}, {g}, {b}, 0.5)"
+        line_color = f"rgb({r}, {g}, {b})"
+
+        fig.add_trace(
+            go.Box(
+                x=field_data,
+                name=field,
+                orientation="h",
+                marker=dict(
+                    color=line_color,
+                    size=4,
+                    outliercolor=line_color,
+                ),
+                line=dict(color=line_color, width=1.5),
+                fillcolor=fill_color,
+                boxmean=False,
+                hovertemplate=(
+                    "<b>%{y}</b><br>"
+                    "Median: %{x:.0f} days<br>"
+                    "<extra></extra>"
+                ),
+            )
+        )
+
+    fig.update_layout(
+        **LAYOUT_DEFAULTS,
+        height=max(400, n_fields * 19),
+        xaxis_title="Median days (submission → acceptance)",
+        xaxis=dict(gridcolor=COLORS["grid"]),
+        yaxis=dict(
+            categoryorder="array",
+            categoryarray=field_order,
+            automargin=True,
+        ),
+        showlegend=False,
+    )
+
+    return fig
+
+
+# ---------------------------------------------------------------------------
+# Chart 3: Scatter — review time vs journal ranking
 # ---------------------------------------------------------------------------
 def build_scatter(journal_summary):
     """Scatter plot of review time vs SJR rank, colored by field."""
@@ -569,7 +645,7 @@ def build_ridge_plot(articles, field_summary):
 # ---------------------------------------------------------------------------
 # Template rendering
 # ---------------------------------------------------------------------------
-def render_site(field_bars, scatter, histograms, ridge, field_summary, journal_summary, articles):
+def render_site(field_bars, field_boxplot, scatter, histograms, ridge, field_summary, journal_summary, articles):
     """Render the Jinja2 template with chart HTML and stats."""
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)))
     template = env.get_template("index.html.j2")
@@ -587,6 +663,9 @@ def render_site(field_bars, scatter, histograms, ridge, field_summary, journal_s
 
     html = template.render(
         chart_field_bars=field_bars.to_html(
+            full_html=False, include_plotlyjs=False, config=PLOTLY_CONFIG
+        ),
+        chart_field_boxplot=field_boxplot.to_html(
             full_html=False, include_plotlyjs=False, config=PLOTLY_CONFIG
         ),
         chart_scatter=scatter.to_html(
@@ -631,6 +710,8 @@ def main():
     print("3. Building charts...")
     print("   - Field bar chart")
     fig_bars = build_field_bars(field_summary)
+    print("   - Field box plot")
+    fig_boxplot = build_field_boxplot(journal_summary, field_summary)
     print("   - Scatter plot")
     fig_scatter = build_scatter(journal_summary)
     print("   - Histograms")
@@ -639,7 +720,7 @@ def main():
     fig_ridge = build_ridge_plot(articles, field_summary)
 
     print("4. Rendering site...")
-    html = render_site(fig_bars, fig_scatter, fig_hist, fig_ridge, field_summary, journal_summary, articles)
+    html = render_site(fig_bars, fig_boxplot, fig_scatter, fig_hist, fig_ridge, field_summary, journal_summary, articles)
 
     DOCS_DIR.mkdir(exist_ok=True)
     out_path = DOCS_DIR / "index.html"
