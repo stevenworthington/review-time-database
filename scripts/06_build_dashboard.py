@@ -448,11 +448,11 @@ def build_ridge_plot(articles, field_summary):
     # Custom scale avoids the washed-out yellows and jarring blues of Turbo
     from plotly.colors import sample_colorscale
     custom_scale = [
-        [0.0, "rgb(180, 40, 40)"],    # deep red (fastest, bottom)
-        [0.25, "rgb(220, 100, 50)"],   # burnt orange
+        [0.0, "rgb(40, 120, 140)"],    # teal (fastest, bottom)
+        [0.25, "rgb(80, 170, 120)"],   # sage green
         [0.5, "rgb(230, 160, 50)"],    # amber
-        [0.75, "rgb(80, 170, 120)"],   # sage green
-        [1.0, "rgb(40, 120, 140)"],    # teal (slowest, top)
+        [0.75, "rgb(220, 100, 50)"],   # burnt orange
+        [1.0, "rgb(180, 40, 40)"],     # deep red (slowest, top)
     ]
     hue_values = np.linspace(0, 1, n_fields)
     ridge_colors_rgb = sample_colorscale(custom_scale, hue_values)
