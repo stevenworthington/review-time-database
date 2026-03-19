@@ -25,64 +25,98 @@ DATA_DIR = Path("data")
 OUTPUT_DIR = Path("outputs")
 
 
-def load_crossref():
-    """Load Crossref article data if it exists."""
-    path = DATA_DIR / "crossref_articles.csv"
-    if not path.exists():
-        print("  No Crossref data found — skipping")
+def load_csv_sources(name, paths):
+    """Load article data from one or more CSV files."""
+    frames = []
+    total = 0
+    for path in paths:
+        p = DATA_DIR / path
+        if p.exists():
+            try:
+                df = pd.read_csv(p)
+                frames.append(df)
+                total += len(df)
+            except Exception as e:
+                print(f"  Warning: could not read {p}: {e}")
+    if frames:
+        combined = pd.concat(frames, ignore_index=True)
+        print(f"  {name}: {total} articles with review dates (from {len(frames)} file(s))")
+        return combined
+    else:
+        print(f"  No {name} data found — skipping")
         return pd.DataFrame()
-    df = pd.read_csv(path)
-    print(f"  Crossref: {len(df)} articles with review dates")
-    return df
+
+
+def load_crossref():
+    """Load Crossref article data from v1 and v2 files."""
+    return load_csv_sources("Crossref", [
+        "crossref_articles.csv",
+        "crossref_articles_v2.csv",
+    ])
 
 
 def load_pubmed():
-    """Load PubMed article data if it exists."""
-    path = DATA_DIR / "pubmed_articles.csv"
-    if not path.exists():
-        print("  No PubMed data found — skipping")
-        return pd.DataFrame()
-    df = pd.read_csv(path)
-    print(f"  PubMed: {len(df)} articles with review dates")
-    return df
+    """Load PubMed article data from v1 and v2 files."""
+    return load_csv_sources("PubMed", [
+        "pubmed_articles.csv",
+        "pubmed_articles_v2.csv",
+    ])
 
 
-def merge_sources(crossref_df, pubmed_df):
-    """Merge Crossref and PubMed data. PubMed takes priority for shared DOIs."""
-    if crossref_df.empty and pubmed_df.empty:
+def load_scraped():
+    """Load scraped article data."""
+    return load_csv_sources("Scraped", ["scraped_articles.csv"])
+
+
+def merge_sources(crossref_df, pubmed_df, scraped_df=None):
+    """
+    Merge all data sources. Priority: PubMed > Crossref > Scraped.
+    When multiple sources have the same DOI, higher-priority source wins.
+    """
+    if scraped_df is None:
+        scraped_df = pd.DataFrame()
+
+    all_frames = [pubmed_df, crossref_df, scraped_df]
+    non_empty = [df for df in all_frames if not df.empty]
+
+    if not non_empty:
         print("ERROR: No data from any source!")
         sys.exit(1)
 
-    if crossref_df.empty:
-        return pubmed_df
-    if pubmed_df.empty:
-        return crossref_df
+    if len(non_empty) == 1:
+        return non_empty[0]
 
-    # Normalize DOIs for matching
-    crossref_df = crossref_df.copy()
-    pubmed_df = pubmed_df.copy()
-    crossref_df["doi_lower"] = crossref_df["doi"].str.lower().str.strip()
-    pubmed_df["doi_lower"] = pubmed_df["doi"].str.lower().str.strip()
+    # Deduplicate by DOI, keeping highest-priority source (PubMed > Crossref > Scraped)
+    # Since we concat in priority order and drop duplicates keeping first, PubMed wins
+    frames_to_merge = []
+    seen_dois = set()
 
-    # Remove Crossref articles that also exist in PubMed (PubMed takes priority)
-    pubmed_dois = set(pubmed_df["doi_lower"].dropna())
-    crossref_unique = crossref_df[~crossref_df["doi_lower"].isin(pubmed_dois)].copy()
+    for df in [pubmed_df, crossref_df, scraped_df]:
+        if df.empty:
+            continue
+        df = df.copy()
+        df["doi_lower"] = df["doi"].astype(str).str.lower().str.strip()
 
-    print(f"  After dedup: {len(crossref_unique)} Crossref-only + {len(pubmed_df)} PubMed")
+        # Keep only DOIs not seen in higher-priority sources
+        unique = df[~df["doi_lower"].isin(seen_dois)]
+        seen_dois.update(unique["doi_lower"].dropna())
+        frames_to_merge.append(unique)
 
-    # Standardize columns for concatenation
-    # PubMed has 'pmid' column, Crossref doesn't
-    if "pmid" not in crossref_unique.columns:
-        crossref_unique["pmid"] = ""
+    merged = pd.concat(frames_to_merge, ignore_index=True)
 
-    # Concat
-    merged = pd.concat([pubmed_df, crossref_unique], ignore_index=True)
+    # Standardize: ensure 'pmid' column exists
+    if "pmid" not in merged.columns:
+        merged["pmid"] = ""
 
     # Clean up
     if "doi_lower" in merged.columns:
         merged.drop(columns=["doi_lower"], inplace=True)
 
-    print(f"  Merged total: {len(merged)} articles")
+    source_counts = merged["data_source"].value_counts()
+    print(f"  After dedup: {len(merged)} total articles")
+    for source, count in source_counts.items():
+        print(f"    {source}: {count}")
+
     return merged
 
 
@@ -224,12 +258,17 @@ def main():
     print("Loading data sources...")
     crossref_df = load_crossref()
     pubmed_df = load_pubmed()
+    scraped_df = load_scraped()
 
     print("\nMerging sources...")
-    merged = merge_sources(crossref_df, pubmed_df)
+    merged = merge_sources(crossref_df, pubmed_df, scraped_df)
 
     print("\nLoading journal list...")
-    journal_list = pd.read_csv(DATA_DIR / "journal_list.csv")
+    # Prefer full journal list if it exists
+    if (DATA_DIR / "journal_list_full.csv").exists():
+        journal_list = pd.read_csv(DATA_DIR / "journal_list_full.csv")
+    else:
+        journal_list = pd.read_csv(DATA_DIR / "journal_list.csv")
     print(f"  {len(journal_list)} journals in master list")
 
     print("\nComputing journal summaries...")

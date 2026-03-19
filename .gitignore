@@ -4,8 +4,12 @@ __pycache__/
 *.pyc
 
 # Data checkpoints (large, regenerable)
-data/crossref_checkpoint.json
-data/pubmed_checkpoint.json
+data/*_checkpoint*.json
+
+# Large article CSVs (regenerable from APIs)
+data/crossref_articles*.csv
+data/pubmed_articles*.csv
+data/scraped_articles*.csv
 
 # Raw SJR download (10MB, can be re-downloaded)
 data/scimagojr_2024.csv

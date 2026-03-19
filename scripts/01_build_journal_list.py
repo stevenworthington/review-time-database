@@ -10,6 +10,7 @@ Input:  data/scimagojr_2024.csv  (downloaded from scimagojr.com)
 Output: data/journal_list.csv
 """
 
+import argparse
 import pandas as pd
 import re
 import sys
@@ -416,7 +417,59 @@ def map_category_to_field(category):
     return CATEGORY_TO_FIELD.get(category)
 
 
+# Publishers that NEVER deposit Crossref assertion dates (0% hit rate in Phase 1)
+CROSSREF_SKIP_PUBLISHERS = [
+    "Institute of Electrical and Electronics Engineers",
+    "Annual Reviews",
+    "American Chemical Society",
+    "American Medical Association",
+    "Emerald Group Publishing",
+    "American Economic Association",
+    "INFORMS",
+    "University of Chicago Press",
+    "Institute of Mathematical Statistics",
+    "Copernicus Publications",
+    "Now Publishers",
+]
+
+# Biomedical SJR areas — journals with these are worth querying PubMed
+BIOMEDICAL_AREAS = {
+    "Medicine", "Biochemistry, Genetics and Molecular Biology",
+    "Immunology and Microbiology", "Neuroscience",
+    "Pharmacology, Toxicology and Pharmaceutics",
+    "Health Professions", "Nursing", "Dentistry", "Veterinary",
+    "Agricultural and Biological Sciences",
+}
+
+
+def should_query_crossref(publisher):
+    """Check if a publisher is known to never deposit Crossref assertion dates."""
+    if pd.isna(publisher):
+        return True  # unknown publisher, try anyway
+    pub_lower = str(publisher).lower()
+    for skip in CROSSREF_SKIP_PUBLISHERS:
+        if skip.lower() in pub_lower:
+            return False
+    return True
+
+
+def should_query_pubmed(areas_str):
+    """Check if a journal's SJR areas overlap with biomedical fields."""
+    if pd.isna(areas_str):
+        return False
+    areas = str(areas_str)
+    for bio_area in BIOMEDICAL_AREAS:
+        if bio_area.lower() in areas.lower():
+            return True
+    return False
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--full", action="store_true",
+                        help="Include ALL SJR journals (not just top 15/field)")
+    args = parser.parse_args()
+
     data_dir = Path("data")
     sjr_file = data_dir / "scimagojr_2024.csv"
 
@@ -449,9 +502,13 @@ def main():
             count = len(df[df["primary_category"] == cat])
             print(f"    - {cat} ({count} journals)")
 
-    # Drop journals with no field mapping
-    df = df[df["field"].notna()].copy()
-    print(f"  {len(df)} journals with field mapping")
+    # For --full mode, keep journals even without field mapping (assign "Unmapped")
+    if args.full:
+        df.loc[df["field"].isna(), "field"] = "Unmapped"
+        print(f"  {len(df)} journals total (full mode, unmapped → 'Unmapped')")
+    else:
+        df = df[df["field"].notna()].copy()
+        print(f"  {len(df)} journals with field mapping")
 
     # Parse ISSNs — store both print and electronic ISSN
     def format_issn(raw):
@@ -474,20 +531,13 @@ def main():
     df["issn_clean"] = issn_pairs.apply(lambda x: x[0])
     df["issn_alt"] = issn_pairs.apply(lambda x: x[1])
 
-    # For each field, rank by SJR and take top 15
-    TOP_N = 15
-    results = []
-
-    fields = sorted(df["field"].unique())
-    print(f"\n  {len(fields)} fields identified")
-
-    for field in fields:
-        field_df = df[df["field"] == field].sort_values("sjr_score", ascending=False)
-        top = field_df.head(TOP_N)
-        for _, row in top.iterrows():
+    if args.full:
+        # Full mode: include ALL journals with query flags
+        results = []
+        for _, row in df.iterrows():
             results.append({
-                "field": field,
-                "field_category": row["primary_category"],
+                "field": row["field"],
+                "field_category": row["primary_category"] if pd.notna(row["primary_category"]) else "",
                 "journal_name": row["Title"],
                 "issn": row["issn_clean"],
                 "issn_alt": row["issn_alt"],
@@ -495,17 +545,58 @@ def main():
                 "sjr_rank": row["Rank"],
                 "sjr_score": row["sjr_score"],
                 "areas": row["Areas"],
+                "query_crossref": should_query_crossref(row["Publisher"]),
+                "query_pubmed": should_query_pubmed(row["Areas"]),
             })
 
-    result_df = pd.DataFrame(results)
-    out_file = data_dir / "journal_list.csv"
-    result_df.to_csv(out_file, index=False)
+        result_df = pd.DataFrame(results)
+        # Drop journals with no ISSN (can't query without it)
+        result_df = result_df[result_df["issn"] != ""].copy()
 
-    print(f"\n  Saved {len(result_df)} journals across {len(fields)} fields to {out_file}")
-    print(f"\n  Field breakdown:")
-    for field in fields:
-        n = len(result_df[result_df["field"] == field])
-        print(f"    {field}: {n} journals")
+        out_file = data_dir / "journal_list_full.csv"
+        result_df.to_csv(out_file, index=False)
+
+        fields = sorted(result_df["field"].unique())
+        n_crossref = result_df["query_crossref"].sum()
+        n_pubmed = result_df["query_pubmed"].sum()
+        print(f"\n  Saved {len(result_df)} journals across {len(fields)} fields to {out_file}")
+        print(f"  Query Crossref: {n_crossref} journals")
+        print(f"  Query PubMed: {n_pubmed} journals")
+        print(f"  Skip both: {len(result_df) - len(result_df[result_df['query_crossref'] | result_df['query_pubmed']])} journals")
+
+    else:
+        # Original mode: top 15 per field
+        TOP_N = 15
+        results = []
+
+        fields = sorted(df["field"].unique())
+        print(f"\n  {len(fields)} fields identified")
+
+        for field in fields:
+            field_df = df[df["field"] == field].sort_values("sjr_score", ascending=False)
+            top = field_df.head(TOP_N)
+            for _, row in top.iterrows():
+                results.append({
+                    "field": field,
+                    "field_category": row["primary_category"],
+                    "journal_name": row["Title"],
+                    "issn": row["issn_clean"],
+                    "issn_alt": row["issn_alt"],
+                    "publisher": row["Publisher"],
+                    "sjr_rank": row["Rank"],
+                    "sjr_score": row["sjr_score"],
+                    "areas": row["Areas"],
+                })
+
+        result_df = pd.DataFrame(results)
+        out_file = data_dir / "journal_list.csv"
+        result_df.to_csv(out_file, index=False)
+
+        print(f"\n  Saved {len(result_df)} journals across {len(fields)} fields to {out_file}")
+        print(f"\n  Field breakdown:")
+        for field in fields:
+            n = len(result_df[result_df["field"] == field])
+            print(f"    {field}: {n} journals")
 
 
 if __name__ == "__main__":
