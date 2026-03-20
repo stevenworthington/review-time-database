@@ -132,7 +132,7 @@
 
         .findings-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1rem;
         }
 
@@ -362,9 +362,6 @@
         <h1>Peer Review Timeline Database</h1>
         <p class="subtitle">How long does peer review take across academic fields?</p>
         <div class="stats" id="header-stats">
-            <span id="stat-articles"></span>
-            <span id="stat-journals"></span>
-            <span id="stat-fields"></span>
             <span id="stat-sources"></span>
         </div>
     </header>
@@ -387,14 +384,18 @@
                 <div class="number" id="card-journals-val"></div>
                 <div class="label">Journals with review time data</div>
             </div>
+            <div class="finding-card">
+                <div class="number" id="card-articles-val"></div>
+                <div class="label">Articles analyzed</div>
+            </div>
         </div>
     </div>
 
     <div class="controls-bar">
         <div class="tier-radios">
-            <label onclick="switchTier('field')"><input type="radio" name="tier" value="field" checked><span>Fields</span></label>
-            <label onclick="switchTier('primary_area')"><input type="radio" name="tier" value="primary_area"><span>Subject Areas</span></label>
-            <label onclick="switchTier('mega_domain')"><input type="radio" name="tier" value="mega_domain"><span>Domains</span></label>
+            <label onclick="switchTier('field')"><input type="radio" name="tier" value="field" checked><span id="tier-label-field">Fields</span></label>
+            <label onclick="switchTier('primary_area')"><input type="radio" name="tier" value="primary_area"><span id="tier-label-area">Subject Areas</span></label>
+            <label onclick="switchTier('mega_domain')"><input type="radio" name="tier" value="mega_domain"><span id="tier-label-domain">Domains</span></label>
         </div>
         <select class="filter-dropdown" id="filter-select" onchange="applyFilter(this.value)">
             <option value="">All</option>
@@ -761,6 +762,7 @@ function updateCards() {
     document.getElementById('card-fastest-label').textContent = 'Median review in ' + fastest.name + ' (fastest)';
     document.getElementById('card-median-val').textContent = Math.round(overallMedian) + ' days';
     document.getElementById('card-journals-val').textContent = totalJournals.toLocaleString();
+    document.getElementById('card-articles-val').textContent = DATA.meta.n_articles.toLocaleString();
 }
 
 function buildActiveChart() {
@@ -1358,11 +1360,22 @@ function buildScatterSJR() {
 function init() {
     initDarkMode();
 
-    // Header stats
-    document.getElementById('stat-articles').textContent = DATA.meta.n_articles.toLocaleString() + ' articles';
-    document.getElementById('stat-journals').textContent = DATA.meta.n_journals.toLocaleString() + ' journals';
-    document.getElementById('stat-fields').textContent = DATA.meta.n_fields + ' fields';
-    document.getElementById('stat-sources').textContent = DATA.meta.sources.length + ' data sources';
+    // Header stats — show data source names
+    const sourceNames = DATA.meta.sources.map(s => {
+        if (s.includes('pubmed')) return 'PubMed';
+        if (s.includes('crossref')) return 'Crossref';
+        if (s.includes('frontiers')) return 'Frontiers';
+        if (s.includes('jstage')) return 'J-STAGE';
+        if (s.includes('scrape')) return 'Publisher scraping';
+        return s;
+    });
+    const uniqueSources = [...new Set(sourceNames)];
+    document.getElementById('stat-sources').textContent = 'Data sources: ' + uniqueSources.join(' · ');
+
+    // Tier labels with counts
+    document.getElementById('tier-label-field').textContent = DATA.meta.n_fields + ' Fields';
+    document.getElementById('tier-label-area').textContent = DATA.areaSummary.length + ' Subject Areas';
+    document.getElementById('tier-label-domain').textContent = DATA.domainSummary.length + ' Domains';
     document.getElementById('build-date').textContent = DATA.meta.build_date;
     document.getElementById('footer-sources').textContent = DATA.meta.sources.join(', ');
 

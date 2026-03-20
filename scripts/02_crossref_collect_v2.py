@@ -414,8 +414,14 @@ def main():
     # Count existing articles per ISSN (from both Phase 1 and v2 files)
     existing_counts = count_existing_articles(OUTPUT_FILE)
     existing_dois = load_existing_dois(OUTPUT_FILE)
+    # Also load PubMed DOIs to avoid re-fetching articles we already have
+    pubmed_file = Path("data/pubmed_articles_v2.csv")
+    if pubmed_file.exists():
+        pubmed_dois = load_existing_dois(pubmed_file)
+        existing_dois.update(pubmed_dois)
     if existing_counts:
-        print(f"  {sum(existing_counts.values())} existing articles across {len(existing_counts)} journals")
+        print(f"  {sum(existing_counts.values())} existing Crossref articles across {len(existing_counts)} journals")
+    print(f"  {len(existing_dois)} total DOIs to skip (Crossref + PubMed)")
 
     # Set up output CSV — always append, write header only if file doesn't exist
     write_header = not OUTPUT_FILE.exists()
