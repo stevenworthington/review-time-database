@@ -45,8 +45,8 @@ CROSSREF_BASE = "https://api.crossref.org"
 TARGET_WITH_DATES = 100      # Stop after this many articles with review dates
 MAX_DOIS_CHECKED = 300       # Hard cap on DOIs checked per journal
 PAGE_SIZE = 50               # DOIs per Crossref page
-OUTPUT_FILE = Path("data/scraped_articles.csv")
-CHECKPOINT_FILE = Path("data/scrape_checkpoint.json")
+OUTPUT_FILE = Path("data/scraped_articles.csv")  # default; overridden per-tier
+CHECKPOINT_FILE = Path("data/scrape_checkpoint.json")  # default; overridden per-tier
 DEFAULT_JOURNAL_LIST = Path("data/journal_list_full.csv")
 
 # Delay between page fetches (seconds) — be polite
@@ -265,6 +265,16 @@ def main():
                         help="Which tier to run: 1=HTTP only, 2=Playwright only, all=both")
     args = parser.parse_args()
 
+    # Use tier-specific output/checkpoint files so tiers can run in parallel
+    global OUTPUT_FILE, CHECKPOINT_FILE
+    if args.tier == "1":
+        OUTPUT_FILE = Path("data/scraped_articles_t1.csv")
+        CHECKPOINT_FILE = Path("data/scrape_checkpoint_t1.json")
+    elif args.tier == "2":
+        OUTPUT_FILE = Path("data/scraped_articles_t2.csv")
+        CHECKPOINT_FILE = Path("data/scrape_checkpoint_t2.json")
+    # else "all" uses the defaults
+
     journal_list_path = Path(args.journal_list)
     if not journal_list_path.exists():
         print(f"ERROR: {journal_list_path} not found.")
@@ -335,10 +345,9 @@ def main():
             pw_manager = sync_playwright()
             pw = pw_manager.start()
             pw_browser = pw.chromium.launch(
-                headless=False,
+                headless=True,
                 args=[
                     '--disable-blink-features=AutomationControlled',
-                    '--window-position=-10000,-10000',
                 ]
             )
             pw_context = pw_browser.new_context(
@@ -357,6 +366,22 @@ def main():
     total_new_with_dates = 0
     journals_processed = 0
 
+    # Publisher-level tracking: skip publishers after 3 journals with 0 dates
+    PUBLISHER_PROBE_THRESHOLD = 3
+    publisher_stats = {}  # {publisher: {"checked": N, "with_data": N}}
+
+    # Pre-populate from checkpoint
+    for cp_issn, cp_info in checkpoint.items():
+        if cp_info.get("done"):
+            cp_row = scrapeable[scrapeable["issn"] == cp_issn]
+            if len(cp_row):
+                cp_pub = str(cp_row.iloc[0]["publisher"])
+                if cp_pub not in publisher_stats:
+                    publisher_stats[cp_pub] = {"checked": 0, "with_data": 0}
+                publisher_stats[cp_pub]["checked"] += 1
+                if cp_info.get("n_with_dates", 0) > 0:
+                    publisher_stats[cp_pub]["with_data"] += 1
+
     try:
         for loop_idx, (_, row) in enumerate(scrapeable.iterrows()):
             issn = str(row["issn"]).strip()
@@ -371,6 +396,18 @@ def main():
             # Check checkpoint
             cp = checkpoint.get(issn, {})
             if cp.get("done", False):
+                continue
+
+            # Publisher-level skip: if we've checked 3+ journals from this
+            # publisher and none had dates, skip the rest
+            pub_key = str(publisher)
+            if pub_key not in publisher_stats:
+                publisher_stats[pub_key] = {"checked": 0, "with_data": 0}
+            ps = publisher_stats[pub_key]
+            if ps["checked"] >= PUBLISHER_PROBE_THRESHOLD and ps["with_data"] == 0:
+                checkpoint[issn] = {"n_with_dates": 0, "n_checked": 0, "done": True,
+                                    "skipped": f"publisher_0pct_after_{ps['checked']}"}
+                save_checkpoint(checkpoint)
                 continue
 
             # Check if already have enough from all sources
@@ -510,6 +547,14 @@ def main():
             csv_file.flush()
 
             print(f"    Result: {n_with_dates} with dates / {n_checked} checked")
+
+            # Update publisher stats
+            publisher_stats[pub_key]["checked"] += 1
+            if n_with_dates > 0:
+                publisher_stats[pub_key]["with_data"] += 1
+            ps = publisher_stats[pub_key]
+            if ps["checked"] == PUBLISHER_PROBE_THRESHOLD and ps["with_data"] == 0:
+                print(f"    ⚠ Publisher '{pub_key[:40]}' has 0/{ps['checked']} journals with data — skipping rest")
 
             checkpoint[issn] = {
                 "n_with_dates": n_with_dates,

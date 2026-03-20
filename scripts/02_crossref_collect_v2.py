@@ -412,12 +412,8 @@ def main():
         print(f"Resuming: {len(checkpoint)} journals in checkpoint")
 
     # Count existing articles per ISSN (from both Phase 1 and v2 files)
-    existing_counts = count_existing_articles(PHASE1_FILE)
-    existing_counts_v2 = count_existing_articles(OUTPUT_FILE)
-    for issn, count in existing_counts_v2.items():
-        existing_counts[issn] = existing_counts.get(issn, 0) + count
-    existing_dois = load_existing_dois(PHASE1_FILE)
-    existing_dois.update(load_existing_dois(OUTPUT_FILE))
+    existing_counts = count_existing_articles(OUTPUT_FILE)
+    existing_dois = load_existing_dois(OUTPUT_FILE)
     if existing_counts:
         print(f"  {sum(existing_counts.values())} existing articles across {len(existing_counts)} journals")
 

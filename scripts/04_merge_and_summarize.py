@@ -61,25 +61,18 @@ def load_csv_sources(name, paths):
 
 
 def load_crossref():
-    """Load Crossref article data from v1 and v2 files."""
-    return load_csv_sources("Crossref", [
-        "crossref_articles.csv",
-        "crossref_articles_v2.csv",
-    ])
+    """Load Crossref article data."""
+    return load_csv_sources("Crossref", ["crossref_articles_v2.csv"])
 
 
 def load_pubmed():
-    """Load PubMed article data from v1 and v2 files."""
-    return load_csv_sources("PubMed", [
-        "pubmed_articles.csv",
-        "pubmed_articles_v2.csv",
-    ])
+    """Load PubMed article data."""
+    return load_csv_sources("PubMed", ["pubmed_articles_v2.csv"])
 
 
 def load_scraped():
     """Load scraped article data from all scraper outputs."""
     return load_csv_sources("Scraped", [
-        "scraped_articles.csv",
         "scraped_articles_t1.csv",
         "scraped_articles_t2.csv",
     ])

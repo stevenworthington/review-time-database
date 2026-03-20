@@ -1,27 +1,27 @@
 field,total_journals,journals_with_data,journals_missing,coverage_pct
 History,1102,52,1050,4.7
-Arts & Humanities,2513,142,2371,5.7
+Arts & Humanities,2513,143,2370,5.7
 Library & Information Science,135,10,125,7.4
 Linguistics,605,56,549,9.3
-Law,790,77,713,9.7
+Law,790,78,712,9.9
 Communication & Media,280,36,244,12.9
 Philosophy,465,63,402,13.5
-Multidisciplinary,169,23,146,13.6
-Electrical & Electronic Engineering,354,50,304,14.1
 General Engineering,241,34,207,14.1
-Sociology & Social Sciences,1388,198,1190,14.3
+Sociology & Social Sciences,1388,199,1189,14.3
+Electrical & Electronic Engineering,354,51,303,14.4
+Multidisciplinary,169,25,144,14.8
 Political Science,512,89,423,17.4
 Operations Research & Decision Science,88,16,72,18.2
 Business & Management,674,127,547,18.8
 Astronomy & Astrophysics,63,12,51,19.0
 Finance,56,12,44,21.4
 Mechanical & Aerospace Engineering,426,94,332,22.1
-Energy,184,42,142,22.8
-Mathematics,1038,241,797,23.2
 Economics,593,138,455,23.3
-Physics,621,151,470,24.3
-Earth Science,739,181,558,24.5
+Energy,184,43,141,23.4
+Mathematics,1038,246,792,23.7
 Industrial Engineering,179,44,135,24.6
+Physics,621,153,468,24.6
+Earth Science,739,183,556,24.8
 Chemical Engineering,394,100,294,25.4
 Computer Science (General),948,243,705,25.6
 Materials Science,430,117,313,27.2
@@ -30,17 +30,17 @@ Accounting,133,37,96,27.8
 Education,963,274,689,28.5
 Geography & Urban Studies,293,85,208,29.0
 Civil Engineering,328,96,232,29.3
-Statistics,71,21,50,29.6
 Psychology,571,171,400,29.9
 Artificial Intelligence,248,76,172,30.6
 Atmospheric & Ocean Science,113,35,78,31.0
-Chemistry,522,167,355,32.0
+Statistics,71,22,49,31.0
+Chemistry,522,168,354,32.2
 Development Studies,179,58,121,32.4
-Plant & Agricultural Science,1028,340,688,33.1
+Plant & Agricultural Science,1028,342,686,33.3
 Animal Science & Veterinary,575,197,378,34.3
 Information Systems,52,18,34,34.6
 Environmental Science,431,161,270,37.4
-Ecology & Evolution,536,211,325,39.4
+Ecology & Evolution,536,212,324,39.6
 Nursing,333,143,190,42.9
 Health Professions,256,112,144,43.8
 Nutrition & Food Science,185,85,100,45.9
@@ -63,7 +63,7 @@ Pharmacology & Toxicology,382,215,167,56.3
 Anatomy & Physiology,81,47,34,58.0
 Obstetrics & Gynecology,146,85,61,58.2
 Orthopedics & Sports Medicine,161,94,67,58.4
-Neurology,182,108,74,59.3
+Neurology,182,109,73,59.9
 Rehabilitation,33,20,13,60.6
 Hematology,101,62,39,61.4
 Cardiovascular Medicine,357,227,130,63.6
