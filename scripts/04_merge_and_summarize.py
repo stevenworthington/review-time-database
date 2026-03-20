@@ -220,9 +220,18 @@ def compute_journal_summary(merged_df, journal_list_df):
         }
         jl["mega_domain"] = jl["primary_area"].map(AREA_TO_DOMAIN).fillna("Other")
 
-        journal_info = jl[["issn", "publisher", "sjr_rank", "sjr_score",
-                           "primary_area", "mega_domain"]].drop_duplicates(subset="issn")
-        summary_df = summary_df.merge(journal_info, on="issn", how="left")
+        journal_info = jl[["issn", "journal_name", "field", "publisher", "sjr_rank",
+                           "sjr_score", "primary_area", "mega_domain"]].drop_duplicates(subset="issn")
+
+        # Start from the FULL journal list so coverage denominator includes
+        # all SJR journals, not just those with collected data
+        summary_df = journal_info.merge(summary_df.drop(columns=["journal_name", "field"], errors="ignore"),
+                                        on="issn", how="left")
+
+        # Fill NaN for journals with no data
+        summary_df["n_articles"] = summary_df["n_articles"].fillna(0).astype(int)
+        summary_df["n_with_review_time"] = summary_df["n_with_review_time"].fillna(0).astype(int)
+        summary_df["data_sources"] = summary_df["data_sources"].fillna("")
 
     return summary_df.sort_values(["field", "median_days_submission_to_acceptance"],
                                    ascending=[True, False], na_position="last")
