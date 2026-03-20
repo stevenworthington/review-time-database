@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Review Times — rapidPeer</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-card: #ffffff;
+            --bg-panel: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --text-muted: #a0aec0;
+            --border-color: #e2e8f0;
+            --grid-color: #edf2f7;
+            --tab-bg: #f0f0f0;
+            --tab-active-bg: #ffffff;
+            --tab-overview-bg: rgba(255,255,255,0.0);
+            --tab-drilldown-bg: rgba(0,0,0,0.03);
+            --header-bg-start: #1a1a2e;
+            --header-bg-end: #16213e;
+            --accent: #e94560;
+            --control-bg: #e2e8f0;
+            --control-active-bg: #1a1a2e;
+            --control-active-text: #fff;
+            --input-bg: #fff;
+            --input-border: #e2e8f0;
+            --plotly-paper: rgba(0,0,0,0);
+            --plotly-plot: #fafafa;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --finding-number: #1a1a2e;
+        }
+
+        body.dark {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #1e2a3a;
+            --bg-panel: #1e2a3a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --text-muted: #6e7681;
+            --border-color: #30363d;
+            --grid-color: #30363d;
+            --tab-bg: #21262d;
+            --tab-active-bg: #30363d;
+            --tab-overview-bg: rgba(255,255,255,0.02);
+            --tab-drilldown-bg: rgba(255,255,255,0.05);
+            --header-bg-start: #0d1117;
+            --header-bg-end: #161b22;
+            --accent: #e94560;
+            --control-bg: #30363d;
+            --control-active-bg: #58a6ff;
+            --control-active-text: #0d1117;
+            --input-bg: #21262d;
+            --input-border: #30363d;
+            --plotly-paper: #0d1117;
+            --plotly-plot: #161b22;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --finding-number: #e0e0e0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
+            color: #fff;
+            padding: 2.5rem 1.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        header .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+
+        header .stats {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        header .stats span {
+            display: inline-block;
+            margin: 0 0.75rem;
+        }
+
+        #dark-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 8px;
+            padding: 0.4rem 0.6rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #fff;
+            transition: background 0.2s;
+            line-height: 1;
+        }
+
+        #dark-toggle:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Key findings cards */
+        .key-findings {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .finding-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 1.25rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .finding-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--finding-number);
+        }
+
+        .finding-card .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.2rem;
+        }
+
+        /* Controls bar */
+        .controls-bar {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tier-radios {
+            display: flex;
+            gap: 0;
+            background: var(--control-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tier-radios label {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: background 0.15s, color 0.15s;
+            user-select: none;
+        }
+
+        .tier-radios input[type="radio"] {
+            display: none;
+        }
+
+        .tier-radios input[type="radio"]:checked + span {
+            background: var(--control-active-bg);
+            color: var(--control-active-text);
+        }
+
+        .tier-radios label span {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .filter-dropdown {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            color: var(--text-primary);
+            min-width: 200px;
+            cursor: pointer;
+        }
+
+        /* Tabs */
+        .tabs-wrapper {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            align-items: stretch;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.25rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+            font-family: inherit;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .tab-btn:hover { color: var(--text-primary); }
+
+        .tab-btn.active {
+            color: var(--finding-number);
+            border-bottom-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .tab-btn.overview-tab {
+            background: var(--tab-overview-bg);
+        }
+
+        .tab-btn.drilldown-tab {
+            background: var(--tab-drilldown-bg);
+        }
+
+        .tab-separator {
+            width: 1px;
+            background: var(--border-color);
+            margin: 6px 4px;
+            flex-shrink: 0;
+        }
+
+        .tab-panel {
+            display: none;
+            background: var(--bg-panel);
+            border-radius: 0 0 12px 12px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tab-panel.active { display: block; }
+
+        .tab-panel h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--finding-number);
+            margin-bottom: 0.3rem;
+        }
+
+        .tab-panel .description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            width: 100%;
+            min-height: 400px;
+        }
+
+        .chart-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .chart-controls select {
+            padding: 0.4rem 0.6rem;
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            color: var(--text-primary);
+        }
+
+        .chart-controls button {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--input-border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            background: var(--input-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .chart-controls button:hover { background: var(--control-bg); }
+        .chart-controls button.active { background: var(--control-active-bg); color: var(--control-active-text); border-color: var(--control-active-bg); }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header { padding: 2rem 1rem 1rem; }
+            header h1 { font-size: 1.6rem; }
+            .findings-grid { grid-template-columns: repeat(2, 1fr); }
+            .controls-bar { flex-direction: column; align-items: stretch; }
+            .tab-btn { padding: 0.6rem 0.75rem; font-size: 0.8rem; }
+            .tab-panel { padding: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .findings-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
+        <h1>Peer Review Timeline Database</h1>
+        <p class="subtitle">How long does peer review take across academic fields?</p>
+        <div class="stats" id="header-stats">
+            <span id="stat-articles"></span>
+            <span id="stat-journals"></span>
+            <span id="stat-fields"></span>
+            <span id="stat-sources"></span>
+        </div>
+    </header>
+
+    <div class="key-findings">
+        <div class="findings-grid">
+            <div class="finding-card">
+                <div class="number" id="card-slowest-val"></div>
+                <div class="label" id="card-slowest-label"></div>
+            </div>
+            <div class="finding-card">
+                <div class="number" id="card-fastest-val"></div>
+                <div class="label" id="card-fastest-label"></div>
+            </div>
+            <div class="finding-card">
+                <div class="number" id="card-median-val"></div>
+                <div class="label">Median review time across all groups</div>
+            </div>
+            <div class="finding-card">
+                <div class="number" id="card-journals-val"></div>
+                <div class="label">Journals with review time data</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-bar">
+        <div class="tier-radios">
+            <label onclick="switchTier('field')"><input type="radio" name="tier" value="field" checked><span>Fields</span></label>
+            <label onclick="switchTier('primary_area')"><input type="radio" name="tier" value="primary_area"><span>Subject Areas</span></label>
+            <label onclick="switchTier('mega_domain')"><input type="radio" name="tier" value="mega_domain"><span>Domains</span></label>
+        </div>
+        <select class="filter-dropdown" id="filter-select" onchange="applyFilter(this.value)">
+            <option value="">All</option>
+        </select>
+    </div>
+
+    <div class="tabs-wrapper">
+        <div class="tab-buttons" id="tab-buttons">
+            <!-- Group 1: Overview -->
+            <button class="tab-btn overview-tab active" data-tab="bars" onclick="switchTab('bars')">Median Times</button>
+            <button class="tab-btn overview-tab" data-tab="dumbbell" onclick="switchTab('dumbbell')">Range</button>
+            <button class="tab-btn overview-tab" data-tab="boxplot" onclick="switchTab('boxplot')">Journal Spread</button>
+            <button class="tab-btn overview-tab" data-tab="ridge" onclick="switchTab('ridge')">Distributions</button>
+            <button class="tab-btn overview-tab" data-tab="coverage" onclick="switchTab('coverage')">Coverage</button>
+            <!-- Separator -->
+            <div class="tab-separator"></div>
+            <!-- Group 2: Drill-down -->
+            <button class="tab-btn drilldown-tab" data-tab="histogram" onclick="switchTab('histogram')">Per-Group</button>
+            <button class="tab-btn drilldown-tab" data-tab="heatmap" onclick="switchTab('heatmap')">Heatmap</button>
+            <button class="tab-btn drilldown-tab" data-tab="two-phase" onclick="switchTab('two-phase')">Bottleneck</button>
+            <button class="tab-btn drilldown-tab" data-tab="scatter-rank" onclick="switchTab('scatter-rank')">vs. Rank</button>
+            <button class="tab-btn drilldown-tab" data-tab="scatter-sjr" onclick="switchTab('scatter-sjr')">vs. Prestige</button>
+        </div>
+    </div>
+
+    <!-- Tab panels -->
+    <div id="tab-bars" class="tab-panel active" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Median Review Time by Group</h2>
+        <p class="description">Each bar shows the median of per-journal median review times within that group. Based on journal-level summaries.</p>
+        <div class="chart-controls">
+            <button class="active" onclick="setSortOrder('slowest', this)">Slowest first</button>
+            <button onclick="setSortOrder('fastest', this)">Fastest first</button>
+            <button onclick="setSortOrder('alpha', this)">A &rarr; Z</button>
+        </div>
+        <div class="chart-container" id="chart-bars"></div>
+    </div>
+
+    <div id="tab-dumbbell" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Review Time Range by Group</h2>
+        <p class="description">Horizontal lines span from the fastest to slowest journal median in each group. Circle marks the group median. Shows the full spread of journal-level variation.</p>
+        <div class="chart-container" id="chart-dumbbell"></div>
+    </div>
+
+    <div id="tab-boxplot" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Journal-Level Spread by Group</h2>
+        <p class="description">Each box shows the distribution of per-journal median review times. Box spans IQR (25th-75th percentile), line marks median, whiskers extend to 1.5x IQR.</p>
+        <div class="chart-container" id="chart-boxplot"></div>
+    </div>
+
+    <div id="tab-ridge" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Distribution Comparison</h2>
+        <p class="description">Kernel density estimates of individual article review times. Each ridge shows the full distribution for one group. Sorted by median review time.</p>
+        <div class="chart-container" id="chart-ridge"></div>
+    </div>
+
+    <div id="tab-coverage" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Data Coverage Treemap</h2>
+        <p class="description">Each tile is sized by total journal count in that group. Color shows data coverage percentage: green = high coverage, red = low.</p>
+        <div class="chart-container" id="chart-coverage"></div>
+    </div>
+
+    <div id="tab-histogram" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Review Time Distribution</h2>
+        <p class="description">Histogram of individual article review times for a selected group. Dashed line marks the median.</p>
+        <div class="chart-controls">
+            <select id="hist-group-select" onchange="buildHistogram()"></select>
+        </div>
+        <div class="chart-container" id="chart-histogram"></div>
+    </div>
+
+    <div id="tab-heatmap" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Group x Publisher Heatmap</h2>
+        <p class="description">Median review time for each group-publisher combination. Rows = groups, columns = top 30 publishers by journal count. Gray = no data.</p>
+        <div class="chart-container" id="chart-heatmap"></div>
+    </div>
+
+    <div id="tab-two-phase" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Two-Phase Scatter: Review vs. Production</h2>
+        <p class="description">X-axis = median submission-to-acceptance days. Y-axis = median acceptance-to-publication days. Diagonal line = equal time in both phases. Points above the line spend more time in production.</p>
+        <div class="chart-container" id="chart-two-phase"></div>
+    </div>
+
+    <div id="tab-scatter-rank" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Review Time vs. Journal Ranking</h2>
+        <p class="description">Each point is one journal. X-axis = SJR rank (lower = more prestigious). Bubble size reflects article count. Use group dropdown to filter.</p>
+        <div class="chart-container" id="chart-scatter-rank"></div>
+    </div>
+
+    <div id="tab-scatter-sjr" class="tab-panel" style="max-width:1200px;margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;">
+        <h2>Review Time vs. SJR Score</h2>
+        <p class="description">Each point is one journal. X-axis = SJR score (log scale, higher = more impact). Y-axis = median review days. Colored by group.</p>
+        <div class="chart-container" id="chart-scatter-sjr"></div>
+    </div>
+
+    <footer>
+        <p>Built <span id="build-date"></span> | Data: <span id="footer-sources"></span> | <a href="https://github.com/rapidPeer">rapidPeer project</a> | <a href="index_v1.html">v1 dashboard</a></p>
+    </footer>
+
+<script>
+// =========================================================================
+// DATA (injected by Python)
+// =========================================================================
+const DATA = {{ data_json }};
+
+// =========================================================================
+// STATE
+// =========================================================================
+const AppState = {
+    tier: 'field',
+    activeTab: 'bars',
+    filter: null,
+    sortOrder: 'slowest'
+};
+
+// Track which charts have been built
+const builtCharts = {};
+
+// =========================================================================
+// COLOR SCALE
+// =========================================================================
+const COLOR_SCALE = [
+    [0, '#2a9d8f'],
+    [0.25, '#8ab17d'],
+    [0.5, '#e9c46a'],
+    [0.75, '#f4845f'],
+    [1, '#e76f51']
+];
+
+function interpolateColor(t) {
+    // Find the two stops surrounding t
+    t = Math.max(0, Math.min(1, t));
+    let i = 0;
+    for (let j = 1; j < COLOR_SCALE.length; j++) {
+        if (t <= COLOR_SCALE[j][0]) { i = j - 1; break; }
+        if (j === COLOR_SCALE.length - 1) i = j - 1;
+    }
+    const [t0, c0] = COLOR_SCALE[i];
+    const [t1, c1] = COLOR_SCALE[i + 1];
+    const f = (t1 === t0) ? 0 : (t - t0) / (t1 - t0);
+    return lerpHex(c0, c1, f);
+}
+
+function lerpHex(a, b, t) {
+    const ar = parseInt(a.slice(1,3),16), ag = parseInt(a.slice(3,5),16), ab = parseInt(a.slice(5,7),16);
+    const br = parseInt(b.slice(1,3),16), bg = parseInt(b.slice(3,5),16), bb = parseInt(b.slice(5,7),16);
+    const r = Math.round(ar + (br - ar) * t);
+    const g = Math.round(ag + (bg - ag) * t);
+    const bl = Math.round(ab + (bb - ab) * t);
+    return `rgb(${r},${g},${bl})`;
+}
+
+function sampleColors(n) {
+    if (n <= 1) return [interpolateColor(0.5)];
+    const colors = [];
+    for (let i = 0; i < n; i++) {
+        colors.push(interpolateColor(i / (n - 1)));
+    }
+    return colors;
+}
+
+function hexToRgba(hex, alpha) {
+    if (hex.startsWith('rgb(')) {
+        return hex.replace('rgb(', 'rgba(').replace(')', ',' + alpha + ')');
+    }
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+    return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// =========================================================================
+// DARK MODE
+// =========================================================================
+function getPlotlyTheme() {
+    const dark = document.body.classList.contains('dark');
+    return {
+        paper_bgcolor: dark ? '#0d1117' : 'rgba(0,0,0,0)',
+        plot_bgcolor: dark ? '#161b22' : '#fafafa',
+        font: { color: dark ? '#e0e0e0' : '#2d3748', family: 'system-ui, -apple-system, sans-serif', size: 13 },
+        xaxis: { gridcolor: dark ? '#30363d' : '#edf2f7' },
+        yaxis: { gridcolor: dark ? '#30363d' : '#edf2f7' },
+    };
+}
+
+function getLegendBg() {
+    const dark = document.body.classList.contains('dark');
+    return dark ? 'rgba(30,42,58,0.9)' : 'rgba(255,255,255,0.9)';
+}
+
+function toggleDarkMode() {
+    const isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
+    document.getElementById('dark-toggle').textContent = isDark ? '🌙' : '☀️';
+    // Re-render all active chart
+    Object.keys(builtCharts).forEach(k => builtCharts[k] = false);
+    buildActiveChart();
+}
+
+function initDarkMode() {
+    const stored = localStorage.getItem('darkMode');
+    let isDark = false;
+    if (stored === 'dark') {
+        isDark = true;
+    } else if (stored === 'light') {
+        isDark = false;
+    } else {
+        // Respect system preference
+        isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    if (isDark) {
+        document.body.classList.add('dark');
+        document.getElementById('dark-toggle').textContent = '🌙';
+    } else {
+        document.getElementById('dark-toggle').textContent = '☀️';
+    }
+}
+
+// =========================================================================
+// PLOTLY DEFAULTS
+// =========================================================================
+function getLayoutBase() {
+    const theme = getPlotlyTheme();
+    return {
+        font: theme.font,
+        paper_bgcolor: theme.paper_bgcolor,
+        plot_bgcolor: theme.plot_bgcolor,
+        margin: {l: 20, r: 20, t: 50, b: 40},
+        hoverlabel: {bgcolor: document.body.classList.contains('dark') ? '#1e2a3a' : 'white', font: {size: 13, color: document.body.classList.contains('dark') ? '#e0e0e0' : '#333'}},
+    };
+}
+
+const PLOTLY_CONFIG = {
+    responsive: true,
+    displayModeBar: true,
+    modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+};
+
+// =========================================================================
+// HEIGHT HELPERS
+// =========================================================================
+function getChartHeight(n, perItem) {
+    // For Subject Areas tier (27 items), increase height by ~30%
+    const multiplier = (AppState.tier === 'primary_area') ? 1.3 : 1.0;
+    return Math.max(400, Math.round(n * perItem * multiplier));
+}
+
+// =========================================================================
+// DATA ACCESSORS
+// =========================================================================
+function getSummary() {
+    if (AppState.tier === 'field') return DATA.fieldSummary;
+    if (AppState.tier === 'primary_area') return DATA.areaSummary;
+    return DATA.domainSummary;
+}
+
+function getFilteredSummary() {
+    let summ = getSummary();
+    if (AppState.filter) {
+        // Filter depends on tier
+        if (AppState.tier === 'field') {
+            summ = summ.filter(s => s.name === AppState.filter);
+        } else if (AppState.tier === 'primary_area') {
+            summ = summ.filter(s => s.name === AppState.filter);
+        } else {
+            summ = summ.filter(s => s.name === AppState.filter);
+        }
+    }
+    return summ;
+}
+
+function getGroupKey(journal) {
+    if (AppState.tier === 'field') return journal.field;
+    if (AppState.tier === 'primary_area') return journal.area;
+    return journal.domain;
+}
+
+function getFilteredJournals() {
+    let journals = DATA.journalData;
+    if (AppState.filter) {
+        journals = journals.filter(j => getGroupKey(j) === AppState.filter);
+    }
+    return journals;
+}
+
+function getTierLabel() {
+    if (AppState.tier === 'field') return 'field';
+    if (AppState.tier === 'primary_area') return 'subject area';
+    return 'domain';
+}
+
+function getTierItems() {
+    if (AppState.tier === 'field') return DATA.mappings.fieldItems;
+    if (AppState.tier === 'primary_area') return DATA.mappings.areaItems;
+    return DATA.mappings.domainItems;
+}
+
+// =========================================================================
+// UI CONTROLLERS
+// =========================================================================
+function switchTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+    AppState.activeTab = name;
+    buildActiveChart();
+    // Trigger Plotly resize
+    window.dispatchEvent(new Event('resize'));
+}
+
+function switchTier(tier) {
+    AppState.tier = tier;
+    AppState.filter = null;
+    // Update radio visual
+    document.querySelectorAll('.tier-radios input').forEach(r => { r.checked = r.value === tier; });
+    populateDropdown();
+    updateCards();
+    builtCharts[AppState.activeTab] = false;
+    buildActiveChart();
+}
+
+function applyFilter(value) {
+    AppState.filter = value || null;
+    updateCards();
+    builtCharts[AppState.activeTab] = false;
+    buildActiveChart();
+}
+
+function populateDropdown() {
+    const sel = document.getElementById('filter-select');
+    const items = getTierItems();
+    sel.innerHTML = '<option value="">All</option>';
+    items.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item;
+        opt.textContent = item;
+        sel.appendChild(opt);
+    });
+}
+
+function setSortOrder(order, btn) {
+    AppState.sortOrder = order;
+    // Update button active states
+    btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    builtCharts['bars'] = false;
+    buildBarChart();
+}
+
+function updateCards() {
+    const summ = getFilteredSummary();
+    if (summ.length === 0) return;
+
+    const sorted = [...summ].sort((a, b) => a.median - b.median);
+    const fastest = sorted[0];
+    const slowest = sorted[sorted.length - 1];
+    const allMedians = sorted.map(s => s.median);
+    const overallMedian = allMedians[Math.floor(allMedians.length / 2)];
+    const totalJournals = sorted.reduce((acc, s) => acc + s.n_journals_with_data, 0);
+
+    document.getElementById('card-slowest-val').textContent = Math.round(slowest.median) + ' days';
+    document.getElementById('card-slowest-label').textContent = 'Median review in ' + slowest.name + ' (slowest)';
+    document.getElementById('card-fastest-val').textContent = Math.round(fastest.median) + ' days';
+    document.getElementById('card-fastest-label').textContent = 'Median review in ' + fastest.name + ' (fastest)';
+    document.getElementById('card-median-val').textContent = Math.round(overallMedian) + ' days';
+    document.getElementById('card-journals-val').textContent = totalJournals.toLocaleString();
+}
+
+function buildActiveChart() {
+    const tab = AppState.activeTab;
+    // Always rebuild (filter/tier changed)
+    switch (tab) {
+        case 'bars': buildBarChart(); break;
+        case 'boxplot': buildBoxplot(); break;
+        case 'ridge': buildRidgePlot(); break;
+        case 'scatter-rank': buildScatterRank(); break;
+        case 'histogram': buildHistogram(); break;
+        case 'heatmap': buildHeatmap(); break;
+        case 'two-phase': buildTwoPhaseScatter(); break;
+        case 'coverage': buildCoverageTreemap(); break;
+        case 'dumbbell': buildDumbbellChart(); break;
+        case 'scatter-sjr': buildScatterSJR(); break;
+    }
+    builtCharts[tab] = true;
+}
+
+// =========================================================================
+// CHART 1: BAR CHART
+// =========================================================================
+function buildBarChart() {
+    let summ = getFilteredSummary();
+    if (summ.length === 0) return;
+
+    // Sort
+    if (AppState.sortOrder === 'slowest') {
+        summ = [...summ].sort((a, b) => a.median - b.median);
+    } else if (AppState.sortOrder === 'fastest') {
+        summ = [...summ].sort((a, b) => b.median - a.median);
+    } else {
+        summ = [...summ].sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    const names = summ.map(s => s.name);
+    const values = summ.map(s => s.median);
+    const colors = sampleColors(names.length);
+    const theme = getPlotlyTheme();
+
+    const trace = {
+        type: 'bar',
+        orientation: 'h',
+        y: names,
+        x: values,
+        marker: { color: colors, line: { width: 0 } },
+        text: values.map(v => Math.round(v) + 'd'),
+        textposition: 'outside',
+        textfont: { size: 11, color: theme.font.color },
+        customdata: summ.map(s => [s.n_journals_with_data, s.n_journals_total, s.coverage_pct, Math.round(s.p25), Math.round(s.p75)]),
+        hovertemplate: '<b>%{y}</b><br>Median: %{x:.0f} days<br>IQR: %{customdata[3]}--%{customdata[4]} days<br>Journals: %{customdata[0]}/%{customdata[1]} (%{customdata[2]}% coverage)<extra></extra>',
+    };
+
+    const layout = {
+        ...getLayoutBase(),
+        height: getChartHeight(names.length, 19),
+        xaxis: { title: 'Median days (submission to acceptance)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { automargin: true },
+    };
+
+    Plotly.react('chart-bars', [trace], layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 2: BOXPLOT
+// =========================================================================
+function buildBoxplot() {
+    const summ = [...getFilteredSummary()].sort((a, b) => a.median - b.median);
+    if (summ.length === 0) return;
+
+    const journals = getFilteredJournals();
+    const groupNames = summ.map(s => s.name);
+    const colors = sampleColors(groupNames.length);
+    const theme = getPlotlyTheme();
+
+    // Group journals
+    const grouped = {};
+    journals.forEach(j => {
+        const g = getGroupKey(j);
+        if (!grouped[g]) grouped[g] = [];
+        grouped[g].push(j.median);
+    });
+
+    const traces = groupNames.map((name, i) => {
+        const vals = grouped[name] || [];
+        const c = colors[i];
+        return {
+            type: 'box',
+            x: vals,
+            name: name,
+            orientation: 'h',
+            marker: { color: c, size: 4 },
+            line: { color: c, width: 1.5 },
+            fillcolor: hexToRgba(c, 0.4),
+            boxmean: false,
+            hovertemplate: '<b>%{y}</b><br>Value: %{x:.0f} days<extra></extra>',
+        };
+    });
+
+    const layout = {
+        ...getLayoutBase(),
+        height: getChartHeight(groupNames.length, 19),
+        xaxis: { title: 'Median days (submission to acceptance)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { categoryorder: 'array', categoryarray: groupNames, automargin: true },
+        showlegend: false,
+    };
+
+    Plotly.react('chart-boxplot', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 3: RIDGE PLOT
+// =========================================================================
+function buildRidgePlot() {
+    const tierKey = AppState.tier;
+    const kdeData = DATA.kde[tierKey];
+    if (!kdeData || !kdeData.curves) return;
+
+    let summ = [...getFilteredSummary()].sort((a, b) => a.median - b.median);
+    if (summ.length === 0) return;
+
+    // Only groups that have KDE data
+    summ = summ.filter(s => kdeData.curves[s.name]);
+    const n = summ.length;
+    if (n === 0) return;
+
+    const xGrid = kdeData.x;
+    const spacing = 0.45;
+    const peakScale = 1.3;
+    const colors = sampleColors(n);
+    const theme = getPlotlyTheme();
+
+    const traces = [];
+
+    // Draw top to bottom so lower (faster) fields render on top
+    for (let drawIdx = n - 1; drawIdx >= 0; drawIdx--) {
+        const s = summ[drawIdx];
+        const density = kdeData.curves[s.name];
+        const yOffset = drawIdx * spacing;
+        const c = colors[drawIdx];
+
+        // Scale density
+        const dMax = Math.max(...density);
+        const scaled = density.map(d => (dMax > 0 ? d / dMax : 0) * peakScale * spacing);
+
+        // Baseline trace (invisible)
+        traces.push({
+            type: 'scatter',
+            x: xGrid,
+            y: Array(xGrid.length).fill(yOffset),
+            mode: 'lines',
+            line: { width: 0 },
+            showlegend: false,
+            hoverinfo: 'skip',
+        });
+
+        // Filled density curve
+        traces.push({
+            type: 'scatter',
+            x: xGrid,
+            y: scaled.map(d => d + yOffset),
+            fill: 'tonexty',
+            fillcolor: hexToRgba(c, 0.35),
+            line: { color: c, width: 1.8 },
+            mode: 'lines',
+            name: s.name,
+            showlegend: false,
+            hovertemplate: '<b>' + s.name + '</b><br>Median: ' + Math.round(s.median) + ' days<extra></extra>',
+        });
+
+        // Median line
+        if (s.median > 0) {
+            const medIdx = xGrid.findIndex(x => x >= s.median);
+            const medDensity = medIdx >= 0 ? scaled[medIdx] : 0;
+            traces.push({
+                type: 'scatter',
+                x: [s.median, s.median],
+                y: [yOffset, medDensity + yOffset],
+                mode: 'lines',
+                line: { color: 'rgba(40,40,40,0.6)', width: 1.5, dash: 'dot' },
+                showlegend: false,
+                hoverinfo: 'skip',
+            });
+        }
+    }
+
+    // Y-axis ticks at vertical midpoint of each peak
+    const tickvals = summ.map((s, i) => {
+        const density = kdeData.curves[s.name];
+        const dMax = Math.max(...density);
+        const peakHeight = peakScale * spacing;
+        return i * spacing + peakHeight / 2;
+    });
+    const ticktext = summ.map(s => s.name);
+
+    const layout = {
+        ...getLayoutBase(),
+        height: getChartHeight(n, 28),
+        margin: { l: 20, r: 20, t: 40, b: 60 },
+        xaxis: { title: 'Days (submission to acceptance)', gridcolor: theme.xaxis.gridcolor, range: [0, 730] },
+        yaxis: { tickvals: tickvals, ticktext: ticktext, automargin: true, showgrid: false },
+        hovermode: 'closest',
+        plot_bgcolor: theme.plot_bgcolor,
+    };
+
+    Plotly.react('chart-ridge', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 4: SCATTER vs RANK
+// =========================================================================
+function buildScatterRank() {
+    const journals = getFilteredJournals().filter(j => j.sjr_rank && j.n >= 5);
+    if (journals.length === 0) return;
+
+    const theme = getPlotlyTheme();
+
+    // Group by current tier
+    const groups = {};
+    journals.forEach(j => {
+        const g = getGroupKey(j);
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(j);
+    });
+
+    const traces = Object.keys(groups).sort().map(name => {
+        const jList = groups[name];
+        return {
+            type: 'scatter',
+            mode: 'markers',
+            name: name,
+            x: jList.map(j => j.sjr_rank),
+            y: jList.map(j => j.median),
+            marker: {
+                size: jList.map(j => Math.min(j.n, 200) / 200 * 14 + 4),
+                opacity: 0.6,
+            },
+            text: jList.map(j => j.name),
+            hovertemplate: '<b>%{text}</b><br>Rank: %{x:.0f}<br>Median: %{y:.0f} days<br><extra>' + name + '</extra>',
+        };
+    });
+
+    const layout = {
+        ...getLayoutBase(),
+        height: 600,
+        margin: { l: 90, r: 20, t: 50, b: 60 },
+        xaxis: { title: 'SJR Rank (lower = more prestigious)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { title: { text: 'Median review days', standoff: 15 }, gridcolor: theme.yaxis.gridcolor },
+        legend: { title: { text: getTierLabel() }, font: { size: 11 }, itemsizing: 'constant', bgcolor: getLegendBg() },
+    };
+
+    Plotly.react('chart-scatter-rank', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 5: HISTOGRAM (per-group detail)
+// =========================================================================
+function buildHistogram() {
+    const tierKey = AppState.tier;
+    const histData = DATA.hist[tierKey];
+    if (!histData || !histData.groups) return;
+
+    const theme = getPlotlyTheme();
+
+    // Populate dropdown if needed
+    const sel = document.getElementById('hist-group-select');
+    const groupNames = Object.keys(histData.groups).sort();
+    if (sel.options.length <= 1 || sel.dataset.tier !== tierKey) {
+        sel.innerHTML = '';
+        groupNames.forEach(name => {
+            const opt = document.createElement('option');
+            opt.value = name;
+            opt.textContent = name;
+            sel.appendChild(opt);
+        });
+        sel.dataset.tier = tierKey;
+    }
+
+    const selected = sel.value || groupNames[0];
+    const grp = histData.groups[selected];
+    if (!grp) return;
+
+    const trace = {
+        type: 'bar',
+        x: histData.bin_centers,
+        y: grp.counts,
+        marker: { color: '#e94560', opacity: 0.8 },
+        hovertemplate: 'Days: %{x:.0f}<br>Articles: %{y}<extra></extra>',
+    };
+
+    const shapes = [];
+    if (grp.median > 0) {
+        shapes.push({
+            type: 'line',
+            x0: grp.median, x1: grp.median,
+            y0: 0, y1: 1,
+            yref: 'paper',
+            line: { color: document.body.classList.contains('dark') ? '#e0e0e0' : '#1a1a2e', width: 2, dash: 'dash' },
+        });
+    }
+
+    const layout = {
+        ...getLayoutBase(),
+        height: 500,
+        margin: { l: 60, r: 20, t: 60, b: 60 },
+        title: { text: selected + ' -- ' + grp.n_articles + ' articles, median ' + Math.round(grp.median) + ' days', x: 0.5 },
+        xaxis: { title: 'Days (submission to acceptance)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { title: 'Number of articles', gridcolor: theme.yaxis.gridcolor },
+        showlegend: false,
+        bargap: 0.05,
+        shapes: shapes,
+    };
+
+    Plotly.react('chart-histogram', [trace], layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 6: HEATMAP
+// =========================================================================
+function buildHeatmap() {
+    const tierKey = AppState.tier;
+    const hm = DATA.heatmap[tierKey];
+    if (!hm || !hm.values) return;
+
+    const theme = getPlotlyTheme();
+
+    // Build custom colorscale for heatmap
+    const heatColorscale = [
+        [0, '#2a9d8f'],
+        [0.25, '#8ab17d'],
+        [0.5, '#e9c46a'],
+        [0.75, '#f4845f'],
+        [1, '#e76f51']
+    ];
+
+    const trace = {
+        type: 'heatmap',
+        z: hm.values,
+        x: hm.cols,
+        y: hm.rows,
+        colorscale: heatColorscale,
+        hovertemplate: '<b>%{y}</b><br>Publisher: %{x}<br>Median: %{z:.0f} days<extra></extra>',
+        colorbar: { title: 'Median days', tickfont: { color: theme.font.color }, titlefont: { color: theme.font.color } },
+        xgap: 1,
+        ygap: 1,
+    };
+
+    const layout = {
+        ...getLayoutBase(),
+        height: getChartHeight(hm.rows.length, 20) + 150,
+        margin: { l: 20, r: 20, t: 40, b: 150 },
+        xaxis: { tickangle: -45, automargin: true, gridcolor: theme.xaxis.gridcolor },
+        yaxis: { automargin: true },
+    };
+
+    Plotly.react('chart-heatmap', [trace], layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 7: TWO-PHASE SCATTER
+// =========================================================================
+function buildTwoPhaseScatter() {
+    const journals = getFilteredJournals().filter(j => j.median_accept_pub && j.median > 0);
+    const theme = getPlotlyTheme();
+
+    if (journals.length === 0) {
+        Plotly.react('chart-two-phase', [], { ...getLayoutBase(), height: 500, annotations: [{ text: 'No journals with both review and production time data', showarrow: false, font: { size: 14, color: theme.font.color } }] }, PLOTLY_CONFIG);
+        return;
+    }
+
+    const groups = {};
+    journals.forEach(j => {
+        const g = getGroupKey(j);
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(j);
+    });
+
+    const traces = Object.keys(groups).sort().map(name => {
+        const jList = groups[name];
+        return {
+            type: 'scatter',
+            mode: 'markers',
+            name: name,
+            x: jList.map(j => j.median),
+            y: jList.map(j => j.median_accept_pub),
+            marker: { size: 7, opacity: 0.6 },
+            text: jList.map(j => j.name),
+            hovertemplate: '<b>%{text}</b><br>Review: %{x:.0f} days<br>Production: %{y:.0f} days<extra>' + name + '</extra>',
+        };
+    });
+
+    // Diagonal y=x line
+    const maxVal = Math.max(
+        ...journals.map(j => j.median),
+        ...journals.map(j => j.median_accept_pub)
+    );
+
+    traces.push({
+        type: 'scatter',
+        mode: 'lines',
+        x: [0, maxVal * 1.1],
+        y: [0, maxVal * 1.1],
+        line: { color: document.body.classList.contains('dark') ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)', dash: 'dash', width: 1 },
+        showlegend: false,
+        hoverinfo: 'skip',
+    });
+
+    const layout = {
+        ...getLayoutBase(),
+        height: 600,
+        margin: { l: 90, r: 20, t: 50, b: 60 },
+        xaxis: { title: 'Median submission-to-acceptance (days)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { title: { text: 'Median acceptance-to-publication (days)', standoff: 15 }, gridcolor: theme.yaxis.gridcolor },
+        legend: { font: { size: 10 }, bgcolor: getLegendBg() },
+    };
+
+    Plotly.react('chart-two-phase', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 8: COVERAGE TREEMAP
+// =========================================================================
+function buildCoverageTreemap() {
+    const tierKey = AppState.tier;
+    const covData = DATA.coverage[tierKey];
+    if (!covData || covData.length === 0) return;
+
+    const theme = getPlotlyTheme();
+
+    const labels = covData.map(c => c.name);
+    const parents = covData.map(() => '');
+    const values = covData.map(c => c.n_journals_total);
+    const colors = covData.map(c => c.coverage_pct);
+    const text = covData.map(c => c.coverage_pct.toFixed(1) + '% coverage<br>' + c.n_journals_with_data + '/' + c.n_journals_total + ' journals');
+
+    const trace = {
+        type: 'treemap',
+        labels: labels,
+        parents: parents,
+        values: values,
+        marker: {
+            colors: colors,
+            colorscale: [[0, '#e76f51'], [0.5, '#e9c46a'], [1, '#2a9d8f']],
+            cmin: 0,
+            cmax: 100,
+            colorbar: { title: 'Coverage %', tickfont: { color: theme.font.color }, titlefont: { color: theme.font.color } },
+            line: { width: 2, color: document.body.classList.contains('dark') ? '#0d1117' : 'white' },
+        },
+        text: text,
+        textinfo: 'label+text',
+        hovertemplate: '<b>%{label}</b><br>%{text}<extra></extra>',
+    };
+
+    const layout = {
+        ...getLayoutBase(),
+        height: 600,
+        margin: { l: 10, r: 10, t: 40, b: 10 },
+    };
+
+    Plotly.react('chart-coverage', [trace], layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 9: DUMBBELL CHART
+// =========================================================================
+function buildDumbbellChart() {
+    let summ = [...getFilteredSummary()].sort((a, b) => a.median - b.median);
+    if (summ.length === 0) return;
+
+    const journals = getFilteredJournals();
+    const grouped = {};
+    journals.forEach(j => {
+        const g = getGroupKey(j);
+        if (!grouped[g]) grouped[g] = [];
+        grouped[g].push(j.median);
+    });
+
+    // Only groups with at least 2 journals
+    summ = summ.filter(s => grouped[s.name] && grouped[s.name].length >= 2);
+    const n = summ.length;
+    if (n === 0) return;
+
+    const colors = sampleColors(n);
+    const traces = [];
+    const theme = getPlotlyTheme();
+    const medianMarkerColor = document.body.classList.contains('dark') ? '#e0e0e0' : '#1a1a2e';
+
+    summ.forEach((s, i) => {
+        const vals = grouped[s.name];
+        const minVal = Math.min(...vals);
+        const maxVal = Math.max(...vals);
+
+        // Line from min to max
+        traces.push({
+            type: 'scatter',
+            mode: 'lines',
+            x: [minVal, maxVal],
+            y: [s.name, s.name],
+            line: { color: colors[i], width: 3 },
+            showlegend: false,
+            hoverinfo: 'skip',
+        });
+
+        // Min marker
+        traces.push({
+            type: 'scatter',
+            mode: 'markers',
+            x: [minVal],
+            y: [s.name],
+            marker: { color: colors[i], size: 8, symbol: 'diamond' },
+            showlegend: false,
+            hovertemplate: '<b>' + s.name + '</b><br>Fastest journal: ' + Math.round(minVal) + ' days<extra></extra>',
+        });
+
+        // Max marker
+        traces.push({
+            type: 'scatter',
+            mode: 'markers',
+            x: [maxVal],
+            y: [s.name],
+            marker: { color: colors[i], size: 8, symbol: 'diamond' },
+            showlegend: false,
+            hovertemplate: '<b>' + s.name + '</b><br>Slowest journal: ' + Math.round(maxVal) + ' days<extra></extra>',
+        });
+
+        // Median circle
+        traces.push({
+            type: 'scatter',
+            mode: 'markers',
+            x: [s.median],
+            y: [s.name],
+            marker: { color: medianMarkerColor, size: 10, symbol: 'circle', line: { color: document.body.classList.contains('dark') ? '#0d1117' : 'white', width: 2 } },
+            showlegend: false,
+            hovertemplate: '<b>' + s.name + '</b><br>Median: ' + Math.round(s.median) + ' days<br>Range: ' + Math.round(minVal) + '-' + Math.round(maxVal) + ' days<extra></extra>',
+        });
+    });
+
+    const layout = {
+        ...getLayoutBase(),
+        height: getChartHeight(n, 22),
+        xaxis: { title: 'Median days (submission to acceptance)', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { categoryorder: 'array', categoryarray: summ.map(s => s.name), automargin: true, range: [-0.5, n - 0.5] },
+        showlegend: false,
+    };
+
+    Plotly.react('chart-dumbbell', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// CHART 10: SCATTER vs SJR SCORE
+// =========================================================================
+function buildScatterSJR() {
+    const journals = getFilteredJournals().filter(j => j.sjr_score && j.sjr_score > 0 && j.n >= 5);
+    if (journals.length === 0) return;
+
+    const theme = getPlotlyTheme();
+
+    const groups = {};
+    journals.forEach(j => {
+        const g = getGroupKey(j);
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(j);
+    });
+
+    const traces = Object.keys(groups).sort().map(name => {
+        const jList = groups[name];
+        return {
+            type: 'scatter',
+            mode: 'markers',
+            name: name,
+            x: jList.map(j => j.sjr_score),
+            y: jList.map(j => j.median),
+            marker: { size: 7, opacity: 0.6 },
+            text: jList.map(j => j.name),
+            hovertemplate: '<b>%{text}</b><br>SJR: %{x:.2f}<br>Median: %{y:.0f} days<extra>' + name + '</extra>',
+        };
+    });
+
+    const layout = {
+        ...getLayoutBase(),
+        height: 600,
+        margin: { l: 90, r: 20, t: 50, b: 60 },
+        xaxis: { title: 'SJR Score (log scale)', type: 'log', gridcolor: theme.xaxis.gridcolor },
+        yaxis: { title: { text: 'Median review days', standoff: 15 }, gridcolor: theme.yaxis.gridcolor },
+        legend: { title: { text: getTierLabel() }, font: { size: 10 }, itemsizing: 'constant', bgcolor: getLegendBg() },
+    };
+
+    Plotly.react('chart-scatter-sjr', traces, layout, PLOTLY_CONFIG);
+}
+
+// =========================================================================
+// INITIALIZATION
+// =========================================================================
+function init() {
+    initDarkMode();
+
+    // Header stats
+    document.getElementById('stat-articles').textContent = DATA.meta.n_articles.toLocaleString() + ' articles';
+    document.getElementById('stat-journals').textContent = DATA.meta.n_journals.toLocaleString() + ' journals';
+    document.getElementById('stat-fields').textContent = DATA.meta.n_fields + ' fields';
+    document.getElementById('stat-sources').textContent = DATA.meta.sources.length + ' data sources';
+    document.getElementById('build-date').textContent = DATA.meta.build_date;
+    document.getElementById('footer-sources').textContent = DATA.meta.sources.join(', ');
+
+    populateDropdown();
+    updateCards();
+    buildBarChart();
+}
+
+init();
+</script>
+</body>
+</html>
