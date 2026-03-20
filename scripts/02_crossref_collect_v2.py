@@ -47,6 +47,55 @@ CHECKPOINT_FILE = Path("data/crossref_checkpoint_v2.json")
 PHASE1_FILE = Path("data/crossref_articles.csv")  # original Phase 1 data for counting existing
 DEFAULT_JOURNAL_LIST = Path("data/journal_list_full.csv")
 
+# Publishers confirmed to NEVER deposit Crossref assertion dates (0% hit rate
+# across 10+ journals already probed). Skip these entirely to save API calls.
+SKIP_PUBLISHERS = {
+    "Elsevier Ltd",
+    "Elsevier Inc.",
+    "SAGE Publications Ltd",
+    "Cambridge University Press",
+    "Academic Press Inc.",
+    "Multidisciplinary Digital Publishing Institute (MDPI)",
+    "American Psychological Association",
+    "Frontiers Media SA",
+    "W.B. Saunders",
+    "Cell Press",
+    "Royal Society of Chemistry",
+    "Elsevier Ireland Ltd",
+    "Academic Press",
+    "S. Karger AG",
+    "Mary Ann Liebert Inc.",
+    "IOP Publishing Ltd.",
+    "Elsevier Masson s.r.l.",
+    "Emerald Publishing",
+    "Elsevier GmbH",
+    "American Physical Society",
+    "Society for Industrial and Applied Mathematics Publications",
+    "JMIR Publications Inc.",
+    "Churchill Livingstone",
+    "W.B. Saunders Ltd",
+    "European Mathematical Society Publishing House",
+    "KeAi Publishing Communications Ltd.",
+    "Walter de Gruyter GmbH",
+    "IEEE Computer Society",
+    # Smaller publishers also confirmed 0% (5-9 journals checked)
+    "Public Library of Science",
+    "American Institute of Physics",
+    "Dove Medical Press Ltd",
+    "Dove Medical Press Ltd.",
+    "American Meteorological Society",
+    "American Mathematical Society",
+    "Institute of Physics",
+    "BioScientifica Ltd.",
+    "Mathematical Sciences Publishers",
+    "Portland Press Ltd",
+    "Ubiquity Press",
+    "American Accounting Association",
+    "Cold Spring Harbor Laboratory Press",
+    "Human Kinetics Publishers Inc.",
+    "OAE Publishing Inc.",
+}
+
 # Date parsing patterns for assertion dates
 DATE_FORMATS = [
     "%d %B %Y",       # "29 August 2025"
@@ -327,9 +376,10 @@ def load_existing_dois(output_file):
         return existing
     try:
         df = pd.read_csv(output_file, usecols=["doi"], dtype=str)
-        existing = set(df["doi"].dropna())
+        existing = set(df["doi"].dropna().str.strip())
     except Exception as e:
         print(f"  Warning: could not read existing DOIs from {output_file}: {e}")
+    print(f"  Loaded {len(existing)} existing DOIs from {output_file.name}")
     return existing
 
 
@@ -392,6 +442,14 @@ def main():
             issn_alt = ""
         journal_name = row["journal_name"]
         field = row["field"]
+
+        # Skip publishers known to never deposit assertion dates
+        publisher = row.get("publisher", "")
+        if publisher in SKIP_PUBLISHERS:
+            if issn not in checkpoint:
+                checkpoint[issn] = {"n_with_dates": 0, "n_checked": 0, "done": True, "skipped": "publisher_skip_list"}
+                save_checkpoint(checkpoint)
+            continue
 
         # Check checkpoint — skip if done
         cp = checkpoint.get(issn, {})

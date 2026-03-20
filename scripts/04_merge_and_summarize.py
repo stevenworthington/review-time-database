@@ -40,7 +40,20 @@ def load_csv_sources(name, paths):
                 print(f"  Warning: could not read {p}: {e}")
     if frames:
         combined = pd.concat(frames, ignore_index=True)
-        print(f"  {name}: {total} articles with review dates (from {len(frames)} file(s))")
+        # Deduplicate within source (e.g., same DOI in v1 and v2 files)
+        if "doi" in combined.columns:
+            before = len(combined)
+            combined["_doi_lower"] = combined["doi"].astype(str).str.lower().str.strip()
+            # Keep last occurrence (v2 files are appended after v1, so v2 data wins)
+            combined = combined.drop_duplicates(subset="_doi_lower", keep="last")
+            combined.drop(columns=["_doi_lower"], inplace=True)
+            deduped = before - len(combined)
+            if deduped > 0:
+                print(f"  {name}: {total} raw articles, {deduped} within-source duplicates removed → {len(combined)}")
+            else:
+                print(f"  {name}: {total} articles with review dates (from {len(frames)} file(s))")
+        else:
+            print(f"  {name}: {total} articles with review dates (from {len(frames)} file(s))")
         return combined
     else:
         print(f"  No {name} data found — skipping")
@@ -64,19 +77,38 @@ def load_pubmed():
 
 
 def load_scraped():
-    """Load scraped article data."""
-    return load_csv_sources("Scraped", ["scraped_articles.csv"])
+    """Load scraped article data from all scraper outputs."""
+    return load_csv_sources("Scraped", [
+        "scraped_articles.csv",
+        "scraped_articles_t1.csv",
+        "scraped_articles_t2.csv",
+    ])
 
 
-def merge_sources(crossref_df, pubmed_df, scraped_df=None):
+def load_frontiers():
+    """Load Frontiers PDF-extracted article data."""
+    return load_csv_sources("Frontiers PDF", ["frontiers_articles.csv"])
+
+
+def load_jstage():
+    """Load J-STAGE scraped article data."""
+    return load_csv_sources("J-STAGE", ["jstage_articles.csv"])
+
+
+def merge_sources(crossref_df, pubmed_df, scraped_df=None,
+                   frontiers_df=None, jstage_df=None):
     """
-    Merge all data sources. Priority: PubMed > Crossref > Scraped.
+    Merge all data sources. Priority: PubMed > Crossref > Frontiers > J-STAGE > Scraped.
     When multiple sources have the same DOI, higher-priority source wins.
     """
     if scraped_df is None:
         scraped_df = pd.DataFrame()
+    if frontiers_df is None:
+        frontiers_df = pd.DataFrame()
+    if jstage_df is None:
+        jstage_df = pd.DataFrame()
 
-    all_frames = [pubmed_df, crossref_df, scraped_df]
+    all_frames = [pubmed_df, crossref_df, frontiers_df, jstage_df, scraped_df]
     non_empty = [df for df in all_frames if not df.empty]
 
     if not non_empty:
@@ -91,10 +123,13 @@ def merge_sources(crossref_df, pubmed_df, scraped_df=None):
     frames_to_merge = []
     seen_dois = set()
 
-    for df in [pubmed_df, crossref_df, scraped_df]:
+    for df in [pubmed_df, crossref_df, frontiers_df, jstage_df, scraped_df]:
         if df.empty:
             continue
         df = df.copy()
+        if "doi" not in df.columns:
+            # Some sources may lack a doi column — assign empty strings
+            df["doi"] = ""
         df["doi_lower"] = df["doi"].astype(str).str.lower().str.strip()
 
         # Keep only DOIs not seen in higher-priority sources
@@ -153,9 +188,47 @@ def compute_journal_summary(merged_df, journal_list_df):
 
     summary_df = pd.DataFrame(summaries)
 
-    # Merge in publisher info from journal list
+    # Merge in publisher and area info from journal list
     if not journal_list_df.empty:
-        journal_info = journal_list_df[["issn", "publisher", "sjr_rank", "sjr_score"]].drop_duplicates(subset="issn")
+        jl = journal_list_df.copy()
+        # Compute primary_area (first listed SJR area)
+        jl["primary_area"] = jl["areas"].fillna("").apply(
+            lambda x: x.split(";")[0].strip() if x else ""
+        )
+        # Compute mega_domain from primary_area
+        AREA_TO_DOMAIN = {
+            "Agricultural and Biological Sciences": "Life Sciences",
+            "Biochemistry, Genetics and Molecular Biology": "Life Sciences",
+            "Immunology and Microbiology": "Life Sciences",
+            "Neuroscience": "Life Sciences",
+            "Veterinary": "Life Sciences",
+            "Medicine": "Health Sciences",
+            "Nursing": "Health Sciences",
+            "Dentistry": "Health Sciences",
+            "Health Professions": "Health Sciences",
+            "Pharmacology, Toxicology and Pharmaceutics": "Health Sciences",
+            "Chemistry": "Physical Sciences",
+            "Chemical Engineering": "Physical Sciences",
+            "Computer Science": "Physical Sciences",
+            "Earth and Planetary Sciences": "Physical Sciences",
+            "Energy": "Physical Sciences",
+            "Engineering": "Physical Sciences",
+            "Environmental Science": "Physical Sciences",
+            "Materials Science": "Physical Sciences",
+            "Mathematics": "Physical Sciences",
+            "Physics and Astronomy": "Physical Sciences",
+            "Business, Management and Accounting": "Social Sciences",
+            "Decision Sciences": "Social Sciences",
+            "Economics, Econometrics and Finance": "Social Sciences",
+            "Psychology": "Social Sciences",
+            "Social Sciences": "Social Sciences",
+            "Arts and Humanities": "Arts & Humanities",
+            "Multidisciplinary": "Arts & Humanities",
+        }
+        jl["mega_domain"] = jl["primary_area"].map(AREA_TO_DOMAIN).fillna("Other")
+
+        journal_info = jl[["issn", "publisher", "sjr_rank", "sjr_score",
+                           "primary_area", "mega_domain"]].drop_duplicates(subset="issn")
         summary_df = summary_df.merge(journal_info, on="issn", how="left")
 
     return summary_df.sort_values(["field", "median_days_submission_to_acceptance"],
@@ -259,9 +332,11 @@ def main():
     crossref_df = load_crossref()
     pubmed_df = load_pubmed()
     scraped_df = load_scraped()
+    frontiers_df = load_frontiers()
+    jstage_df = load_jstage()
 
     print("\nMerging sources...")
-    merged = merge_sources(crossref_df, pubmed_df, scraped_df)
+    merged = merge_sources(crossref_df, pubmed_df, scraped_df, frontiers_df, jstage_df)
 
     print("\nLoading journal list...")
     # Prefer full journal list if it exists
