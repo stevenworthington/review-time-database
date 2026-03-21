@@ -1,46 +1,46 @@
 field,total_journals,journals_with_data,journals_missing,coverage_pct
 Library & Information Science,135,12,123,8.9
-Arts & Humanities,2513,241,2272,9.6
+Arts & Humanities,2513,242,2271,9.6
 History,1102,107,995,9.7
 Linguistics,605,65,540,10.7
 Law,790,103,687,13.0
 Philosophy,465,72,393,15.5
 Communication & Media,280,48,232,17.1
-Multidisciplinary,169,29,140,17.2
+Multidisciplinary,169,30,139,17.8
 Sociology & Social Sciences,1388,266,1122,19.2
 Operations Research & Decision Science,88,18,70,20.5
-Political Science,512,107,405,20.9
+Political Science,512,108,404,21.1
 General Engineering,241,51,190,21.2
-Business & Management,674,144,530,21.4
-Electrical & Electronic Engineering,354,79,275,22.3
-Mathematics,1038,282,756,27.2
+Business & Management,674,146,528,21.7
+Electrical & Electronic Engineering,354,80,274,22.6
 Marketing,44,12,32,27.3
-Energy,184,51,133,27.7
-Mechanical & Aerospace Engineering,426,119,307,27.9
-Economics,593,166,427,28.0
+Mathematics,1038,285,753,27.5
+Mechanical & Aerospace Engineering,426,121,305,28.4
 Finance,56,16,40,28.6
-Computer Science (General),948,277,671,29.2
-Earth Science,739,216,523,29.2
-Astronomy & Astrophysics,63,19,44,30.2
+Economics,593,170,423,28.7
+Energy,184,53,131,28.8
+Computer Science (General),948,278,670,29.3
+Earth Science,739,218,521,29.5
 Industrial Engineering,179,55,124,30.7
-Education,963,300,663,31.2
-Accounting,133,42,91,31.6
-Psychology,571,188,383,32.9
-Geography & Urban Studies,293,97,196,33.1
-Civil Engineering,328,111,217,33.8
-Chemical Engineering,394,136,258,34.5
-Physics,621,215,406,34.6
+Education,963,301,662,31.3
+Astronomy & Astrophysics,63,20,43,31.7
+Accounting,133,43,90,32.3
+Geography & Urban Studies,293,98,195,33.4
+Psychology,571,192,379,33.6
+Civil Engineering,328,114,214,34.8
+Chemical Engineering,394,138,256,35.0
 Artificial Intelligence,248,87,161,35.1
+Physics,621,219,402,35.3
 Atmospheric & Ocean Science,113,40,73,35.4
-Plant & Agricultural Science,1028,371,657,36.1
+Plant & Agricultural Science,1028,373,655,36.3
 Information Systems,52,19,33,36.5
 Statistics,71,26,45,36.6
-Materials Science,430,158,272,36.7
 Development Studies,179,66,113,36.9
 Animal Science & Veterinary,575,214,361,37.2
+Materials Science,430,163,267,37.9
 Ecology & Evolution,536,222,314,41.4
-Chemistry,522,218,304,41.8
-Environmental Science,431,190,241,44.1
+Chemistry,522,221,301,42.3
+Environmental Science,431,191,240,44.3
 Health Professions,256,116,140,45.3
 Nursing,333,155,178,46.5
 Marine & Aquatic Science,191,94,97,49.2
@@ -50,9 +50,9 @@ Nutrition & Food Science,185,95,90,51.4
 Health Policy & Services,229,118,111,51.5
 Public Health & Epidemiology,321,174,147,54.2
 Pediatrics,218,119,99,54.6
-Biomedical Engineering,134,74,60,55.2
 Dermatology,133,74,59,55.6
 Biotechnology,70,39,31,55.7
+Biomedical Engineering,134,75,59,56.0
 Critical Care & Emergency Medicine,142,80,62,56.3
 Dentistry,250,141,109,56.4
 Surgery,225,128,97,56.9
