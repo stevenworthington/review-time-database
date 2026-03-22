@@ -1,85 +1,85 @@
 field,n_journals_total,n_journals_with_data,coverage_pct,field_median_review_days,field_p25_review_days,field_p75_review_days,field_mean_review_days,slowest_journal,fastest_journal
-Accounting,133,44,33.1,344.75,214.75,497.625,366.7386363636364,China Journal of Accounting Studies,Fiscal Studies
-Business & Management,674,161,23.9,267.0,192.0,336.0,273.0124223602484,Journal of International Entrepreneurship,Frontiers of Health Services Management
+Accounting,133,46,34.6,325.0,216.25,491.75,362.5869565217391,China Journal of Accounting Studies,Fiscal Studies
 Development Studies,179,68,38.0,254.25,167.75,304.0,242.64705882352942,Journal of African Business,Developing Economies
-Statistics,71,26,36.6,254.0,214.75,285.75,256.3269230769231,Journal of the American Statistical Association,Stat
+Statistics,71,27,38.0,252.0,202.0,285.5,252.53703703703704,Journal of the American Statistical Association,Stat
 Information Systems,52,19,36.5,246.5,136.5,301.75,253.26315789473685,Journal of Strategic Information Systems,Neuroinformatics
-Communication & Media,280,51,18.2,242.0,123.0,323.5,231.59803921568627,"Technology, Pedagogy and Education",Science Editing
+Business & Management,674,192,28.5,240.5,170.875,325.0,257.328125,Journal of International Entrepreneurship,Frontiers of Health Services Management
 Marketing,44,15,34.1,237.0,175.25,342.0,267.03333333333336,International Journal of Research in Marketing,Journal of Retailing and Consumer Services
-Economics,593,175,29.5,237.0,173.0,307.0,237.65714285714284,Journal of the Knowledge Economy (discontinued),RAND Journal of Economics
-Operations Research & Decision Science,88,23,26.1,228.5,141.25,255.5,224.47826086956522,International Journal of Management Reviews,International Journal of Mathematics in Operational Research
-Finance,56,17,30.4,224.0,167.5,249.0,262.2352941176471,Financial Innovation,Communications for Statistical Applications and Methods
-Geography & Urban Studies,293,99,33.8,219.0,185.75,254.25,221.6060606060606,Journal of Urbanism,New Zealand Geographer
-Education,963,302,31.4,218.0,162.625,277.875,221.85596026490066,Educational Research and Evaluation,Education Research International
+Communication & Media,280,52,18.6,233.0,123.0,323.25,231.0096153846154,"Technology, Pedagogy and Education",Science Editing
+Economics,593,184,31.0,226.5,170.125,306.0,234.5054347826087,Journal of the Knowledge Economy (discontinued),RAND Journal of Economics
+Finance,56,19,33.9,224.0,142.25,248.0,249.26315789473685,Financial Innovation,Communications for Statistical Applications and Methods
+Operations Research & Decision Science,88,26,29.5,220.75,123.125,250.875,216.17307692307693,International Journal of Management Reviews,International Journal of Mathematics in Operational Research
+Geography & Urban Studies,293,104,35.5,218.5,180.125,253.125,220.31730769230768,Journal of Urbanism,New Zealand Geographer
+Education,963,310,32.2,216.75,161.625,276.0,220.33225806451614,Educational Research and Evaluation,Education Research International
 Linguistics,605,65,10.7,214.5,164.0,277.0,234.7153846153846,Natural Language and Linguistic Theory,Communication Sciences and Disorders
-Political Science,512,109,21.3,211.5,149.0,266.0,214.90366972477065,Journal of Contemporary African Studies,Journal for International Business and Entrepreneurship Development
-Sociology & Social Sciences,1388,268,19.3,206.5,152.0,271.125,215.34141791044777,Latin American and Caribbean Ethnic Studies,American Ethnologist
-Mathematics,1038,289,27.8,199.0,140.0,261.5,212.9878892733564,Publications Mathematiques de l'Institut des Hautes Etudes Scientifiques,Doklady Mathematics
-Arts & Humanities,2513,243,9.7,188.0,135.0,247.5,198.72633744855966,Material Religion,Oxford Journal of Archaeology
+Political Science,512,112,21.9,211.5,149.375,266.25,215.57142857142858,Journal of Contemporary African Studies,Journal for International Business and Entrepreneurship Development
+Sociology & Social Sciences,1388,270,19.5,206.5,152.0,270.75,215.1648148148148,Latin American and Caribbean Ethnic Studies,American Ethnologist
+Mathematics,1038,301,29.0,199.0,139.0,262.0,213.7325581395349,Publications Mathematiques de l'Institut des Hautes Etudes Scientifiques,Doklady Mathematics
 Philosophy,465,72,15.5,187.0,142.125,238.0,191.97222222222223,Journal of Social Philosophy,Nous-Supplement: Philosophical Issues
-History,1102,107,9.7,185.0,126.0,262.5,193.34112149532712,History and Technology,History and Theory
-Computer Science (General),948,291,30.7,180.0,140.0,248.5,199.44158075601374,NETNOMICS: Economic Research and Electronic Networking,Pattern Recognition and Image Analysis
-Psychology,571,193,33.8,175.0,124.5,224.5,188.16321243523316,Organizational Behavior and Human Decision Processes,Journal of Analytical Psychology
-Artificial Intelligence,248,88,35.5,172.5,127.625,244.875,188.70454545454547,Journal of the ACM,Transactions of the Japanese Society for Artificial Intelligence
-Atmospheric & Ocean Science,113,45,39.8,169.0,133.5,192.0,169.11111111111111,Journal of Operational Oceanography,Atmospheric and Oceanic Science Letters
-Earth Science,739,235,31.8,167.0,131.25,207.5,170.67659574468084,Geodesy and Cartography,Korean Journal of Remote Sensing
-Law,790,104,13.2,162.25,116.5,225.25,174.02884615384616,Jindal Global Law Review,Family Court Review
+Arts & Humanities,2513,245,9.7,187.0,135.0,245.0,198.16938775510204,Material Religion,Oxford Journal of Archaeology
+History,1102,108,9.8,186.5,126.25,269.875,195.59722222222223,History and Technology,History and Theory
+Computer Science (General),948,318,33.5,175.5,135.25,239.125,194.45283018867926,NETNOMICS: Economic Research and Electronic Networking,Pattern Recognition and Image Analysis
+Psychology,571,194,34.0,174.75,123.75,224.375,187.7242268041237,Organizational Behavior and Human Decision Processes,Journal of Analytical Psychology
+Artificial Intelligence,248,89,35.9,171.0,125.5,243.5,187.9943820224719,Journal of the ACM,Transactions of the Japanese Society for Artificial Intelligence
+Atmospheric & Ocean Science,113,46,40.7,168.5,133.875,191.375,168.52173913043478,Journal of Operational Oceanography,Atmospheric and Oceanic Science Letters
+Earth Science,739,242,32.7,162.5,131.875,204.125,169.66735537190084,Geodesy and Cartography,Korean Journal of Remote Sensing
+Law,790,106,13.4,161.25,112.375,224.75,172.0,Jindal Global Law Review,Family Court Review
 Marine & Aquatic Science,191,94,49.2,156.75,120.5,189.5,158.20212765957447,Transactions of the American Fisheries Society,Limnology and Oceanography Bulletin
-Ecology & Evolution,536,223,41.6,150.0,112.5,189.0,158.51569506726457,Tropical Ecology,Current Forestry Reports
-Health Policy & Services,229,119,52.0,147.5,114.5,182.0,153.44957983193277,Journal of Public Health Policy,Alter
-Civil Engineering,328,116,35.4,147.25,106.75,196.5,154.08620689655172,Tecnologia y Ciencias del Agua,Asian Journal of Civil Engineering
-General Engineering,241,53,22.0,146.0,98.0,200.0,164.5754716981132,Journal of Product Innovation Management,Mathematical Problems in Engineering
-Environmental Science,431,197,45.7,143.0,103.0,198.0,153.87817258883248,Housing Studies,Journal of Korean Society for Atmospheric Environment
-Energy,184,57,31.0,142.0,96.0,176.0,145.2982456140351,International Journal of Coal Science and Technology,Energy and Environmental Materials
-Electrical & Electronic Engineering,354,83,23.4,139.0,93.25,188.0,155.96987951807228,EPE Journal (European Power Electronics and Drives Journal),Russian Electrical Engineering
-Multidisciplinary,169,30,17.8,137.0,94.625,180.75,139.58333333333334,Nature,Journal of Yeungnam Medical Science
+Ecology & Evolution,536,223,41.6,150.0,114.0,189.0,158.79372197309416,Tropical Ecology,Current Forestry Reports
+Civil Engineering,328,119,36.3,147.5,106.5,194.0,153.84873949579833,Tecnologia y Ciencias del Agua,Asian Journal of Civil Engineering
+Health Policy & Services,229,121,52.8,147.5,114.0,184.0,153.72314049586777,Journal of Public Health Policy,Alter
+Multidisciplinary,169,31,18.3,144.5,94.75,186.25,142.08064516129033,Nature,Journal of Yeungnam Medical Science
+General Engineering,241,58,24.1,144.5,99.0,195.5,161.48275862068965,Journal of Product Innovation Management,Mathematical Problems in Engineering
+Energy,184,63,34.2,143.0,97.25,177.75,145.47619047619048,International Journal of Coal Science and Technology,Energy and Environmental Materials
+Environmental Science,431,203,47.1,143.0,103.25,197.5,153.5591133004926,Housing Studies,Journal of Korean Society for Atmospheric Environment
+Electrical & Electronic Engineering,354,90,25.4,140.5,97.625,187.5,155.32222222222222,EPE Journal (European Power Electronics and Drives Journal),Russian Electrical Engineering
+Mechanical & Aerospace Engineering,426,137,32.2,137.0,102.0,182.5,149.86131386861314,International Applied Mechanics,Russian Aeronautics
 Public Health & Epidemiology,321,174,54.2,137.0,94.875,184.75,151.16954022988506,Sahara J,Communicable Diseases Intelligence
-Mechanical & Aerospace Engineering,426,128,30.0,136.0,101.5,182.125,149.37109375,International Applied Mechanics,Russian Aeronautics
-Plant & Agricultural Science,1028,376,36.6,135.75,98.75,175.0,143.33111702127658,Proceedings of the National Academy of Sciences India Section B - Biological Sciences,Physics of Life Reviews
+Plant & Agricultural Science,1028,377,36.7,136.0,99.0,175.0,143.40185676392574,Proceedings of the National Academy of Sciences India Section B - Biological Sciences,Physics of Life Reviews
 Health Professions,256,119,46.5,134.0,100.25,177.75,146.2058823529412,Health Care Management Science,ACSM's Health and Fitness Journal
-Rehabilitation,33,21,63.6,132.0,84.0,171.0,125.42857142857143,Disability and Rehabilitation,Journal of Neurorestoratology
-Nursing,333,156,46.8,131.5,90.375,178.625,138.10897435897436,International Journal of Nursing Practice,Journal of Midwifery and Women's Health
+Rehabilitation,33,23,69.7,132.0,82.25,168.0,124.21739130434783,Disability and Rehabilitation,Journal of Neurorestoratology
+Industrial Engineering,179,67,37.4,132.0,90.25,230.75,160.5820895522388,Multimedia Tools and Applications,Russian Engineering Research
+Nursing,333,157,47.1,131.0,90.5,178.0,138.02229299363057,International Journal of Nursing Practice,Journal of Midwifery and Women's Health
 Neuroscience,196,159,81.1,127.0,92.5,167.0,135.3993710691824,Nature Neuroscience,Dementia and Geriatric Cognitive Disorders Extra
-Industrial Engineering,179,57,31.8,127.0,92.5,240.5,163.74561403508773,Multimedia Tools and Applications,Russian Engineering Research
+Animal Science & Veterinary,575,217,37.7,124.0,90.5,167.0,132.25806451612902,Journal of Mammalogy,Journal of World's Poultry Research
 Library & Information Science,135,12,8.9,124.0,110.25,273.0,187.125,Journal of Classification,Journal of Hospital Librarianship
-Animal Science & Veterinary,575,215,37.4,124.0,90.0,167.5,132.42093023255813,Journal of Mammalogy,Journal of World's Poultry Research
 Orthopedics & Sports Medicine,161,102,63.4,121.0,87.875,146.125,124.75490196078431,Brazilian Journal of Physical Therapy,Korean Journal of Sport Science
 Genetics & Genomics,103,88,85.4,118.25,91.375,151.25,125.07954545454545,Nature Genetics,HLA
 Ophthalmology,107,62,57.9,117.0,88.75,147.625,123.54032258064517,Journal of Korean Ophthalmological Society,Vision (Switzerland)
 Molecular & Cell Biology,149,126,84.6,115.25,85.625,153.5,126.59920634920636,Nature Cell Biology,Molecular and Cellular Oncology
 Geriatrics,67,46,68.7,114.5,86.25,153.875,123.26086956521739,Nature Aging,American Journal of Geriatric Psychiatry
-Psychiatry,120,60,50.0,113.0,94.375,142.875,124.125,Journal of Nervous and Mental Disease,International Review of Psychiatry
-Biomedical Engineering,134,75,56.0,112.0,91.0,153.25,125.22,Journal of Medical Engineering and Technology,Annals of 3D Printed Medicine
-General & Internal Medicine,1343,679,50.6,110.5,79.25,142.5,115.93078055964654,Journal of Herbal Medicine,Frontiers of Neurology and Neuroscience
-Pediatrics,218,121,55.5,109.0,81.5,144.0,118.04545454545455,International Journal of Child Care and Education Policy,Paediatric Respiratory Reviews
-Obstetrics & Gynecology,146,89,61.0,109.0,78.0,143.5,116.56179775280899,Birth,Fertility and Sterility
+Psychiatry,120,61,50.8,113.5,94.5,142.5,124.18852459016394,Journal of Nervous and Mental Disease,International Review of Psychiatry
+Biomedical Engineering,134,76,56.7,110.75,91.0,152.375,124.91447368421052,Journal of Medical Engineering and Technology,Annals of 3D Printed Medicine
+General & Internal Medicine,1343,685,51.0,110.5,79.0,143.0,115.96642335766424,Journal of Herbal Medicine,Frontiers of Neurology and Neuroscience
+Obstetrics & Gynecology,146,91,62.3,109.0,77.5,142.75,115.81318681318682,Birth,Fertility and Sterility
+Pediatrics,218,124,56.9,108.5,81.5,144.125,117.82661290322581,International Journal of Child Care and Education Policy,Paediatric Respiratory Reviews
 Oncology,201,142,70.6,108.5,79.25,135.5,111.7394366197183,Nature Cancer,Anti-Cancer Drugs
 Anatomy & Physiology,81,50,61.7,107.0,82.375,144.375,114.61,Translational Research in Anatomy,Journal of Functional Morphology and Kinesiology
+Dentistry,250,142,56.8,106.5,74.5,139.375,114.69718309859155,International Journal of Dental Hygiene,AJO-DO Clinical Companion
 Pathology,99,67,67.7,106.5,81.5,131.75,110.0,"Medicine, Conflict and Survival",International Journal of Forensic Mental Health
-Dentistry,250,142,56.8,106.5,74.5,139.375,114.66549295774648,International Journal of Dental Hygiene,AJO-DO Clinical Companion
-Nutrition & Food Science,185,96,51.9,105.25,77.75,142.25,116.59895833333333,Journal of the Academy of Nutrition and Dietetics,Nestle Nutrition Institute Workshop Series
+Nutrition & Food Science,185,96,51.9,105.25,77.75,140.5,115.91666666666667,Journal of the Academy of Nutrition and Dietetics,Nestle Nutrition Institute Workshop Series
 Microbiology,157,113,72.0,105.0,88.0,138.5,114.80530973451327,Nature Microbiology,mBio
 Dermatology,133,74,55.6,103.25,84.625,136.625,107.32432432432432,International Journal of Trichology,Dermatology Online Journal
+Biotechnology,70,39,55.7,102.0,82.5,129.25,110.7051282051282,Food Technology and Biotechnology,BioSpektrum
 Otolaryngology,68,41,60.3,102.0,76.0,134.0,106.51219512195122,International Archives of Otorhinolaryngology,Journal of Craniofacial Surgery
-Biotechnology,70,39,55.7,102.0,82.5,129.25,110.75641025641026,Food Technology and Biotechnology,BioSpektrum
-Chemical Engineering,394,140,35.5,101.0,74.75,130.625,111.06785714285714,Nature Biomedical Engineering,Fluid Dynamics
-Biochemistry,566,381,67.3,101.0,74.5,132.0,113.26377952755905,Proceedings of the National Academy of Sciences India Section A - Physical Sciences,Biologie Aujourd'hui
+Chemical Engineering,394,145,36.8,101.0,74.0,130.5,110.60344827586206,Nature Biomedical Engineering,Fluid Dynamics
+Biochemistry,566,381,67.3,101.0,74.5,132.0,112.99737532808399,Proceedings of the National Academy of Sciences India Section A - Physical Sciences,Biologie Aujourd'hui
 Endocrinology & Metabolism,165,114,69.1,100.75,74.75,125.75,106.00438596491227,Obesity Reviews,Frontiers of Hormone Research
 Respiratory Medicine,56,43,76.8,100.5,63.5,127.5,96.70930232558139,Clinical Respiratory Journal,The Lancet Respiratory Medicine
-Immunology,184,128,69.6,99.5,77.5,120.75,104.60546875,Nature Immunology,European Journal of Microbiology and Immunology
-Pharmacology & Toxicology,382,228,59.7,98.0,80.375,125.375,106.58991228070175,Indian Journal of Pharmacology,Current Cardiovascular Risk Reports
-Physics,621,219,35.3,96.5,68.5,125.5,103.3607305936073,Photonic Network Communications,Russian Journal of Mathematical Physics
+Immunology,184,130,70.7,99.5,76.5,121.25,105.1423076923077,Nature Immunology,European Journal of Microbiology and Immunology
+Pharmacology & Toxicology,382,230,60.2,98.0,80.125,126.125,106.80217391304348,Indian Journal of Pharmacology,Current Cardiovascular Risk Reports
+Physics,621,221,35.6,97.0,69.0,125.5,103.50226244343891,Photonic Network Communications,Russian Journal of Mathematical Physics
 Hematology,101,66,65.3,96.5,76.0,117.5,96.13636363636364,Advances in Hematology,Onkologie
 Neurology,182,118,64.8,96.25,72.0,126.375,99.45762711864407,Spinal Cord Series and Cases,Brain Hemorrhages
 Infectious Disease,178,129,72.5,96.0,72.0,120.5,100.90310077519379,Infectio,Voprosy Virusologii
-Materials Science,430,167,38.8,96.0,76.25,116.75,104.36526946107784,International Journal of Corrosion,Russian Metallurgy (Metally)
 Nephrology & Urology,124,86,69.4,94.75,68.875,114.5,92.21511627906976,Nephrologie et Therapeutique,Journal of Urology
-Critical Care & Emergency Medicine,142,80,56.3,92.0,62.875,126.625,98.5625,Traumatology,Neonatal Network
+Materials Science,430,174,40.5,94.5,75.0,116.375,103.4080459770115,International Journal of Corrosion,Russian Metallurgy (Metally)
+Critical Care & Emergency Medicine,142,82,57.7,92.0,63.625,126.875,100.53658536585365,International Journal of Emergency Management,Neonatal Network
 Astronomy & Astrophysics,63,20,31.7,91.75,71.5,142.75,110.6,Living Reviews in Solar Physics,Astronomy Letters
-Surgery,225,129,57.3,90.0,66.0,117.0,97.72093023255815,Journal of Cosmetic and Laser Therapy,Journal of Healthcare Engineering
-Gastroenterology & Hepatology,175,124,70.9,89.0,62.75,117.25,93.00403225806451,Gastroenterology Research and Practice,Alimentary Pharmacology and Therapeutics
+Surgery,225,132,58.7,90.5,66.0,117.0,97.89015151515152,Journal of Cosmetic and Laser Therapy,Journal of Healthcare Engineering
+Gastroenterology & Hepatology,175,125,71.4,89.5,63.0,117.0,93.036,Gastroenterology Research and Practice,Alimentary Pharmacology and Therapeutics
 Rheumatology,31,20,64.5,88.0,62.375,123.375,91.7,Advances in Rheumatology,Egyptian Rheumatologist
-Radiology & Imaging,128,89,69.5,85.5,67.5,128.0,98.30337078651685,Revista Argentina de Radiologia,Seminars in Nuclear Medicine
+Radiology & Imaging,128,91,71.1,85.5,67.75,128.0,98.49450549450549,Revista Argentina de Radiologia,Seminars in Nuclear Medicine
 Anesthesiology,132,76,57.6,85.25,59.625,124.0,94.65789473684211,Current Anesthesiology Reports,Saudi Journal of Anaesthesia
-Cardiovascular Medicine,357,235,65.8,81.0,63.5,120.5,91.09574468085107,Circulation: Genomic and Precision Medicine,Kardiologia Polska
-Chemistry,522,227,43.5,79.0,60.5,111.25,91.87004405286343,Journal of Chromatographic Science,High Energy Chemistry
+Cardiovascular Medicine,357,236,66.1,81.0,63.75,120.5,91.05084745762711,Circulation: Genomic and Precision Medicine,Kardiologia Polska
+Chemistry,522,232,44.4,79.0,60.875,111.125,91.82974137931035,Journal of Chromatographic Science,High Energy Chemistry
