@@ -1,82 +1,82 @@
 field,total_journals,journals_with_data,journals_missing,coverage_pct
 Library & Information Science,135,12,123,8.9
 Arts & Humanities,2513,245,2268,9.7
-History,1102,108,994,9.8
-Linguistics,605,65,540,10.7
+History,1102,109,993,9.9
+Linguistics,605,71,534,11.7
 Law,790,106,684,13.4
 Philosophy,465,72,393,15.5
 Multidisciplinary,169,31,138,18.3
-Communication & Media,280,52,228,18.6
 Sociology & Social Sciences,1388,270,1118,19.5
+Communication & Media,280,55,225,19.6
 Political Science,512,112,400,21.9
 General Engineering,241,58,183,24.1
 Electrical & Electronic Engineering,354,90,264,25.4
-Business & Management,674,192,482,28.5
-Mathematics,1038,301,737,29.0
-Operations Research & Decision Science,88,26,62,29.5
-Economics,593,184,409,31.0
+Business & Management,674,195,479,28.9
+Mathematics,1038,307,731,29.6
+Economics,593,185,408,31.2
 Astronomy & Astrophysics,63,20,43,31.7
-Education,963,310,653,32.2
-Mechanical & Aerospace Engineering,426,137,289,32.2
-Earth Science,739,242,497,32.7
-Computer Science (General),948,318,630,33.5
+Operations Research & Decision Science,88,28,60,31.8
+Mechanical & Aerospace Engineering,426,138,288,32.4
+Education,963,313,650,32.5
+Earth Science,739,243,496,32.9
 Finance,56,19,37,33.9
-Psychology,571,194,377,34.0
 Marketing,44,15,29,34.1
-Energy,184,63,121,34.2
-Accounting,133,46,87,34.6
+Psychology,571,196,375,34.3
+Energy,184,64,120,34.8
+Computer Science (General),948,334,614,35.2
+Accounting,133,47,86,35.3
 Geography & Urban Studies,293,104,189,35.5
-Physics,621,221,400,35.6
-Artificial Intelligence,248,89,159,35.9
+Physics,621,222,399,35.7
+Artificial Intelligence,248,90,158,36.3
 Civil Engineering,328,119,209,36.3
-Information Systems,52,19,33,36.5
 Plant & Agricultural Science,1028,377,651,36.7
-Chemical Engineering,394,145,249,36.8
-Industrial Engineering,179,67,112,37.4
+Chemical Engineering,394,148,246,37.6
 Animal Science & Veterinary,575,217,358,37.7
-Development Studies,179,68,111,38.0
-Statistics,71,27,44,38.0
-Materials Science,430,174,256,40.5
+Development Studies,179,69,110,38.5
+Information Systems,52,20,32,38.5
+Industrial Engineering,179,69,110,38.5
+Statistics,71,28,43,39.4
 Atmospheric & Ocean Science,113,46,67,40.7
+Materials Science,430,175,255,40.7
 Ecology & Evolution,536,223,313,41.6
-Chemistry,522,232,290,44.4
+Chemistry,522,233,289,44.6
 Health Professions,256,119,137,46.5
 Nursing,333,157,176,47.1
 Environmental Science,431,203,228,47.1
 Marine & Aquatic Science,191,94,97,49.2
-Psychiatry,120,61,59,50.8
-General & Internal Medicine,1343,685,658,51.0
+General & Internal Medicine,1343,690,653,51.4
+Psychiatry,120,62,58,51.7
 Nutrition & Food Science,185,96,89,51.9
 Health Policy & Services,229,121,108,52.8
-Public Health & Epidemiology,321,174,147,54.2
+Public Health & Epidemiology,321,175,146,54.5
 Dermatology,133,74,59,55.6
-Biotechnology,70,39,31,55.7
 Biomedical Engineering,134,76,58,56.7
 Dentistry,250,142,108,56.8
-Pediatrics,218,124,94,56.9
-Anesthesiology,132,76,56,57.6
+Biotechnology,70,40,30,57.1
+Pediatrics,218,125,93,57.3
 Critical Care & Emergency Medicine,142,82,60,57.7
 Ophthalmology,107,62,45,57.9
+Anesthesiology,132,77,55,58.3
 Surgery,225,132,93,58.7
 Pharmacology & Toxicology,382,230,152,60.2
-Otolaryngology,68,41,27,60.3
 Anatomy & Physiology,81,50,31,61.7
+Otolaryngology,68,42,26,61.8
 Obstetrics & Gynecology,146,91,55,62.3
 Orthopedics & Sports Medicine,161,102,59,63.4
 Rheumatology,31,20,11,64.5
-Neurology,182,118,64,64.8
 Hematology,101,66,35,65.3
+Neurology,182,119,63,65.4
 Cardiovascular Medicine,357,236,121,66.1
 Biochemistry,566,381,185,67.3
 Pathology,99,67,32,67.7
 Geriatrics,67,46,21,68.7
-Endocrinology & Metabolism,165,114,51,69.1
 Nephrology & Urology,124,86,38,69.4
+Endocrinology & Metabolism,165,115,50,69.7
 Rehabilitation,33,23,10,69.7
 Oncology,201,142,59,70.6
-Immunology,184,130,54,70.7
 Radiology & Imaging,128,91,37,71.1
-Gastroenterology & Hepatology,175,125,50,71.4
+Immunology,184,132,52,71.7
+Gastroenterology & Hepatology,175,126,49,72.0
 Microbiology,157,113,44,72.0
 Infectious Disease,178,129,49,72.5
 Respiratory Medicine,56,43,13,76.8
