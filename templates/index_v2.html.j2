@@ -100,6 +100,7 @@
         header .stats {
             font-size: 0.85rem;
             opacity: 0.6;
+            min-height: 1.5rem;
         }
 
         header .stats span {
@@ -145,12 +146,15 @@
             box-shadow: var(--shadow);
             padding: 1.25rem;
             border-left: 4px solid var(--accent);
+            min-height: 5.5rem;
         }
 
         .finding-card .number {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--finding-number);
+            min-height: 2.2rem;
+            line-height: 2.2rem;
         }
 
         .finding-card .label {
@@ -380,23 +384,23 @@
     <div class="key-findings">
         <div class="findings-grid">
             <div class="finding-card">
-                <div class="number" id="card-slowest-val"></div>
-                <div class="label" id="card-slowest-label"></div>
+                <div class="number" id="card-slowest-val">&nbsp;</div>
+                <div class="label" id="card-slowest-label">Slowest field</div>
             </div>
             <div class="finding-card">
-                <div class="number" id="card-fastest-val"></div>
-                <div class="label" id="card-fastest-label"></div>
+                <div class="number" id="card-fastest-val">&nbsp;</div>
+                <div class="label" id="card-fastest-label">Fastest field</div>
             </div>
             <div class="finding-card">
-                <div class="number" id="card-median-val"></div>
+                <div class="number" id="card-median-val">&nbsp;</div>
                 <div class="label">Median review time across all groups</div>
             </div>
             <div class="finding-card">
-                <div class="number" id="card-journals-val"></div>
+                <div class="number" id="card-journals-val">&nbsp;</div>
                 <div class="label">Journals with review time data</div>
             </div>
             <div class="finding-card">
-                <div class="number" id="card-articles-val"></div>
+                <div class="number" id="card-articles-val">&nbsp;</div>
                 <div class="label">Articles analyzed</div>
             </div>
         </div>
