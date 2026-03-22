@@ -208,21 +208,21 @@ Articles are sorted by publication date (most recent first) during collection, s
 
 | Year | Articles |
 |------|----------|
-| 2026 | 236,570 |
-| 2025 | 399,605 |
-| 2024 | 133,132 |
-| 2023 | 63,950 |
-| 2022 | 38,628 |
-| 2021 | 25,103 |
-| 2020 | 12,278 |
-| 2019 | 7,418 |
-| 2018 | 5,417 |
-| 2017 | 3,448 |
-| 2016 | 2,282 |
-| 2015 | 1,556 |
-| ≤2014 | 3,849 |
+| 2026 | 261,740 |
+| 2025 | 475,626 |
+| 2024 | 137,470 |
+| 2023 | 63,242 |
+| 2022 | 39,250 |
+| 2021 | 24,841 |
+| 2020 | 12,050 |
+| 2019 | 6,671 |
+| 2018 | 5,343 |
+| 2017 | 4,179 |
+| 2016 | 3,172 |
+| 2015 | 2,221 |
+| ≤2014 | 6,216 |
 
-The bulk of the data (68%) comes from 2025–2026, reflecting both the recency-first sampling strategy and the larger volume of recent publications.
+Year is determined from the best available date (published date, then accepted date, then received date). The bulk of the data (71%) comes from 2025–2026, reflecting both the recency-first sampling strategy and the larger volume of recent publications.
 
 ## Current Coverage Summary
 
