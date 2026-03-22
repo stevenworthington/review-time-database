@@ -171,6 +171,37 @@ All computed deltas are validated:
 - **Acceptance-to-publication:** Must be ≥ 0 and ≤ 365 days (1 year). Values outside this range are excluded.
 - **Total (submission-to-publication):** Must be ≥ 0 and ≤ 1,460 days (4 years).
 
+### Long Review Times (>2 years)
+
+Of the ~1,018,000 articles with valid review times, **7,706 (0.75%)** have submission-to-acceptance times exceeding 2 years (730 days). These are retained in the database as they represent genuine delays in fields with lengthy review processes, not data errors. The 3-year ceiling is a hard cutoff; no articles exceed 1,095 days.
+
+| Field | Articles >2 years | % of field total |
+|-------|-------------------|-----------------|
+| Accounting | 340 | 9.8% |
+| Business & Management | 539 | 3.0% |
+| Economics | 406 | 2.7% |
+| Development Studies | 152 | 2.5% |
+| Mathematics | 718 | 2.4% |
+| History | 204 | 2.3% |
+| Linguistics | 132 | 2.2% |
+| Education | 515 | 1.9% |
+| Sociology & Social Sciences | 432 | 1.9% |
+| Arts & Humanities | 351 | 1.8% |
+| Geography & Urban Studies | 168 | 1.7% |
+| Computer Science (General) | 473 | 1.5% |
+| Political Science | 132 | 1.4% |
+| Artificial Intelligence | 116 | 1.3% |
+| Psychology | 205 | 1.2% |
+
+The distribution of these long-review articles is:
+
+| Duration | Articles |
+|----------|----------|
+| 2–2.5 years (731–912 days) | 5,562 |
+| 2.5–3 years (913–1,095 days) | 2,144 |
+
+Fields with the highest proportions of long-review articles — Accounting (9.8%), Business & Management (3.0%), and Economics (2.7%) — are consistent with known patterns in these disciplines, where multiple rounds of revision and resubmission are common.
+
 ## Temporal Coverage
 
 Articles are sorted by publication date (most recent first) during collection, so the sample is weighted toward recent publications. The target of 100 articles per journal means that for high-volume journals, only the most recent 1–2 years are captured, while for low-volume journals, the sample may span a longer period.

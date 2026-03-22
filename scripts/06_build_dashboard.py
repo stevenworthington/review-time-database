@@ -104,7 +104,7 @@ def load_data():
         # Filter bogus values
         articles = articles[
             (articles["days_submission_to_acceptance"] > 0)
-            & (articles["days_submission_to_acceptance"] <= 730)
+            & (articles["days_submission_to_acceptance"] <= 1095)
         ].copy()
         # Deduplicate by DOI (keep first occurrence)
         if "doi" in articles.columns:
