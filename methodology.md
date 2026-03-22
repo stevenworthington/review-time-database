@@ -199,7 +199,7 @@ The bulk of the data (68%) comes from 2025–2026, reflecting both the recency-f
 |--------|-------|
 | Journals in SJR | 29,553 |
 | Journals with review time data | 10,825 (36.6%) |
-| Total articles (after dedup) | ~1,024,000 |
+| Total articles (after dedup) | ~1,018,000 |
 | Data sources | 9 pipelines |
 | Fields covered | 84 / 84 |
 | Median review time (across journal medians) | 128 days |
