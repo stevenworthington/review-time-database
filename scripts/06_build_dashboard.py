@@ -78,6 +78,9 @@ def load_data():
         "scraped_articles.csv",
         "scraped_articles_t1.csv",
         "scraped_articles_t2.csv",
+        "inderscience_articles.csv",
+        "small_publishers_articles.csv",
+        "degruyter_articles.csv",
     ]
 
     dfs = []

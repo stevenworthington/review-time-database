@@ -69,6 +69,9 @@
             color: var(--text-primary);
             background: var(--bg-secondary);
             line-height: 1.6;
+        }
+
+        body.transitions-enabled {
             transition: background 0.3s, color 0.3s;
         }
 
@@ -357,6 +360,14 @@
     </style>
 </head>
 <body>
+    <script>
+        // Apply dark mode BEFORE first paint to prevent flash
+        (function() {
+            var stored = localStorage.getItem('darkMode');
+            var isDark = stored === 'dark' || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) document.body.classList.add('dark');
+        })();
+    </script>
     <header>
         <button id="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">☀️</button>
         <h1>Peer Review Timeline Database</h1>
@@ -1399,6 +1410,11 @@ function init() {
     populateDropdown();
     updateCards();
     buildBarChart();
+
+    // Enable transitions only after first paint to prevent flash
+    requestAnimationFrame(function() {
+        document.body.classList.add('transitions-enabled');
+    });
 }
 
 init();
